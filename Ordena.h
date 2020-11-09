@@ -18,7 +18,6 @@ class Ordena
 		vector <Produto> ordena_produto_categoria(vector <Produto>);
 		vector <ProdutoPerecivel> ordena_produto_perecivel_categoria(vector <ProdutoPerecivel>);
 		vector <Remedio> ordena_remedio_categoria(vector <Remedio>);
-		vector <Remedio> ordena_remedio_tarja(vector <Remedio>);
 };
 
 #endif
