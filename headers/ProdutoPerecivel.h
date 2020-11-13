@@ -18,16 +18,16 @@ class ProdutoPerecivel : public Produto
 	// especificador de acesso private
 	private:
 	// membros de dados da classe
-		Data data_atual;
 		Data data_validade;
     public:
     	// construtor da clase
     	ProdutoPerecivel(float = 0.0, float = 0.0, string = " ", string = " ", 
 				string = " ", int = 0, long int = 0, int = 0, int = 0,
-				int = 0, int = 0, int = 0, int = 0)
+				int = 0);
     	// membros de funções da classe
+    	bool verifica_vencimento(Data);
+    	void set_objeto_perecivel(Produto_prototipo, Data);
     	void set_data_validade(Data);
-    	void set_data_atual(Data);
     	Data get_data_validade(void) const;
     	Data get_data_atual(void) const;
 };
