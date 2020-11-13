@@ -14,7 +14,7 @@ int main(void)
 	
 	cout << setw(2);
 	cout << setfill('0') << infoTempo -> tm_mday << "/";
-	cout << setfill('0') << infoTempo -> tm_mon << "/";
+	cout << setfill('0') << ++(infoTempo -> tm_mon) << "/";
 	cout << setfill('0') << 1900 + (infoTempo -> tm_year);
 	
 	return 0;
