@@ -21,10 +21,16 @@ class Estoque
     	Estoque();
     	~Estoque();
     	// membros de funções da classe
-    	bool salvarlista(void);
+    	void lerProduto(void);
+    	void lerProdutoPerecivel(void);
+    	void lerRemedio(void);
+    	void salvarProduto(void);
+    	void salvarProdutoPerecivel(void);
+    	void salvarRemedio(void);
     	bool inserirProduto(Produto);
     	bool inserirRemedio(Remedio);
     	bool inserirProdutoPerecivel(ProdutoPerecivel);
+    	void imprimirLista() const;
     	//void remover_produto(unsigned int);
     	//void remover_produto_perecivel(unsigned int);
     	//void remover_remedio(unsigned int);

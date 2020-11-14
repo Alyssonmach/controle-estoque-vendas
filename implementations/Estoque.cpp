@@ -6,6 +6,20 @@
 
 Estoque::Estoque()
 {
+	lerProduto();
+	lerProdutoPerecivel();
+	lerRemedio();
+}
+
+Estoque::~Estoque()
+{
+	salvarProduto();
+	salvarProdutoPerecivel();
+	salvarRemedio();
+}
+
+void Estoque::lerProduto(void)
+{
 	Produto p;
 	ifstream arquivo1; // Criando um arquivo apenas para leitura.
 	arquivo1.open("lista_de_produtos.txt"); // Abrindo o arquivo de leitura.
@@ -21,6 +35,11 @@ Estoque::Estoque()
 	}
 	arquivo1.close(); // Fechando o arquivo de leitura.
 	
+	return;
+}
+
+void Estoque::lerProdutoPerecivel(void)
+{
 	ProdutoPerecivel pp;
 	ifstream arquivo2; // Criando um arquivo apenas para leitura.
 	arquivo2.open("lista_de_produtos_pereciveis.txt"); // Abrindo o arquivo de leitura.
@@ -36,6 +55,11 @@ Estoque::Estoque()
 	}
 	arquivo2.close(); // Fechando o arquivo de leitura.
 	
+	return;
+}
+
+void Estoque::lerRemedio(void)
+{
 	Remedio r;
 	ifstream arquivo3; // Criando um arquivo apenas para leitura.
 	arquivo3.open("lista_de_remedios.txt"); // Abrindo o arquivo de leitura.
@@ -50,14 +74,11 @@ Estoque::Estoque()
 		}
 	}
 	arquivo3.close(); // Fechando o arquivo de leitura.
+	
+	return;
 }
 
-Estoque::~Estoque()
-{
-	salvarlista();
-}
-
-bool Estoque::salvarlista()
+void Estoque::salvarProduto(void)
 {
 	ofstream arquivo1; // Criando um arquivo para salvar a lista de objetos.
 	
@@ -71,14 +92,15 @@ bool Estoque::salvarlista()
 		{
 			// Utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
 			arquivo1 << produtos[i]; 
-		}
-		return true;	
-	}
-	else
-		return false;
-	
+		}	
+	}	
 	arquivo1.close();
 	
+	return;
+}
+
+void Estoque::salvarProdutoPerecivel(void)
+{
 	ofstream arquivo2; // Criando um arquivo para salvar a lista de objetos.
 	
 	/* Utilizando o modo de abertura trunc, que abre e apaga os dados anteriores armazenados nele. Como toda a lista
@@ -91,14 +113,16 @@ bool Estoque::salvarlista()
 		{
 			// Utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
 			arquivo2 << pereciveis[i]; 
-		}
-		return true;	
+		}	
 	}
-	else
-		return false;
 	
 	arquivo2.close();
 	
+	return;
+}
+
+void Estoque::salvarRemedio(void)
+{
 	ofstream arquivo3; // Criando um arquivo para salvar a lista de objetos.
 	
 	/* Utilizando o modo de abertura trunc, que abre e apaga os dados anteriores armazenados nele. Como toda a lista
@@ -111,15 +135,12 @@ bool Estoque::salvarlista()
 		{
 			// Utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
 			arquivo3 << remedios[i]; 
-		}
-		return true;	
+		}	
 	}
-	else
-		return false;
 	
 	arquivo3.close();
 	
-	return false;
+	return;
 }
 
 bool Estoque::inserirProduto(Produto p)
@@ -159,4 +180,15 @@ bool Estoque::inserirProdutoPerecivel(ProdutoPerecivel pp)
 	
 	pereciveis.push_back(pp);
 	return true;
+}
+
+void Estoque::imprimirLista() const
+{
+	for(unsigned i(0); i < produtos.size(); i++)
+	{
+		cout << i+1 << "ª Pessoa: " << endl;
+		//produtos[i].imprimeDados();
+		cout << produtos[i].get_objeto_produto().nome;
+		cout << endl;
+	}
 }

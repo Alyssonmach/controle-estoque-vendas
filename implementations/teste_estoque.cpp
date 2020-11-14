@@ -6,14 +6,15 @@
 
 using namespace std;
 
-#include "../implementations/Produto.cpp"
-#include "../implementations/ProdutoPerecivel.cpp"
-#include "../implementations/Remedio.cpp"
-#include "../implementations/Estoque.cpp"
+#include "Produto.cpp"
+#include "ProdutoPerecivel.cpp"
+#include "Remedio.cpp"
+#include "Estoque.cpp"
 
 int main(void)
 {
 	setlocale(LC_ALL, "Portuguese");
+	
 	
 	Estoque estoque;
 	Produto produto;
@@ -24,9 +25,11 @@ int main(void)
 	Data vencimento;
 	Drogaria drogas;
 	
+	//estoque.imprimirLista();
+	
 	prodprop.preco_loja  = 12.39;
 	prodprop.preco_consumidor = 20.50;
-	prodprop.nome = "Absorvente Masculino";
+	prodprop.nome = "Desodorante";
 	prodprop.categoria = "Higiene";
 	prodprop.fabricante = "Pampers";
 	prodprop.quantidade = 24;
@@ -45,9 +48,11 @@ int main(void)
 	
 	remedio.set_objeto_remedio(prodprop, vencimento, drogas);
 	
-	estoque.inserirProduto(produto);
-	estoque.inserirProdutoPerecivel(perecivel);
-	estoque.inserirRemedio(remedio);
+	cout << estoque.inserirProduto(produto);
+	cout << estoque.inserirProdutoPerecivel(perecivel);
+	cout << estoque.inserirRemedio(remedio);
+	
+	estoque.imprimirLista();
 	
 	return 0;
 }
