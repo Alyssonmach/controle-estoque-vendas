@@ -1,24 +1,4 @@
 
-12.39
-20.5
-Termometro
-Cuidados Pessoais
-Aviante
-44
-1234589
-10
-12
-2021
-12.39
-20.5
-Termometro
-Cuidados Pessoais
-Aviante
-44
-1234583
-10
-12
-2021
 11
 13
 Fraldas Geriátricas
@@ -29,6 +9,8 @@ Fraldario Souza e Souza
 10
 12
 2021
+14 Unidades
+Fraldas para cuidados de idosos
 11
 13
 Fraldas Geriátricas
@@ -39,3 +21,5 @@ Fraldario Souza e Souza
 10
 12
 2021
+14 Unidades
+Fraldas para cuidados de idosos

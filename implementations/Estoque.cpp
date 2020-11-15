@@ -220,6 +220,7 @@ void Estoque::imprimirProduto() const
 		cout << "===== "<< i+1 << "° Produto =====" << endl;
 		// imprime todos os atributos vinculados ao produto
 		produtos[i].imprimeProduto();
+		cout << endl;
 	}
 }
 
@@ -229,7 +230,7 @@ void Estoque::imprimirProdutoPerecivel(void) const
 	{
 		cout << "===== "<< i+1 << "° Produto Perecível =====" << endl;
 		// imprime todos os atributos vinculados ao produto perecível
-		pereciveis.imprimeProdutoPerecivel();
+		pereciveis[i].imprimeProdutoPerecivel();
 		cout << endl;
 	}
 }
@@ -240,7 +241,7 @@ void Estoque::imprimirRemedio(void) const
 	{
 		cout << "===== "<< i+1 << "° Remédio =====" << endl;
 		// imprime todos os atributos vinculados ao remédio
-		remedios.imprimeRemedio();
+		remedios[i].imprimeRemedio();
 		cout << endl;
 	}
 }

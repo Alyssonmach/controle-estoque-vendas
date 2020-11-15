@@ -18,25 +18,22 @@ int main(void)
 	
 	Estoque estoque;
 	Produto produto;
-	//Remedio remedio;
+	Remedio remedio;
 	ProdutoPerecivel perecivel;
 	
 	Produto_prototipo prodprop;
 	Data vencimento;
-	//Drogaria drogas;
+	Drogaria drogas;
 	
-	estoque.imprimirLista();
-	
-	prodprop.preco_loja  = 12.39;
-	prodprop.preco_consumidor = 20.50;
-	prodprop.nome = "Termometro";
+	prodprop.preco_loja  = 11.00;
+	prodprop.preco_consumidor = 13.00;
+	prodprop.nome = "Fraldas Geriátricas";
 	prodprop.categoria = "Cuidados Pessoais";
-	prodprop.fabricante = "Aviante";
-	prodprop.quantidade = 44;
-	prodprop.codigo = 1234583;
+	prodprop.fabricante = "Fraldario Souza e Souza";
+	prodprop.quantidade = 100;
+	prodprop.codigo = 12345673;
 	
-	//produto.set_objeto_produto(prodprop);
-	
+	produto.set_objeto_produto(prodprop);
 	
 	vencimento.dia = 10;
 	vencimento.mes = 12;
@@ -44,16 +41,18 @@ int main(void)
 	
 	perecivel.set_objeto_perecivel(prodprop, vencimento);
 	
-	//drogas.medida = "14 Unidades";
-	//drogas.info_adicional = "Contenção sanguinaria masculina";
+	drogas.medida = "14 Unidades";
+	drogas.info_adicional = "Fraldas para cuidados de idosos";
 	
-	//remedio.set_objeto_remedio(prodprop, vencimento, drogas); 
+	remedio.set_objeto_remedio(prodprop, vencimento, drogas); 
 	
-	//cout << estoque.inserirProduto(produto);
+	cout << estoque.inserirProduto(produto);
 	cout << estoque.inserirProdutoPerecivel(perecivel);
-	//cout << estoque.inserirRemedio(remedio);
+	cout << estoque.inserirRemedio(remedio);
 	
-	//estoque.imprimirLista();
+	estoque.imprimirProduto();
+	estoque.imprimirProdutoPerecivel();
+	estoque.imprimirRemedio();
 	
 	return 0;
 }

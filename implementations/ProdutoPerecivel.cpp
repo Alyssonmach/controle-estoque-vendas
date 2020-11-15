@@ -1,6 +1,9 @@
 #include "../headers/ProdutoPerecivel.h"
 
 #include <ctime>
+#include <iomanip>
+using std::setw;
+using std::setfill;
 
 ProdutoPerecivel::ProdutoPerecivel(float preco_loja, float preco_consumidor, 
 									string nome, string categoria, string fabricante,
