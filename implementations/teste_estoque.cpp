@@ -27,11 +27,11 @@ int main(void)
 	
 	prodprop.preco_loja  = 11.00;
 	prodprop.preco_consumidor = 13.00;
-	prodprop.nome = "Fraldas Geriátricas";
+	prodprop.nome = "Fraldas Geriatricas";
 	prodprop.categoria = "Cuidados Pessoais";
 	prodprop.fabricante = "Fraldario Souza e Souza";
 	prodprop.quantidade = 100;
-	prodprop.codigo = 12345673;
+	prodprop.codigo = 1234562;
 	
 	produto.set_objeto_produto(prodprop);
 	
@@ -46,18 +46,18 @@ int main(void)
 	
 	remedio.set_objeto_remedio(prodprop, vencimento, drogas); 
 	
-	//cout << estoque.inserirProduto(produto);
-	//cout << estoque.inserirProdutoPerecivel(perecivel);
-	//cout << estoque.inserirRemedio(remedio);
+	cout << estoque.inserirProduto(produto);
+	cout << estoque.inserirProdutoPerecivel(perecivel);
+	cout << estoque.inserirRemedio(remedio);
 	
 	estoque.imprimirProduto();
 	estoque.imprimirProdutoPerecivel();
 	estoque.imprimirRemedio();
-	long int codigo;
+	string nome;
 	
-	cout << "Insira o código do produto a ser removido: ";
-	cin >> codigo;
-	cout << estoque.removerRemedio(codigo);
+	cout << "Insira o nome do produto para ser pesquisado: ";
+	getline(cin, nome);
+	cout << estoque.pesquisarRemedio(nome);
 	
 	return 0;
 }

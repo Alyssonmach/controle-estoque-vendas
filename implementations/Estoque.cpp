@@ -308,3 +308,60 @@ bool Estoque::removerRemedio(long int codigo)
 	
 	return false;
 }
+
+bool Estoque::pesquisarProduto(string nome) const
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < produtos.size(); i++)
+	{
+		if(produtos[i].get_objeto_produto().nome == nome)
+		{
+			produtos[i].imprimeProduto();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == produtos.size())
+		return false;
+	
+	return false;
+}
+
+bool Estoque::pesquisarProdutoPerecivel(string nome) const
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		if(pereciveis[i].get_objeto_produto().nome == nome)
+		{
+			pereciveis[i].imprimeProdutoPerecivel();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == pereciveis.size())
+		return false;
+	
+	return false;
+}
+
+bool Estoque::pesquisarRemedio(string nome) const
+{
+		unsigned contador(0);
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		if(remedios[i].get_objeto_produto().nome == nome)
+		{
+			remedios[i].imprimeProdutoPerecivel();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == remedios.size())
+		return false;
+	
+	return false;
+}

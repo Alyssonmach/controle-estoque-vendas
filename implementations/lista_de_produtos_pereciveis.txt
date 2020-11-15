@@ -1,11 +1,31 @@
 
-0
-0
-
-
-
-6879612
-6879424
-0
-0
-4548090
+11
+13
+Fraldas Geriátricas
+Cuidados Pessoais
+Fraldario Souza e Souza
+100
+12345673
+10
+12
+2021
+11
+13
+Fraldas
+Cuidados Pessoais
+Fraldario Souza e Souza
+100
+12345674
+10
+12
+2021
+11
+13
+Fraldas Geriatricas
+Cuidados Pessoais
+Fraldario Souza e Souza
+100
+1234562
+10
+12
+2021
