@@ -533,3 +533,31 @@ void Estoque::removerRemediosVencidos(void)
 	
 	return;
 }
+
+Produto Estoque::getProduto(int indice) const
+{
+	return produtos[indice];
+}
+
+ProdutoPerecivel Estoque::getProdutoPerecivel(int indice) const
+{
+	return pereciveis[indice];
+}
+
+Remedio Estoque::getRemedio(int indice) const
+{
+	return remedios[indice];
+}
+
+vector <Produto> Estoque::getListaProdutos(void) const
+{
+	return produtos;
+}
+vector <ProdutoPerecivel> Estoque::getListaProdutosPereciveis(void) const
+{
+	return pereciveis;
+}
+vector <Remedio> Estoque::getListaRemedios(void) const
+{
+	return remedios;
+}

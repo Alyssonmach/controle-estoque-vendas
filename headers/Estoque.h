@@ -45,12 +45,12 @@ class Estoque
     	bool pesquisarRemedio(string) const;
     	bool pesquisaPerecivelVencido(int);
     	bool pesquisaRemedioVencido(int);
-    	//Produto getProduto(int) const;
-    	//ProdutoPerecivel getProdutoPerecivel(int) const;
-    	//Remedio getRemedio(int) const;
-    	//vector <Produto> lista_produtos(void) const;
-    	//vector <ProdutoPerecivel> lista_pereciveis(void) const;
-    	//vector <Remedio> lista_remedios(void) const;
+    	Produto getProduto(int) const;
+    	ProdutoPerecivel getProdutoPerecivel(int) const;
+    	Remedio getRemedio(int) const;
+    	vector <Produto> getListaProdutos(void) const;
+    	vector <ProdutoPerecivel> getListaProdutosPereciveis(void) const;
+    	vector <Remedio> getListaRemedios(void) const;
 };
 
 #endif
