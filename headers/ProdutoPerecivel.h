@@ -25,7 +25,6 @@ class ProdutoPerecivel : public Produto
 				string = " ", int = 0, long int = 0, int = 0, int = 0,
 				int = 0);
     	// membros de funções da classe
-    	bool verifica_vencimento(Data);
     	void set_objeto_perecivel(Produto_prototipo, Data);
     	void set_data_validade(Data);
     	Data get_data_validade(void) const;

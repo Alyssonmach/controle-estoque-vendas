@@ -20,44 +20,6 @@ ProdutoPerecivel::ProdutoPerecivel(float preco_loja, float preco_consumidor,
 	set_data_validade(aux);										
 } 
 
-bool ProdutoPerecivel::verifica_vencimento(Data vencimento)
-{
-	Data atual;
-	
-	atual = get_data_atual();
-	
-	size_t acumula_atual, acumula_vencido, verifica;
-	
-	acumula_atual = ((12 - atual.mes) * 30) + atual.dia;
-	acumula_vencido = ((12 - vencimento.mes) * 30) + vencimento.dia;
-	
-	if(vencimento.ano - atual.ano == 1)
-	{
-		verifica = acumula_atual + acumula_vencido;
-		if(verifica)
-		{
-			return true;
-		}
-	}
-	else if(vencimento.ano - atual.ano > 1)
-	{
-		return true;
-	}
-	else if(vencimento.ano - atual.ano == 0)
-	{
-		if(acumula_vencido - acumula_atual >= 1)
-		{
-			return true;
-		}
-	}
-	else
-	{
-		return false;
-	}
-	
-	return false;
-}
-
 void ProdutoPerecivel::set_objeto_perecivel(Produto_prototipo aux1, Data aux2)
 {
 	set_objeto_produto(aux1);
@@ -71,11 +33,6 @@ void ProdutoPerecivel::set_data_validade(Data aux)
 		this -> data_validade.dia = (aux.dia > 0 && aux.dia <= 31) ? aux.dia : 0;
 		this -> data_validade.mes = (aux.mes > 0 && aux.mes <= 12) ? aux.mes : 0;
 		this -> data_validade.ano = (aux.ano > 0) ? aux.ano : 0;
-		
-		if(verifica_vencimento(aux))
-		{
-			cout << "PRODUTO VENCIDO!" << endl;
-		}
 	
 	return;
 }
