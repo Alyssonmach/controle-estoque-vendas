@@ -4,6 +4,7 @@
 #include "../headers/Remedio.h"
 #include "../headers/Sobrecarga.h"
 
+// implementacao do construtor da classe (le os arquivos)
 Estoque::Estoque()
 {
 	lerProduto();
@@ -11,6 +12,7 @@ Estoque::Estoque()
 	lerRemedio();
 }
 
+// implementacao do destrutor da classe (salva os arquivos)
 Estoque::~Estoque()
 {
 	salvarProduto();
@@ -18,6 +20,7 @@ Estoque::~Estoque()
 	salvarRemedio();
 }
 
+// método que le os arquivos da classe produto
 void Estoque::lerProduto(void)
 {
 	Produto p;
@@ -44,6 +47,7 @@ void Estoque::lerProduto(void)
 	return;
 }
 
+// método que le os arquivos da classe de produtos pereciveis
 void Estoque::lerProdutoPerecivel(void)
 {	
 	ProdutoPerecivel pp;
@@ -70,6 +74,7 @@ void Estoque::lerProdutoPerecivel(void)
 	return;
 }
 
+// método que le os arquivos da classe remedio
 void Estoque::lerRemedio(void)
 {	
 	Remedio r;
@@ -96,6 +101,7 @@ void Estoque::lerRemedio(void)
 	return;
 }
 
+// metodo que salva em um arquivo os produtos cadastrados
 void Estoque::salvarProduto(void)
 {
 	// criando um arquivo para salvar a lista de objetos
@@ -118,6 +124,7 @@ void Estoque::salvarProduto(void)
 	return;
 }
 
+// metodo que salva em um arquivo os produtos pereciveis cadastrados
 void Estoque::salvarProdutoPerecivel(void)
 {
 	// criando um arquivo para salvar a lista de objetos
@@ -140,6 +147,7 @@ void Estoque::salvarProdutoPerecivel(void)
 	return;
 }
 
+// metodo que salva em um arquivo os remedios cadastrados
 void Estoque::salvarRemedio(void)
 {
 	// criando um arquivo para salvar a lista de objetos
@@ -162,6 +170,7 @@ void Estoque::salvarRemedio(void)
 	return;
 }
 
+// metodo que insere um produto a lista de produtos
 bool Estoque::inserirProduto(Produto p)
 {
 	for(unsigned i(0); i < produtos.size(); i++)
@@ -179,6 +188,7 @@ bool Estoque::inserirProduto(Produto p)
 	return true;
 }
 
+// metodo que insere um produto perecivel a lista de produtos pereciveis
 bool Estoque::inserirProdutoPerecivel(ProdutoPerecivel pp)
 {
 	for(unsigned i(0); i < pereciveis.size(); i++)
@@ -196,6 +206,7 @@ bool Estoque::inserirProdutoPerecivel(ProdutoPerecivel pp)
 	return true;
 }
 
+// metodo que insere um remedio a lista de remedios
 bool Estoque::inserirRemedio(Remedio r)
 {
 	for(unsigned i(0); i < remedios.size(); i++)
@@ -213,6 +224,7 @@ bool Estoque::inserirRemedio(Remedio r)
 	return true;
 }
 
+// metodo que imprime todos os produtos vinculados a lista
 void Estoque::imprimirProduto() const
 {
 	for(unsigned i(0); i < produtos.size(); i++)
@@ -226,6 +238,7 @@ void Estoque::imprimirProduto() const
 	return;
 }
 
+// metodo que imprime todos os produtos pereciveis vinculados a lista
 void Estoque::imprimirProdutoPerecivel(void) const
 {
 	for(unsigned i(0); i < pereciveis.size(); i++)
@@ -239,6 +252,7 @@ void Estoque::imprimirProdutoPerecivel(void) const
 	return;
 }
 
+// metodo que imprime todos os remedios vinculados a lista
 void Estoque::imprimirRemedio(void) const
 {
 	for(unsigned i(0); i < remedios.size(); i++)
@@ -252,6 +266,7 @@ void Estoque::imprimirRemedio(void) const
 	return;
 }
 
+// metodo que remove produtos da lista
 bool Estoque::removerProduto(long int codigo)
 {
 	unsigned contador(0);
@@ -271,6 +286,7 @@ bool Estoque::removerProduto(long int codigo)
 	return false;
 }
 
+// metodo que remove produtos pereciveis da lista
 bool Estoque::removerProdutoPerecivel(long int codigo)
 {
 	unsigned contador(0);
@@ -290,6 +306,7 @@ bool Estoque::removerProdutoPerecivel(long int codigo)
 	return false;
 }
 
+// metodo que remove remedios da lista
 bool Estoque::removerRemedio(long int codigo)
 {
 	unsigned contador(0);
@@ -309,6 +326,7 @@ bool Estoque::removerRemedio(long int codigo)
 	return false;
 }
 
+// metodo que pesquisa produtos pelo codigo de barras
 bool Estoque::pesquisarProduto(string nome) const
 {
 	unsigned contador(0);
@@ -328,6 +346,7 @@ bool Estoque::pesquisarProduto(string nome) const
 	return false;
 }
 
+// metodo que pesquisa produtos pereciveis pelo codigo de barras
 bool Estoque::pesquisarProdutoPerecivel(string nome) const
 {
 	unsigned contador(0);
@@ -347,6 +366,7 @@ bool Estoque::pesquisarProdutoPerecivel(string nome) const
 	return false;
 }
 
+// metodo que pesquisa remedios pelo codigo de barras
 bool Estoque::pesquisarRemedio(string nome) const
 {
 	unsigned contador(0);
@@ -366,6 +386,7 @@ bool Estoque::pesquisarRemedio(string nome) const
 	return false;
 }
 
+// metodo que checa os produtos pereciveis que estao pertos de se vencer ate um dado limite de dias
 bool Estoque::checaVencimentoPerecivel(int indice, int limite)
 {
 	Data atual;
@@ -412,6 +433,7 @@ bool Estoque::checaVencimentoPerecivel(int indice, int limite)
 	return false;
 }
 
+// metodo que checa os remedios que estao pertos de se vencer ate um dado limite de dias
 bool Estoque::checaVencimentoRemedio(int indice, int limite)
 {
 	Data atual;
@@ -458,6 +480,7 @@ bool Estoque::checaVencimentoRemedio(int indice, int limite)
 	return false;
 }
 
+// metodo que imprime todos os produtos pereciveis vencidos da lista ate um dado limite de dias
 bool Estoque::pesquisaPerecivelVencido(int limite)
 {
 	unsigned contador(0);
@@ -479,6 +502,7 @@ bool Estoque::pesquisaPerecivelVencido(int limite)
 	return true;
 }
 
+// metodo que imprime todos os remedios vencidos da lista ate um dado limite de dias
 bool Estoque::pesquisaRemedioVencido(int limite)
 {
 	unsigned contador(0);
@@ -500,6 +524,7 @@ bool Estoque::pesquisaRemedioVencido(int limite)
 	return true;
 }
 
+// metodo que remove todos os produtos vencidos da lista
 void Estoque::removerProdutosPereciveisVencidos(void)
 {
 	unsigned contador(0);
@@ -517,6 +542,7 @@ void Estoque::removerProdutosPereciveisVencidos(void)
 	return;
 }
 
+// metodo que remove todos os remedios vencidos da lista
 void Estoque::removerRemediosVencidos(void)
 {
 	unsigned contador(0);
@@ -534,29 +560,37 @@ void Estoque::removerRemediosVencidos(void)
 	return;
 }
 
+// metodo que retorna um elemento particular da lista de produtos
 Produto Estoque::getProduto(int indice) const
 {
 	return produtos[indice];
 }
 
+// metodo que retorna um elemento particular da lista de produtos pereciveis
 ProdutoPerecivel Estoque::getProdutoPerecivel(int indice) const
 {
 	return pereciveis[indice];
 }
 
+// metodo que retorna um elemento particular da lista de remedios
 Remedio Estoque::getRemedio(int indice) const
 {
 	return remedios[indice];
 }
 
+// metodo que retorna a lista de produtos
 vector <Produto> Estoque::getListaProdutos(void) const
 {
 	return produtos;
 }
+
+// metodo que retorna a lista de produtos pereciveis
 vector <ProdutoPerecivel> Estoque::getListaProdutosPereciveis(void) const
 {
 	return pereciveis;
 }
+
+// metodo que retorna a lista de remedios
 vector <Remedio> Estoque::getListaRemedios(void) const
 {
 	return remedios;
