@@ -12,13 +12,12 @@ Remedio::Remedio(float preco_loja, float preco_consumidor, string nome, string c
 
 void Remedio::set_objeto_remedio(Produto_prototipo aux1, Data aux2, Drogaria aux3)
 {
-	if(verifica_vencimento(aux2))
-	{
-		set_objeto_produto(aux1);
-		set_data_validade(aux2);
-		set_medida(aux3.medida);
-		set_info_adicional(aux3.info_adicional);
-	}
+	set_objeto_produto(aux1);
+	set_data_validade(aux2);
+	set_medida(aux3.medida);
+	set_info_adicional(aux3.info_adicional);
+	
+	return;
 }
 
 void Remedio::set_medida(string medida)
