@@ -38,7 +38,8 @@ class Estoque
     	bool removerProduto(long int);
     	bool removerProdutoPerecivel(long int);
     	bool removerRemedio(long int);
-    	//bool removerProdutosVencidos
+    	void removerProdutosPereciveisVencidos(void);
+    	void removerRemediosVencidos(void);
     	bool pesquisarProduto(string) const;
     	bool pesquisarProdutoPerecivel(string) const;
     	bool pesquisarRemedio(string) const;

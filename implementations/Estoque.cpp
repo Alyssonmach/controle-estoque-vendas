@@ -499,3 +499,37 @@ bool Estoque::pesquisaRemedioVencido(int limite)
 	
 	return true;
 }
+
+void Estoque::removerProdutosPereciveisVencidos(void)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		if(checaVencimentoPerecivel(i, 0))
+		{
+			removerProdutoPerecivel(pereciveis[i].get_objeto_produto().codigo);
+			contador++;
+		}
+	}
+	
+	cout << contador << "Produtos Perecíveis vencidos removidos." << endl;
+	
+	return;
+}
+
+void Estoque::removerRemediosVencidos(void)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		if(checaVencimentoRemedio(i, 0))
+		{
+			removerRemedio(remedios[i].get_objeto_produto().codigo);
+			contador++;
+		}
+	}
+	
+	cout << contador << "Remédios vencidos removidos." << endl;
+	
+	return;
+}

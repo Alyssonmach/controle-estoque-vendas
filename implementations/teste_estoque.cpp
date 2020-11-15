@@ -46,21 +46,17 @@ int main(void)
 	
 	remedio.set_objeto_remedio(prodprop, vencimento, drogas); 
 	
-	cout << estoque.inserirProduto(produto);
-	cout << estoque.inserirProdutoPerecivel(perecivel);
-	cout << estoque.inserirRemedio(remedio);
+	estoque.inserirProduto(produto);
+	estoque.inserirProdutoPerecivel(perecivel);
+	estoque.inserirRemedio(remedio);
 	
+	estoque.removerProdutosPereciveisVencidos();
+	estoque.removerRemediosVencidos();
 	estoque.imprimirProduto();
 	estoque.imprimirProdutoPerecivel();
 	estoque.imprimirRemedio();
 	string nome;
 	
-	int limite;
-	
-	cout << "Insira o limite da data de valida: ";
-	cin >> limite;
-	
-	estoque.pesquisaPerecivelVencido(limite);
 	
 	
 	return 0;
