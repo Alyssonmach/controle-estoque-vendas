@@ -31,13 +31,13 @@ int main(void)
 	prodprop.categoria = "Cuidados Pessoais";
 	prodprop.fabricante = "Fraldario Souza e Souza";
 	prodprop.quantidade = 100;
-	prodprop.codigo = 1234562;
+	prodprop.codigo = 1237896;
 	
 	produto.set_objeto_produto(prodprop);
 	
-	vencimento.dia = 10;
-	vencimento.mes = 12;
-	vencimento.ano = 2021;
+	vencimento.dia = 16;
+	vencimento.mes = 11;
+	vencimento.ano = 2022;
 	
 	perecivel.set_objeto_perecivel(prodprop, vencimento);
 	
@@ -55,9 +55,13 @@ int main(void)
 	estoque.imprimirRemedio();
 	string nome;
 	
-	cout << "Insira o nome do produto para ser pesquisado: ";
-	getline(cin, nome);
-	cout << estoque.pesquisarRemedio(nome);
+	int limite;
+	
+	cout << "Insira o limite da data de valida: ";
+	cin >> limite;
+	
+	estoque.pesquisaPerecivelVencido(limite);
+	
 	
 	return 0;
 }

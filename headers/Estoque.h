@@ -15,6 +15,8 @@ class Estoque
 		vector <Produto> produtos;
 		vector <ProdutoPerecivel> pereciveis;
 		vector <Remedio> remedios;
+		bool checaVencimentoPerecivel(int, int);
+    	bool checaVencimentoRemedio(int, int);
     // especificador de acesso public
     public:
     	// construtor e destrutor da classe (trabalhar manipulação de arquivo)
@@ -39,11 +41,11 @@ class Estoque
     	bool pesquisarProduto(string) const;
     	bool pesquisarProdutoPerecivel(string) const;
     	bool pesquisarRemedio(string) const;
-    	//void checar_vencimento_produto_perecivel(int);
-    	//void checar_vencimento_remedio(int);
-    	//Produto get_produto(unsigned int) const;
-    	//ProdutoPerecivel get_produto_perecivel(unsigned int) const;
-    	//Remedio get_remedio(unsigned int) const;
+    	bool pesquisaPerecivelVencido(int);
+    	bool pesquisaRemedioVencido(int);
+    	//Produto getProduto(int) const;
+    	//ProdutoPerecivel getProdutoPerecivel(int) const;
+    	//Remedio getRemedio(int) const;
     	//vector <Produto> lista_produtos(void) const;
     	//vector <ProdutoPerecivel> lista_pereciveis(void) const;
     	//vector <Remedio> lista_remedios(void) const;

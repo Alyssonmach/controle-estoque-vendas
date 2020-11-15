@@ -349,7 +349,7 @@ bool Estoque::pesquisarProdutoPerecivel(string nome) const
 
 bool Estoque::pesquisarRemedio(string nome) const
 {
-		unsigned contador(0);
+	unsigned contador(0);
 	for(unsigned i(0); i < remedios.size(); i++)
 	{
 		if(remedios[i].get_objeto_produto().nome == nome)
@@ -364,4 +364,138 @@ bool Estoque::pesquisarRemedio(string nome) const
 		return false;
 	
 	return false;
+}
+
+bool Estoque::checaVencimentoPerecivel(int indice, int limite)
+{
+	Data atual;
+	
+	atual = pereciveis[indice].get_data_atual();
+	
+	int acumula_atual, acumula_vencido, verifica, anual;
+	
+	acumula_atual = ((12 - atual.mes) * 30) + atual.dia;
+	acumula_vencido = ((12 - pereciveis[indice].get_data_validade().mes) * 30);
+	acumula_vencido += pereciveis[indice].get_data_validade().dia;
+	
+	if(pereciveis[indice].get_data_validade().ano - atual.ano == 1)
+	{
+		verifica = acumula_atual + acumula_vencido;
+		if(verifica <= limite)
+		{
+			return true;
+		}
+	}
+	else if(pereciveis[indice].get_data_validade().ano - atual.ano > 1)
+	{
+		
+		verifica = acumula_atual + acumula_vencido;
+		anual = (pereciveis[indice].get_data_validade().ano - atual.ano - 1) * 365;
+		verifica += anual;
+		if(verifica <= limite)
+		{
+			return true;
+		}
+	}
+	else if(pereciveis[indice].get_data_validade().ano - atual.ano == 0)
+	{
+		if(acumula_vencido - acumula_atual <= limite)
+		{
+			return true;
+		}
+	}
+	else
+	{
+		return false;
+	}
+	
+	return false;
+}
+
+bool Estoque::checaVencimentoRemedio(int indice, int limite)
+{
+	Data atual;
+	
+	atual = remedios[indice].get_data_atual();
+	
+	int acumula_atual, acumula_vencido, verifica, anual;
+	
+	acumula_atual = ((12 - atual.mes) * 30) + atual.dia;
+	acumula_vencido = ((12 - remedios[indice].get_data_validade().mes) * 30);
+	acumula_vencido += remedios[indice].get_data_validade().dia;
+	
+	if(remedios[indice].get_data_validade().ano - atual.ano == 1)
+	{
+		verifica = acumula_atual + acumula_vencido;
+		if(verifica <= limite)
+		{
+			return true;
+		}
+	}
+	else if(pereciveis[indice].get_data_validade().ano - atual.ano > 1)
+	{
+		
+		verifica = acumula_atual + acumula_vencido;
+		anual = (remedios[indice].get_data_validade().ano - atual.ano - 1) * 365;
+		verifica += anual;
+		if(verifica <= limite)
+		{
+			return true;
+		}
+	}
+	else if(remedios[indice].get_data_validade().ano - atual.ano == 0)
+	{
+		if(acumula_vencido - acumula_atual <= limite)
+		{
+			return true;
+		}
+	}
+	else
+	{
+		return false;
+	}
+	
+	return false;
+}
+
+bool Estoque::pesquisaPerecivelVencido(int limite)
+{
+	unsigned contador(0);
+	cout << "Produtos Perecíveis com " << limite << " dias antes do vencimento: " << endl << endl;
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		if(checaVencimentoPerecivel(i, limite))
+		{
+			cout << "=== " << i + 1 << "° Produto Perecível === " << endl;
+			pereciveis[i].imprimeProdutoPerecivel();
+			cout << endl;
+		}
+		else
+			contador++;
+	}
+	if(contador == pereciveis.size())
+		return false;
+	
+	return true;
+}
+
+bool Estoque::pesquisaRemedioVencido(int limite)
+{
+	unsigned contador(0);
+	cout << "Remédios com " << limite << " dias antes do vencimento: " << endl << endl;
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		if(checaVencimentoRemedio(i, limite))
+		{
+			cout << "=== " << i + 1 << "° Remédio === " << endl;
+			remedios[i].imprimeProdutoPerecivel();
+			cout << endl;
+		}
+		else
+			contador++;
+	}
+	if(contador == remedios.size())
+		return false;
+	
+	return true;
 }
