@@ -46,12 +46,12 @@ int main(void)
 	
 	remedio.set_objeto_remedio(prodprop, vencimento, drogas); 
 	
-	estoque.inserirProduto(produto);
-	estoque.inserirProdutoPerecivel(perecivel);
-	estoque.inserirRemedio(remedio);
+	//estoque.inserirProduto(produto);
+	//estoque.inserirProdutoPerecivel(perecivel);
+	//estoque.inserirRemedio(remedio);
 	
-	estoque.removerProdutosPereciveisVencidos();
-	estoque.removerRemediosVencidos();
+	//estoque.removerProdutosPereciveisVencidos();
+	//estoque.removerRemediosVencidos();
 	estoque.imprimirProduto();
 	estoque.imprimirProdutoPerecivel();
 	estoque.imprimirRemedio();

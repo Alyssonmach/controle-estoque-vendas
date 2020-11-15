@@ -24,7 +24,7 @@ void Estoque::lerProduto(void)
 	// criacao de arquivo para leitura
 	ifstream arquivo1; 
 	// abrindo o arquivo de leitura
-	arquivo1.open("lista_de_produtos.txt"); 
+	arquivo1.open("../arquivos/lista_de_produtos.txt"); 
 	
 	// verificando se o arquivo foi efetivamente aberto
 	if(arquivo1.is_open()) 
@@ -50,7 +50,7 @@ void Estoque::lerProdutoPerecivel(void)
 	// criacao de arquivo para leitura
 	ifstream arquivo2; 
 	// abrindo o arquivo de leitura
-	arquivo2.open("lista_de_produtos_pereciveis.txt"); 
+	arquivo2.open("../arquivos/lista_de_produtos_pereciveis.txt"); 
 	
 	// verificando se o arquivo foi efetivamente aberto
 	if(arquivo2.is_open()) 
@@ -76,7 +76,7 @@ void Estoque::lerRemedio(void)
 	// criacao de arquivo para leitura
 	ifstream arquivo3; 
 	// abrindo o arquivo de leitura
-	arquivo3.open("lista_de_produtos_remedios.txt"); 
+	arquivo3.open("../arquivos/lista_de_remedios.txt"); 
 	
 	// verificando se o arquivo foi efetivamente aberto
 	if(arquivo3.is_open()) 
@@ -102,7 +102,7 @@ void Estoque::salvarProduto(void)
 	ofstream arquivo1; 
 	
 	// modo de abertura trunc (abre, apaga e sobreescreve os dados)
-	arquivo1.open("lista_de_produtos.txt", std::ios::trunc);
+	arquivo1.open("../arquivos/lista_de_produtos.txt", std::ios::trunc);
 	
 	if(arquivo1.is_open())
 	{
@@ -124,7 +124,7 @@ void Estoque::salvarProdutoPerecivel(void)
 	ofstream arquivo2; 
 	
 	// modo de abertura trunc (abre, apaga e sobreescreve os dados)
-	arquivo2.open("lista_de_produtos_pereciveis.txt", std::ios::trunc);
+	arquivo2.open("../arquivos/lista_de_produtos_pereciveis.txt", std::ios::trunc);
 	
 	if(arquivo2.is_open())
 	{
@@ -146,7 +146,7 @@ void Estoque::salvarRemedio(void)
 	ofstream arquivo3; 
 	
 	// modo de abertura trunc (abre, apaga e sobreescreve os dados)
-	arquivo3.open("lista_de_produtos_remedios.txt", std::ios::trunc);
+	arquivo3.open("../arquivos/lista_de_remedios.txt", std::ios::trunc);
 	
 	if(arquivo3.is_open())
 	{
