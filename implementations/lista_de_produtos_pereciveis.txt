@@ -8,7 +8,7 @@ Fraldario Souza e Souza
 12345673
 10
 12
-2021
+2019
 11
 13
 Fraldas
@@ -18,7 +18,7 @@ Fraldario Souza e Souza
 12345674
 10
 12
-2021
+2019
 11
 13
 Fraldas Geriatricas
@@ -28,7 +28,7 @@ Fraldario Souza e Souza
 1234562
 10
 12
-2021
+2019
 11
 13
 Fraldas Geriatricas
@@ -36,9 +36,9 @@ Cuidados Pessoais
 Fraldario Souza e Souza
 100
 123
-16
-11
-2020
+10
+12
+2019
 11
 13
 Fraldas Geriatricas

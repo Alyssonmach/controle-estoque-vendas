@@ -406,7 +406,7 @@ bool Estoque::checaVencimentoPerecivel(int indice, int limite)
 	}
 	else
 	{
-		return false;
+		return true;
 	}
 	
 	return false;
@@ -452,7 +452,7 @@ bool Estoque::checaVencimentoRemedio(int indice, int limite)
 	}
 	else
 	{
-		return false;
+		return true;
 	}
 	
 	return false;
