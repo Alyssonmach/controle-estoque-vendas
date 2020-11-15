@@ -33,9 +33,9 @@ class Estoque
     	void imprimirProduto(void) const;
     	void imprimirProdutoPerecivel(void) const;
     	void imprimirRemedio(void) const;
-    	//void remover_produto(unsigned int);
-    	//void remover_produto_perecivel(unsigned int);
-    	//void remover_remedio(unsigned int);
+    	bool removerProduto(long int);
+    	bool removerProdutoPerecivel(long int);
+    	bool removerRemedio(long int);
     	//unsigned int pesquisar_produto(long int) const;
     	//unsigned int pesquisar_produto_perecivel(long int) const;
     	//unsigned int pesquisar_remedio(long int) const;

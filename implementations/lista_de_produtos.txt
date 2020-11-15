@@ -1,36 +1,8 @@
 
-12.39
-20.5
-Desodorante
-Higiene
-Pamper
-24
-1234545
-12.39
-20.5
-Desodorante
-Higiene
-Pamper
-24
-12345
-12.39
-20.5
-Termometro
-Cuidados Pessoais
-Aviante
-44
-1234589
-11
-13
-Fraldas Geriátricas
-Cuidados Pessoais
-Fraldario Souza e Souza
-100
-12345678
-11
-13
-Fraldas Geriátricas
-Cuidados Pessoais
-Fraldario Souza e Souza
-100
-12345673
+5.88364e-039
+3.19128e-039
+
+
+
+6879628
+23657012

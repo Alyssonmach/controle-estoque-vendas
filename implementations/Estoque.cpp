@@ -222,6 +222,8 @@ void Estoque::imprimirProduto() const
 		produtos[i].imprimeProduto();
 		cout << endl;
 	}
+	
+	return;
 }
 
 void Estoque::imprimirProdutoPerecivel(void) const
@@ -233,6 +235,8 @@ void Estoque::imprimirProdutoPerecivel(void) const
 		pereciveis[i].imprimeProdutoPerecivel();
 		cout << endl;
 	}
+	
+	return;
 }
 
 void Estoque::imprimirRemedio(void) const
@@ -244,4 +248,63 @@ void Estoque::imprimirRemedio(void) const
 		remedios[i].imprimeRemedio();
 		cout << endl;
 	}
+	
+	return;
+}
+
+bool Estoque::removerProduto(long int codigo)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < produtos.size(); i++)
+	{
+		if(produtos[i].get_objeto_produto().codigo == codigo)
+		{
+			produtos.erase(produtos.begin() + i);
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == produtos.size())
+		return false;
+	
+	return false;
+}
+
+bool Estoque::removerProdutoPerecivel(long int codigo)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		if(pereciveis[i].get_objeto_produto().codigo == codigo)
+		{
+			pereciveis.erase(pereciveis.begin() + i);
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == pereciveis.size())
+		return false;
+	
+	return false;
+}
+
+bool Estoque::removerRemedio(long int codigo)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		if(remedios[i].get_objeto_produto().codigo == codigo)
+		{
+			remedios.erase(remedios.begin() + i);
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == remedios.size())
+		return false;
+	
+	return false;
 }

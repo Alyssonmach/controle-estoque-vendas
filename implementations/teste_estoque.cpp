@@ -46,13 +46,18 @@ int main(void)
 	
 	remedio.set_objeto_remedio(prodprop, vencimento, drogas); 
 	
-	cout << estoque.inserirProduto(produto);
-	cout << estoque.inserirProdutoPerecivel(perecivel);
-	cout << estoque.inserirRemedio(remedio);
+	//cout << estoque.inserirProduto(produto);
+	//cout << estoque.inserirProdutoPerecivel(perecivel);
+	//cout << estoque.inserirRemedio(remedio);
 	
 	estoque.imprimirProduto();
 	estoque.imprimirProdutoPerecivel();
 	estoque.imprimirRemedio();
+	long int codigo;
+	
+	cout << "Insira o código do produto a ser removido: ";
+	cin >> codigo;
+	cout << estoque.removerRemedio(codigo);
 	
 	return 0;
 }
