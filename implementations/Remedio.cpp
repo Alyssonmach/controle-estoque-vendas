@@ -37,3 +37,12 @@ Drogaria Remedio::get_objeto_remedio(void) const
 {
 	return objeto_remedio;
 }
+
+void Remedio::imprimeRemedio(void) const
+{
+	imprimeProdutoPerecivel();
+	
+	cout << "Medida do Remédio: " << objeto_remedio.medida << endl;
+	cout << "Informações do Remédio: " << objeto_remedio.info_adicional << endl;
+	
+}

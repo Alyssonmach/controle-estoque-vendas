@@ -218,15 +218,8 @@ void Estoque::imprimirProduto() const
 	for(unsigned i(0); i < produtos.size(); i++)
 	{
 		cout << "===== "<< i+1 << "° Produto =====" << endl;
-		//produtos[i].imprimeDados();
-		cout << produtos[i].get_objeto_produto().preco_loja << endl;
-		cout << produtos[i].get_objeto_produto().preco_consumidor << endl;
-		cout << produtos[i].get_objeto_produto().nome << endl;
-		cout << produtos[i].get_objeto_produto().categoria << endl;
-		cout << produtos[i].get_objeto_produto().fabricante << endl;
-		cout << produtos[i].get_objeto_produto().quantidade << endl;
-		cout << produtos[i].get_objeto_produto().codigo << endl;
-		cout << endl;
+		// imprime todos os atributos vinculados ao produto
+		produtos[i].imprimeProduto();
 	}
 }
 
@@ -235,7 +228,19 @@ void Estoque::imprimirProdutoPerecivel(void) const
 	for(unsigned i(0); i < pereciveis.size(); i++)
 	{
 		cout << "===== "<< i+1 << "° Produto Perecível =====" << endl;
-		//produtos[i].imprimeDados();
+		// imprime todos os atributos vinculados ao produto perecível
+		pereciveis.imprimeProdutoPerecivel();
+		cout << endl;
+	}
+}
+
+void Estoque::imprimirRemedio(void) const
+{
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		cout << "===== "<< i+1 << "° Remédio =====" << endl;
+		// imprime todos os atributos vinculados ao remédio
+		remedios.imprimeRemedio();
 		cout << endl;
 	}
 }

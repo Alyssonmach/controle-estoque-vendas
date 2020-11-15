@@ -110,8 +110,22 @@ void Produto::set_codigo(long int codigo)
 	this -> objeto_produto.codigo = (codigo > 0) ? codigo : 0;
 }
 
-//método que retorna o objeto que a classe produto deve armazenar
+// método que retorna o objeto que a classe produto deve armazenar
 Produto_prototipo Produto::get_objeto_produto(void) const
 {
 	return objeto_produto;
+}
+
+// método que imprime os dados da classe
+void Produto::imprimeProduto(void) const
+{
+	cout << "Preço de aquisição: " << objeto_produto.preco_loja << " R$" << endl;
+	cout << "Preço de venda: " << objeto_produto.preco_consumidor << " R$" << endl;
+	cout << "Nome do produto: " << objeto_produto.nome << endl;
+	cout << "Categoria do Produto: " << objeto_produto.categoria << endl;
+	cout << "Fabricante: " << objeto_produto.fabricante << endl;
+	cout << "Quantidade em Estoque: " << objeto_produto.quantidade << " Produtos" << endl;
+	cout << "Código de Barras do Produto: " << objeto_produto.codigo << endl;
+	
+	return;
 }

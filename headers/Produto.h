@@ -43,6 +43,7 @@ class Produto
 		void set_quantidade(int);
 		void set_codigo(long int);
 		Produto_prototipo get_objeto_produto(void) const;
+		void imprimeProduto(void) const;
 };
 
 #endif

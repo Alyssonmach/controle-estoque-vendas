@@ -109,3 +109,14 @@ Data ProdutoPerecivel::get_data_atual(void) const
 	
 	return aux;
 }
+
+void ProdutoPerecivel::imprimeProdutoPerecivel(void) const
+{
+	imprimeProduto();
+	
+	cout << "Data Vencimento do Produto: ";
+	cout << setw(2);
+	cout << setfill('0') << get_data_validade().dia << "/";
+	cout << setfill('0') << get_data_validade().mes << "/";
+	cout << setfill('0') << get_data_validade().ano << endl;
+}

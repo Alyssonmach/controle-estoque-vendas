@@ -28,6 +28,7 @@ class Remedio : public ProdutoPerecivel
     	void set_medida(string);
     	void set_info_adicional(string);
     	Drogaria get_objeto_remedio(void) const;
+    	void imprimeRemedio(void) const;
 };
 
 #endif
