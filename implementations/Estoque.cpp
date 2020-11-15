@@ -21,79 +21,98 @@ Estoque::~Estoque()
 void Estoque::lerProduto(void)
 {
 	Produto p;
-	ifstream arquivo1; // Criando um arquivo apenas para leitura.
-	arquivo1.open("lista_de_produtos.txt"); // Abrindo o arquivo de leitura.
+	// criacao de arquivo para leitura
+	ifstream arquivo1; 
+	// abrindo o arquivo de leitura
+	arquivo1.open("lista_de_produtos.txt"); 
 	
-	if(arquivo1.is_open()) // Verificando se o arquivo foi aberto.
+	// verificando se o arquivo foi efetivamente aberto
+	if(arquivo1.is_open()) 
 	{
-		while(!arquivo1.eof()) // Enquanto for diferente de eof(end of file) continue se repetindo.
+		// Enquanto for diferente de eof(end of file) continue se repetindo.
+		while(!arquivo1.eof()) 
 		{
-			arquivo1.ignore(); // Ignorando o caractere de quebra de linha que está no início de cada objeto.
-			arquivo1 >> p; // Utilizando a sobrecarga do operador >> para inicializar o objeto.
-			produtos.push_back(p); // Adicionando o objeto a lista.
+			// utilizando a sobrecarga de operador >> para inicializar o arquivo
+			arquivo1 >> p; 
+			// adiciona o objeto a lista através do vector
+			produtos.push_back(p);
 		}
 	}
-	arquivo1.close(); // Fechando o arquivo de leitura.
+	// fechando o arquivo de leitura
+	arquivo1.close(); 
 	
 	return;
 }
 
 void Estoque::lerProdutoPerecivel(void)
-{
+{	
 	ProdutoPerecivel pp;
-	ifstream arquivo2; // Criando um arquivo apenas para leitura.
-	arquivo2.open("lista_de_produtos_pereciveis.txt"); // Abrindo o arquivo de leitura.
+	// criacao de arquivo para leitura
+	ifstream arquivo2; 
+	// abrindo o arquivo de leitura
+	arquivo2.open("lista_de_produtos_pereciveis.txt"); 
 	
-	if(arquivo2.is_open()) // Verificando se o arquivo foi aberto.
+	// verificando se o arquivo foi efetivamente aberto
+	if(arquivo2.is_open()) 
 	{
-		while(!arquivo2.eof()) // Enquanto for diferente de eof(end of file) continue se repetindo.
+		// Enquanto for diferente de eof(end of file) continue se repetindo.
+		while(!arquivo2.eof()) 
 		{
-			arquivo2.ignore(); // Ignorando o caractere de quebra de linha que está no início de cada objeto.
-			arquivo2 >> pp; // Utilizando a sobrecarga do operador >> para inicializar o objeto.
-			pereciveis.push_back(pp); // Adicionando o objeto a lista.
+			// utilizando a sobrecarga de operador >> para inicializar o arquivo
+			arquivo2 >> pp; 
+			// adiciona o objeto a lista através do vector
+			pereciveis.push_back(pp);
 		}
 	}
-	arquivo2.close(); // Fechando o arquivo de leitura.
+	// fechando o arquivo de leitura
+	arquivo2.close(); 
 	
 	return;
 }
 
 void Estoque::lerRemedio(void)
-{
+{	
 	Remedio r;
-	ifstream arquivo3; // Criando um arquivo apenas para leitura.
-	arquivo3.open("lista_de_remedios.txt"); // Abrindo o arquivo de leitura.
+	// criacao de arquivo para leitura
+	ifstream arquivo3; 
+	// abrindo o arquivo de leitura
+	arquivo3.open("lista_de_produtos_remedios.txt"); 
 	
-	if(arquivo3.is_open()) // Verificando se o arquivo foi aberto.
+	// verificando se o arquivo foi efetivamente aberto
+	if(arquivo3.is_open()) 
 	{
-		while(!arquivo3.eof()) // Enquanto for diferente de eof(end of file) continue se repetindo.
+		// Enquanto for diferente de eof(end of file) continue se repetindo.
+		while(!arquivo3.eof()) 
 		{
-			arquivo3.ignore(); // Ignorando o caractere de quebra de linha que está no início de cada objeto.
-			arquivo3 >> r; // Utilizando a sobrecarga do operador >> para inicializar o objeto.
-			remedios.push_back(r); // Adicionando o objeto a lista.
+			// utilizando a sobrecarga de operador >> para inicializar o arquivo
+			arquivo3 >> r; 
+			// adiciona o objeto a lista através do vector
+			remedios.push_back(r);
 		}
 	}
-	arquivo3.close(); // Fechando o arquivo de leitura.
+	// fechando o arquivo de leitura
+	arquivo3.close();
 	
 	return;
 }
 
 void Estoque::salvarProduto(void)
 {
-	ofstream arquivo1; // Criando um arquivo para salvar a lista de objetos.
+	// criando um arquivo para salvar a lista de objetos
+	ofstream arquivo1; 
 	
-	/* Utilizando o modo de abertura trunc, que abre e apaga os dados anteriores armazenados nele. Como toda a lista
-	foi carregada no vector se utilizassemos o modo de abertura app o arquivo iria ficar com objetos repetidos.*/
+	// modo de abertura trunc (abre, apaga e sobreescreve os dados)
 	arquivo1.open("lista_de_produtos.txt", std::ios::trunc);
 	
 	if(arquivo1.is_open())
 	{
 		for(unsigned i(0); i < produtos.size(); i++)
 		{
-			// Utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
+			// utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
 			arquivo1 << produtos[i]; 
 		}	
 	}	
+	// fechando o arquivo
 	arquivo1.close();
 	
 	return;
@@ -101,21 +120,21 @@ void Estoque::salvarProduto(void)
 
 void Estoque::salvarProdutoPerecivel(void)
 {
-	ofstream arquivo2; // Criando um arquivo para salvar a lista de objetos.
+	// criando um arquivo para salvar a lista de objetos
+	ofstream arquivo2; 
 	
-	/* Utilizando o modo de abertura trunc, que abre e apaga os dados anteriores armazenados nele. Como toda a lista
-	foi carregada no vector se utilizassemos o modo de abertura app o arquivo iria ficar com objetos repetidos.*/
+	// modo de abertura trunc (abre, apaga e sobreescreve os dados)
 	arquivo2.open("lista_de_produtos_pereciveis.txt", std::ios::trunc);
 	
 	if(arquivo2.is_open())
 	{
 		for(unsigned i(0); i < pereciveis.size(); i++)
 		{
-			// Utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
+			// utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
 			arquivo2 << pereciveis[i]; 
 		}	
-	}
-	
+	}	
+	// fechando o arquivo
 	arquivo2.close();
 	
 	return;
@@ -123,21 +142,21 @@ void Estoque::salvarProdutoPerecivel(void)
 
 void Estoque::salvarRemedio(void)
 {
-	ofstream arquivo3; // Criando um arquivo para salvar a lista de objetos.
+	// criando um arquivo para salvar a lista de objetos
+	ofstream arquivo3; 
 	
-	/* Utilizando o modo de abertura trunc, que abre e apaga os dados anteriores armazenados nele. Como toda a lista
-	foi carregada no vector se utilizassemos o modo de abertura app o arquivo iria ficar com objetos repetidos.*/
-	arquivo3.open("lista_de_remedios.txt", std::ios::trunc);
+	// modo de abertura trunc (abre, apaga e sobreescreve os dados)
+	arquivo3.open("lista_de_produtos_remedios.txt", std::ios::trunc);
 	
 	if(arquivo3.is_open())
 	{
 		for(unsigned i(0); i < remedios.size(); i++)
 		{
-			// Utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
+			// utilizando a sobrecarga do operador << para gravar o objeto no arquivo.
 			arquivo3 << remedios[i]; 
 		}	
-	}
-	
+	}	
+	// fechando o arquivo
 	arquivo3.close();
 	
 	return;
@@ -147,25 +166,16 @@ bool Estoque::inserirProduto(Produto p)
 {
 	for(unsigned i(0); i < produtos.size(); i++)
 	{
-		// Verificando se já não existe uma pessoa na lista com o mesmo CPF.
+		// verifica se o produto cadastrado possui um outro codigo
 		if(produtos[i].get_objeto_produto().codigo == p.get_objeto_produto().codigo)
+		{
 			return false;
+		}
 	}
 	
+	// caso seja um produto de codigo diferente, insere o produto a lista
 	produtos.push_back(p);
-	return true;
-}
-
-bool Estoque::inserirRemedio(Remedio r)
-{
-	for(unsigned i(0); i < remedios.size(); i++)
-	{
-		// Verificando se já não existe uma pessoa na lista com o mesmo CPF.
-		if(remedios[i].get_objeto_produto().codigo == r.get_objeto_produto().codigo)
-			return false;
-	}
 	
-	remedios.push_back(r);
 	return true;
 }
 
@@ -173,22 +183,59 @@ bool Estoque::inserirProdutoPerecivel(ProdutoPerecivel pp)
 {
 	for(unsigned i(0); i < pereciveis.size(); i++)
 	{
-		// Verificando se já não existe uma pessoa na lista com o mesmo CPF.
+		// verifica se o produto cadastrado possui um outro codigo
 		if(pereciveis[i].get_objeto_produto().codigo == pp.get_objeto_produto().codigo)
+		{
 			return false;
+		}
 	}
 	
+	// caso seja um produto de codigo diferente, insere o produto a lista
 	pereciveis.push_back(pp);
+	
 	return true;
 }
 
-void Estoque::imprimirLista() const
+bool Estoque::inserirRemedio(Remedio r)
+{
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		// verifica se o produto cadastrado possui um outro codigo
+		if(remedios[i].get_objeto_produto().codigo == r.get_objeto_produto().codigo)
+		{
+			return false;
+		}
+	}
+	
+	// caso seja um produto de codigo diferente, insere o produto a lista
+	remedios.push_back(r);
+	
+	return true;
+}
+
+void Estoque::imprimirProduto() const
 {
 	for(unsigned i(0); i < produtos.size(); i++)
 	{
-		cout << i+1 << "ª Pessoa: " << endl;
+		cout << "===== "<< i+1 << "° Produto =====" << endl;
 		//produtos[i].imprimeDados();
-		cout << produtos[i].get_objeto_produto().nome;
+		cout << produtos[i].get_objeto_produto().preco_loja << endl;
+		cout << produtos[i].get_objeto_produto().preco_consumidor << endl;
+		cout << produtos[i].get_objeto_produto().nome << endl;
+		cout << produtos[i].get_objeto_produto().categoria << endl;
+		cout << produtos[i].get_objeto_produto().fabricante << endl;
+		cout << produtos[i].get_objeto_produto().quantidade << endl;
+		cout << produtos[i].get_objeto_produto().codigo << endl;
+		cout << endl;
+	}
+}
+
+void Estoque::imprimirProdutoPerecivel(void) const
+{
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		cout << "===== "<< i+1 << "° Produto Perecível =====" << endl;
+		//produtos[i].imprimeDados();
 		cout << endl;
 	}
 }

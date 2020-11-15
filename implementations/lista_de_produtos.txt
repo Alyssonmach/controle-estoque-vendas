@@ -3,6 +3,20 @@
 20.5
 Desodorante
 Higiene
-Pampers
+Pamper
 24
-123456
+1234545
+12.39
+20.5
+Desodorante
+Higiene
+Pamper
+24
+12345
+12.39
+20.5
+Termometro
+Cuidados Pessoais
+Aviante
+44
+1234589

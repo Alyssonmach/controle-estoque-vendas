@@ -30,7 +30,9 @@ class Estoque
     	bool inserirProduto(Produto);
     	bool inserirRemedio(Remedio);
     	bool inserirProdutoPerecivel(ProdutoPerecivel);
-    	void imprimirLista() const;
+    	void imprimirProduto(void) const;
+    	void imprimirProdutoPerecivel(void) const;
+    	void imprimirRemedio(void) const;
     	//void remover_produto(unsigned int);
     	//void remover_produto_perecivel(unsigned int);
     	//void remover_remedio(unsigned int);

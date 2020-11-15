@@ -64,9 +64,9 @@ ifstream& operator >> (ifstream& arquivo1, Produto& p)
 	int quantidade;
 	long int codigo;
 	
-	arquivo1 >> preco_loja;
-	p.set_preco_loja(preco_loja);
-	arquivo1 >> preco_consumidor;
+	arquivo1 >> preco_loja; arquivo1.ignore();
+	p.set_preco_loja(preco_loja); 
+	arquivo1 >> preco_consumidor; arquivo1.ignore();
 	p.set_preco_consumidor(preco_consumidor);
 	getline(arquivo1, nome);
 	p.set_nome(nome);
@@ -74,9 +74,9 @@ ifstream& operator >> (ifstream& arquivo1, Produto& p)
 	p.set_categoria(categoria);
 	getline(arquivo1, fabricante);
 	p.set_fabricante(fabricante);
-	arquivo1 >> quantidade;
+	arquivo1 >> quantidade; arquivo1.ignore();
 	p.set_quantidade(quantidade);
-	arquivo1 >> codigo;
+	arquivo1 >> codigo; arquivo1.ignore();
 	p.set_codigo(codigo);
 	
 	return arquivo1;
@@ -91,9 +91,9 @@ ifstream& operator >> (ifstream& arquivo2, ProdutoPerecivel& pp)
 	int quantidade, dia, mes, ano;
 	long int codigo;
 	
-	arquivo2 >> preco_loja;
+	arquivo2 >> preco_loja; arquivo2.ignore();
 	pp.set_preco_loja(preco_loja);
-	arquivo2 >> preco_consumidor;
+	arquivo2 >> preco_consumidor; arquivo2.ignore();
 	pp.set_preco_consumidor(preco_consumidor);
 	getline(arquivo2, nome);
 	pp.set_nome(nome);
@@ -101,13 +101,13 @@ ifstream& operator >> (ifstream& arquivo2, ProdutoPerecivel& pp)
 	pp.set_categoria(categoria);
 	getline(arquivo2, fabricante);
 	pp.set_fabricante(fabricante);
-	arquivo2 >> quantidade;
+	arquivo2 >> quantidade; arquivo2.ignore();
 	pp.set_quantidade(quantidade);
-	arquivo2 >> codigo;
+	arquivo2 >> codigo; arquivo2.ignore();
 	pp.set_codigo(codigo);
-	arquivo2 >> dia;
-	arquivo2 >> mes;
-	arquivo2 >> ano;
+	arquivo2 >> dia; arquivo2.ignore();
+	arquivo2 >> mes; arquivo2.ignore();
+	arquivo2 >> ano; arquivo2.ignore();
 	
 	Data aux;
 	aux.dia = dia;
@@ -128,9 +128,9 @@ ifstream& operator >> (ifstream& arquivo3, Remedio& r)
 	int quantidade, dia, mes, ano;
 	long int codigo;
 	
-	arquivo3 >> preco_loja;
+	arquivo3 >> preco_loja; arquivo3.ignore();
 	r.set_preco_loja(preco_loja);
-	arquivo3 >> preco_consumidor;
+	arquivo3 >> preco_consumidor; arquivo3.ignore();
 	r.set_preco_consumidor(preco_consumidor);
 	getline(arquivo3, nome);
 	r.set_nome(nome);
@@ -138,13 +138,13 @@ ifstream& operator >> (ifstream& arquivo3, Remedio& r)
 	r.set_categoria(categoria);
 	getline(arquivo3, fabricante);
 	r.set_fabricante(fabricante);
-	arquivo3 >> quantidade;
+	arquivo3 >> quantidade; arquivo3.ignore();
 	r.set_quantidade(quantidade);
-	arquivo3 >> codigo;
+	arquivo3 >> codigo; arquivo3.ignore();
 	r.set_codigo(codigo);
-	arquivo3 >> dia;
-	arquivo3 >> mes;
-	arquivo3 >> ano;
+	arquivo3 >> dia; arquivo3.ignore();
+	arquivo3 >> mes; arquivo3.ignore();
+	arquivo3 >> ano; arquivo3.ignore();
 	
 	Data aux;
 	aux.dia = dia;
