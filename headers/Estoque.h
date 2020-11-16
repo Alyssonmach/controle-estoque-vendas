@@ -17,18 +17,18 @@ class Estoque
 		vector <Remedio> remedios;
 		bool checaVencimentoPerecivel(int, int);
     	bool checaVencimentoRemedio(int, int);
-    // especificador de acesso public
-    public:
-    	// construtor e destrutor da classe (trabalhar manipulação de arquivo)
-    	Estoque();
-    	~Estoque();
-    	// membros de funções da classe
     	void lerProduto(void);
     	void lerProdutoPerecivel(void);
     	void lerRemedio(void);
     	void salvarProduto(void);
     	void salvarProdutoPerecivel(void);
     	void salvarRemedio(void);
+    // especificador de acesso public
+    public:
+    	// construtor e destrutor da classe (trabalhar manipulação de arquivo)
+    	Estoque();
+    	~Estoque();
+    	// membros de funções da classe
     	bool inserirProduto(Produto);
     	bool inserirRemedio(Remedio);
     	bool inserirProdutoPerecivel(ProdutoPerecivel);

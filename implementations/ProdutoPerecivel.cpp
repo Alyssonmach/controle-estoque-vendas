@@ -63,7 +63,7 @@ void ProdutoPerecivel::imprimeProdutoPerecivel(void) const
 {
 	imprimeProduto();
 	
-	cout << "Data Vencimento do Produto: ";
+	cout << "Data de Vencimento do Produto: ";
 	cout << setw(2);
 	cout << setfill('0') << get_data_validade().dia << "/";
 	cout << setfill('0') << get_data_validade().mes << "/";

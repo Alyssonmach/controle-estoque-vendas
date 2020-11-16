@@ -1,11 +1,21 @@
 
-11
-13
-Fraldas Geriatricas
-Cuidados Pessoais
-Fraldario Souza e Souza
-100
-1237896
-16
-11
-2022
+2.3
+4
+Pastilha Valda
+Comestiveis
+Valda
+450
+12347
+12
+3
+2020
+1
+2
+Bolinho de Chocolate
+Comestiveis
+Maria
+45
+12348
+12
+8
+2021
