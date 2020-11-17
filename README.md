@@ -63,16 +63,16 @@ A classe Cadastro é responsável por fazer a gestão de funcionários da farmá
 
 - Arquivos
 
-> [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos referenciados na lista de Vector;
+- [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos referenciados na lista de Vector;
  
 - Headers
 
-> [x] Contém todos os arquivos de cabeçalho .h das classes utilizadas no projeto;
+- [x] Contém todos os arquivos de cabeçalho .h das classes utilizadas no projeto;
 
 - Implementations
 
-> [x] Contém todos os arquivos de implementação .cpp das classes utilizadas no projeto;
+- [x] Contém todos os arquivos de implementação .cpp das classes utilizadas no projeto;
 
  - Tests
 
- > [x] Contéum todos os arquivos de teste .cpp que testam cada um dos métodos da classe;
+ - [x] Contéum todos os arquivos de teste .cpp que testam cada um dos métodos da classe;
