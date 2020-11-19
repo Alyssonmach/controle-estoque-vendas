@@ -326,7 +326,7 @@ bool Estoque::removerRemedio(long int codigo)
 	return false;
 }
 
-// metodo que pesquisa produtos pelo codigo de barras
+// metodo que pesquisa produtos pelo nome
 bool Estoque::pesquisarProduto(string nome) const
 {
 	unsigned contador(0);
@@ -346,7 +346,7 @@ bool Estoque::pesquisarProduto(string nome) const
 	return false;
 }
 
-// metodo que pesquisa produtos pereciveis pelo codigo de barras
+// metodo que pesquisa produtos pereciveis pelo nome
 bool Estoque::pesquisarProdutoPerecivel(string nome) const
 {
 	unsigned contador(0);
@@ -366,13 +366,73 @@ bool Estoque::pesquisarProdutoPerecivel(string nome) const
 	return false;
 }
 
-// metodo que pesquisa remedios pelo codigo de barras
+// metodo que pesquisa remedios pelo nome
 bool Estoque::pesquisarRemedio(string nome) const
 {
 	unsigned contador(0);
 	for(unsigned i(0); i < remedios.size(); i++)
 	{
 		if(remedios[i].get_objeto_produto().nome == nome)
+		{
+			remedios[i].imprimeProdutoPerecivel();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == remedios.size())
+		return false;
+	
+	return false;
+}
+
+// metodo que pesquisa produtos pelo codigo de barras
+bool Estoque::pesquisarProduto(long int codigo) const
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < produtos.size(); i++)
+	{
+		if(produtos[i].get_objeto_produto().codigo == codigo)
+		{
+			produtos[i].imprimeProduto();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == produtos.size())
+		return false;
+	
+	return false;
+}
+
+// metodo que pesquisa produtos pereciveis pelo codigo de barras
+bool Estoque::pesquisarProdutoPerecivel(long int codigo) const
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		if(pereciveis[i].get_objeto_produto().codigo == codigo)
+		{
+			pereciveis[i].imprimeProdutoPerecivel();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == pereciveis.size())
+		return false;
+	
+	return false;
+}
+
+// metodo que pesquisa remedios pelo codigo de barras
+bool Estoque::pesquisarRemedio(long int codigo) const
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		if(remedios[i].get_objeto_produto().codigo == codigo)
 		{
 			remedios[i].imprimeProdutoPerecivel();
 			return true;
@@ -537,7 +597,7 @@ void Estoque::removerProdutosPereciveisVencidos(void)
 		}
 	}
 	
-	cout << contador << "Produtos Perecíveis vencidos removidos." << endl;
+	cout << contador << " Produtos Perecíveis vencidos removidos." << endl;
 	
 	return;
 }
@@ -555,9 +615,423 @@ void Estoque::removerRemediosVencidos(void)
 		}
 	}
 	
-	cout << contador << "Remédios vencidos removidos." << endl;
+	cout << contador << " Remédios vencidos removidos." << endl;
 	
 	return;
+}
+
+void Estoque::ordenaProdutoPrecoVenda(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < produtos.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < produtos.size(); index++)
+        {
+            if(produtos[index].get_objeto_produto().preco_consumidor < produtos[smallest].get_objeto_produto().preco_consumidor)
+            {
+                smallest = index;
+            }
+        }
+		Produto produto_auxiliar;
+		produto_auxiliar = produtos[i];
+    	produtos[i] = produtos[smallest];
+    	produtos[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+void Estoque::ordenaProdutoNome(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < produtos.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < produtos.size(); index++)
+        {
+            if(produtos[index].get_objeto_produto().nome.compare(produtos[smallest].get_objeto_produto().nome) < 0)
+            {
+                smallest = index;
+            }
+        }
+		Produto produto_auxiliar;
+		produto_auxiliar = produtos[i];
+    	produtos[i] = produtos[smallest];
+    	produtos[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;			
+}
+
+void Estoque::ordenaProdutoFabricante(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < produtos.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < produtos.size(); index++)
+        {
+            if(produtos[index].get_objeto_produto().fabricante.compare(produtos[smallest].get_objeto_produto().fabricante) < 0)
+            {
+                smallest = index;
+            }
+        }
+		Produto produto_auxiliar;
+		produto_auxiliar = produtos[i];
+    	produtos[i] = produtos[smallest];
+    	produtos[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;			
+}
+
+void Estoque::ordenaProdutoEstoque(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < produtos.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < produtos.size(); index++)
+        {
+            if(produtos[index].get_objeto_produto().quantidade < produtos[smallest].get_objeto_produto().quantidade)
+            {
+                smallest = index;
+            }
+        }
+		Produto produto_auxiliar;
+		produto_auxiliar = produtos[i];
+    	produtos[i] = produtos[smallest];
+    	produtos[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+void Estoque::ordenaPerecivelPrecoVenda(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < pereciveis.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < pereciveis.size(); index++)
+        {
+            if(pereciveis[index].get_objeto_produto().preco_consumidor < pereciveis[smallest].get_objeto_produto().preco_consumidor)
+            {
+                smallest = index;
+            }
+        }
+		ProdutoPerecivel produto_auxiliar;
+		produto_auxiliar = pereciveis[i];
+    	pereciveis[i] = pereciveis[smallest];
+    	pereciveis[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+void Estoque::ordenaPerecivelNome(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < pereciveis.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < pereciveis.size(); index++)
+        {
+            if(pereciveis[index].get_objeto_produto().nome.compare(pereciveis[smallest].get_objeto_produto().nome) < 0)
+            {
+                smallest = index;
+            }
+        }
+		ProdutoPerecivel produto_auxiliar;
+		produto_auxiliar = pereciveis[i];
+    	pereciveis[i] = pereciveis[smallest];
+    	pereciveis[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+void Estoque::ordenaPerecivelFabricante(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < pereciveis.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < pereciveis.size(); index++)
+        {
+            if(pereciveis[index].get_objeto_produto().fabricante.compare(pereciveis[smallest].get_objeto_produto().fabricante) < 0)
+            {
+                smallest = index;
+            }
+        }
+		ProdutoPerecivel produto_auxiliar;
+		produto_auxiliar = pereciveis[i];
+    	pereciveis[i] = pereciveis[smallest];
+    	pereciveis[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+void Estoque::ordenaPerecivelEstoque(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < pereciveis.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < pereciveis.size(); index++)
+        {
+            if(pereciveis[index].get_objeto_produto().quantidade < pereciveis[smallest].get_objeto_produto().quantidade)
+            {
+                smallest = index;
+            }
+        }
+		ProdutoPerecivel produto_auxiliar;
+		produto_auxiliar = pereciveis[i];
+    	pereciveis[i] = pereciveis[smallest];
+    	pereciveis[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+void Estoque::ordenaRemedioPrecoVenda(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < remedios.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < remedios.size(); index++)
+        {
+            if(remedios[index].get_objeto_produto().preco_consumidor < remedios[smallest].get_objeto_produto().preco_consumidor)
+            {
+                smallest = index;
+            }
+        }
+		Remedio produto_auxiliar;
+		produto_auxiliar = remedios[i];
+    	remedios[i] = remedios[smallest];
+    	remedios[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+
+void Estoque::ordenaRemedioNome(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < remedios.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < remedios.size(); index++)
+        {
+            if(remedios[index].get_objeto_produto().nome.compare(remedios[smallest].get_objeto_produto().nome) < 0)
+            {
+                smallest = index;
+            }
+        }
+		Remedio produto_auxiliar;
+		produto_auxiliar = remedios[i];
+    	remedios[i] = remedios[smallest];
+    	remedios[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+void Estoque::ordenaRemedioFabricante(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < remedios.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < remedios.size(); index++)
+        {
+            if(remedios[index].get_objeto_produto().fabricante.compare(remedios[smallest].get_objeto_produto().fabricante) < 0)
+            {
+                smallest = index;
+            }
+        }
+		Remedio produto_auxiliar;
+		produto_auxiliar = remedios[i];
+    	remedios[i] = remedios[smallest];
+    	remedios[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+void Estoque::ordenaRemedioTarja(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < remedios.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < remedios.size(); index++)
+        {
+            if(remedios[index].get_objeto_produto().categoria.compare(remedios[smallest].get_objeto_produto().categoria) < 0)
+            {
+                smallest = index;
+            }
+        }
+		Remedio produto_auxiliar;
+		produto_auxiliar = remedios[i];
+    	remedios[i] = remedios[smallest];
+    	remedios[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+void Estoque::ordenaRemedioEstoque(void)
+{
+	int smallest; // indice do menor elemento
+
+    // itera sobre size - 1 elementos
+    for(unsigned i = 0; i < remedios.size() - 1; i++)
+    {
+        smallest = i; // primeiro indice do array
+
+        // faz um loop para localizar o indice do menor elemento
+        for(unsigned index = i + 1; index < remedios.size(); index++)
+        {
+            if(remedios[index].get_objeto_produto().quantidade < remedios[smallest].get_objeto_produto().quantidade)
+            {
+                smallest = index;
+            }
+        }
+		Remedio produto_auxiliar;
+		produto_auxiliar = remedios[i];
+    	remedios[i] = remedios[smallest];
+    	remedios[smallest] = produto_auxiliar;
+    } // fim do for
+    
+    return;
+}
+
+int Estoque::getIndiceProduto(long int codigo) const
+{
+	for(unsigned i(0); i < produtos.size(); i++)
+	{
+		if(produtos[i].get_objeto_produto().codigo == codigo)
+		{
+			return i;
+		}
+	}
+	
+	return -1;
+}
+
+int Estoque::getIndiceProduto(string nome) const
+{
+	for(unsigned i(0); i < produtos.size(); i++)
+	{
+		if(produtos[i].get_objeto_produto().nome == nome)
+		{
+			return i;
+		}
+	}
+	
+	return -1;
+}
+
+int Estoque::getIndiceProdutoPerecivel(long int codigo) const
+{
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		if(pereciveis[i].get_objeto_produto().codigo == codigo)
+		{
+			return i;
+		}
+	}
+	
+	return -1;
+}
+
+int Estoque::getIndiceProdutoPerecivel(string nome) const
+{
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		if(pereciveis[i].get_objeto_produto().nome == nome)
+		{
+			return i;
+		}
+	}
+	
+	return -1;
+}
+
+int Estoque::getIndiceRemedio(long int codigo) const
+{
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		if(remedios[i].get_objeto_produto().codigo == codigo)
+		{
+			return i;
+		}
+	}
+	
+	return -1;
+}
+
+int Estoque::getIndiceRemedio(string nome) const
+{
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		if(remedios[i].get_objeto_produto().nome == nome)
+		{
+			return i;
+		}
+	}
+	
+	return -1;
 }
 
 // metodo que retorna um elemento particular da lista de produtos
