@@ -34,17 +34,17 @@ A classe Remedio é responsável por armazenar diversos atributos de um objeto p
 
 A classe Estoque é responsável por fazer todos os gerenciamentos dos produtos disponíveis a venda na farmácia. Armazenando todos os objetos pertencentes a classe Produto, Perecivel e Remedio em um Vector, foi implementado os seguintes métodos:
 
-> [x] Métodos para checar o vencimento de produtos Perecíveis e Remédios;
-> [x] Métodos para ler as listas de Produtos, Produtos Perecíveis e Remédios armazenados em um arquivo; 
-> [x] Métodos para salvar as listas de Produtos, Produtos Perecíveis e Remédios armazenados em um .arquivo; 
-> [x] Métodos para inserir os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-> [x] Métodos para imprimir os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-> [x] Métodos para remover os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-> [x] Métodos para remover os Produtos, Produtos Perecíveis e Remédios que estão vencidos nas listas .de Vector;
- [x] Métodos para pesquisar os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-> [x] Métodos para pesquisar os Produtos, Produtos Perecíveis e Remédios que estão vencidos nas listas de Vector;
-> [X] Métodos que retornam um objeto armazenado na lista de Vector através do índice;
-> [x] Métodos para retornar todas as listas de vector que armazena os objetos Produto, Produto Perecível e Remédio armazenados em arquivos distintos;
+- [x] Métodos para checar o vencimento de produtos Perecíveis e Remédios;
+- [x] Métodos para ler as listas de Produtos, Produtos Perecíveis e Remédios armazenados em um arquivo; 
+- [x] Métodos para salvar as listas de Produtos, Produtos Perecíveis e Remédios armazenados em um .arquivo; 
+- [x] Métodos para inserir os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
+- [x] Métodos para imprimir os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
+- [x] Métodos para remover os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
+- [x] Métodos para remover os Produtos, Produtos Perecíveis e Remédios que estão vencidos nas listas .de Vector;
+- [x] Métodos para pesquisar os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
+- [x] Métodos para pesquisar os Produtos, Produtos Perecíveis e Remédios que estão vencidos nas listas de Vector;
+- [X] Métodos que retornam um objeto armazenado na lista de Vector através do índice;
+- [x] Métodos para retornar todas as listas de vector que armazena os objetos Produto, Produto Perecível e Remédio armazenados em arquivos distintos;
 
 - Vendas [**Em construção**]
 
@@ -54,8 +54,8 @@ A classe Vendas é responsável por fazer a comunicação indireta com o Estoque
 
 A classe Cadastro é responsável por fazer a gestão de funcionários da farmácia. Em outras farmácias, armazena informações de cadastro dos funcionários, criando senhas de acesso específica para cada um deles. Há três tipos distintos de cadastro:
 
-> [x] Cadastro Universal e único dá poder a uma só pessoa de registrar novos funcionários;
-> [x] Cadastro de funcionários de vendas dá poder aos membros de de gerar saída de produtos do estoque por meio de notas fiscais;
+- [x] Cadastro Universal e único dá poder a uma só pessoa de registrar novos funcionários;
+- [x] Cadastro de funcionários de vendas dá poder aos membros de de gerar saída de produtos do estoque por meio de notas fiscais;
 - [x] Cadastro de operários de estoque dá livre acesso ao estoque da loja, de modo que seja possível implementar todos os métodos envolvidos da classe Estoque;
 
 
@@ -63,16 +63,16 @@ A classe Cadastro é responsável por fazer a gestão de funcionários da farmá
 
 - Arquivos
 
-> [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos referenciados na lista de Vector;
+- [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos referenciados na lista de Vector;
  
 - Headers
 
-> [x] Contém todos os arquivos de cabeçalho .h das classes utilizadas no projeto;
+- [x] Contém todos os arquivos de cabeçalho .h das classes utilizadas no projeto;
 
 - Implementations
 
-> [x] Contém todos os arquivos de implementação .cpp das classes utilizadas no projeto;
+- [x] Contém todos os arquivos de implementação .cpp das classes utilizadas no projeto;
 
  - Tests
 
- > [x] Contéum todos os arquivos de teste .cpp que testam cada um dos métodos da classe;
+ - [x] Contéum todos os arquivos de teste .cpp que testam cada um dos métodos da classe;
