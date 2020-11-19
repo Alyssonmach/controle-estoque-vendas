@@ -33,9 +33,10 @@ int main(void)
 		cout << "Escolha uma opção para testar a classe estoque: " << endl << endl;
 		cout << "1 - Inserir um novo produto ao estoque;" << endl;
 		cout << "2 - Visualizar estoque;" << endl;
-		cout << "3 - Remover produto por código de barra." << endl;
+		cout << "3 - Remover produtos por código de barra." << endl;
 		cout << "4 - Fazer a gestão da validade dos produtos;" << endl;
 		cout << "5 - Pesquisar sobre o produto;" << endl;
+		cout << "6 - Ordenação de Estoque;" << endl;
 		cout << "0 - Encerrar o programa;" << endl << endl;
 		cout << "Digite sua opção: ";
 		cin >> opcao;
@@ -217,6 +218,14 @@ int main(void)
 			{
 				cout << "Informe o código de barras do produto a ser removido: ";
 				cin >> codigo;
+				
+				cout << "Produtos Encontrados: " << endl << endl;
+				if(estoque.pesquisarProduto(codigo))
+				{
+					cout << endl;
+					cout << "Processando remoção..." << endl;
+				}
+				
 				if(estoque.removerProduto(codigo))
 				{
 					cout << "Produto removido com sucesso." << endl;
@@ -231,6 +240,14 @@ int main(void)
 			{
 				cout << "Informe o código de barras do produto perecível a ser removido: ";
 				cin >> codigo;
+				
+				cout << "Produtos Encontrados: " << endl << endl;
+				if(estoque.pesquisarProdutoPerecivel(codigo))
+				{
+					cout << endl;
+					cout << "Processando remoção..." << endl;
+				}
+				
 				if(estoque.removerProdutoPerecivel(codigo))
 				{
 					cout << "Produto removido com sucesso." << endl;
@@ -243,11 +260,19 @@ int main(void)
 			}
 			case 3:
 			{
-				cout << "Informe o código de barras do produto a ser removido: ";
+				cout << "Informe o código de barras do remédio a ser removido: ";
 				cin >> codigo;
+				
+				cout << "Produtos Encontrados: " << endl << endl;
+				if(estoque.pesquisarProduto(codigo))
+				{
+					cout << endl;
+					cout << "Processando remoção..." << endl;
+				}
+				
 				if(estoque.removerRemedio(codigo))
 				{
-					cout << "Produto removido com sucesso." << endl;
+					cout << "Remédio removido com sucesso." << endl;
 				}
 				else
 				{
@@ -259,6 +284,439 @@ int main(void)
 				cout << "Opção Inválida. Tente novamente." << endl;
 			}
 			break;
+		}
+		case 4:
+		{
+			int escolha;
+			int limite;
+			
+			cout << "=== Escolha o departamento para analisar validade dos produtos === :" << endl << endl;
+			cout << "1 - Departamento de produtos perecíveis;" << endl;
+			cout << "2 - Departamento de remédios;" << endl << endl;
+			cout << "Opção: ";
+			cin >> escolha;
+			
+			cout << endl;
+			system("pause");
+			system("cls");
+			
+			switch(escolha)
+			{
+			case 1:
+			{
+				cout << "Informe o limite de validade em dias a ser pesquisado: ";
+				cin >> limite;
+				if(estoque.pesquisaPerecivelVencido(limite))
+				{
+					cout << "Foi encontrado produtos perecíveis perto do vencimento com limite de " << limite << " dias." << endl;
+					int aux;
+					
+					cout << "Deseja Remover os produtos perecíveis já vencidos da lista?" << endl;
+					cout << "1 - sim;" << endl;
+					cout << "2 - não" << endl;
+					cout << "Digite sua opção: ";
+					cin >> aux;
+					
+					if(aux == 1)
+					{
+						estoque.removerProdutosPereciveisVencidos();
+					} 
+					else if(aux != 1 || aux != 2)
+					{
+						cout << "Entrada inválidade. Tente novamente." << endl;
+					}
+					else
+					{
+						cout << "Produtos vencidos mantidos." << endl;
+					}
+				}
+				else
+				{
+					cout << "Todos os produtos estão com a validade em dia." << endl;
+				}
+				break;
+			}
+			case 2:
+			{
+				cout << "Informe o limite de validade em dias a ser pesquisado: ";
+				cin >> limite;
+				if(estoque.pesquisaRemedioVencido(limite))
+				{
+					cout << "Foi encontrado remédios perto do vencimento com limite de " << limite << " dias." << endl;
+					int aux;
+					
+					cout << "Deseja Remover os remédios já vencidos da lista?" << endl;
+					cout << "1 - sim;" << endl;
+					cout << "2 - não" << endl;
+					cout << "Digite sua opção: ";
+					cin >> aux;
+					
+					if(aux == 1)
+					{
+						estoque.removerRemediosVencidos();
+					} 
+					else if(aux != 1 || aux != 2)
+					{
+						cout << "Entrada inválidade. Tente novamente." << endl;
+					}
+					else
+					{
+						cout << "Remédios vencidos mantidos." << endl;
+					}
+				}
+				else
+				{
+					cout << "Todos os Remédios estão com a validade em dia." << endl;
+				}
+				break;
+			}
+			default:
+				cout << "Opção Inválida. Tente novamente." << endl;
+			}
+			break;
+		}
+		case 5:
+		{
+			int escolha;
+			
+			
+			cout << "=== Escolha o tipo de pesquisa a ser realizada === :" << endl << endl;
+			cout << "1 - Pesquisa por código de barras;" << endl;
+			cout << "2 - Pesquisa por nome do produto;" << endl;
+			cout << "Opção: ";
+			cin >> escolha;
+			
+			cout << endl;
+			system("pause");
+			system("cls");
+			
+			switch(escolha)
+			{
+			case 1:
+			{
+				int escolha;
+				long int codigo;
+			
+				cout << "=== Escolha o departamento a ter o produto pesquisado === :" << endl << endl;
+				cout << "1 - Departamento de produtos não perecíveis;" << endl;
+				cout << "2 - Departamento de produtos perecíveis;" << endl;
+				cout << "3 - Departamento de remédios;" << endl << endl;
+				cout << "Opção: ";
+				cin >> escolha;
+			
+				cout << endl;
+				system("pause");
+				system("cls");
+				
+				switch(escolha)
+				{
+				case 1:
+				{
+					cout << "Informe o código de barras do produto a ser pesquisado: ";
+					cin >> codigo;
+					
+					if(estoque.pesquisarProduto(codigo))
+					{
+						cout << endl;
+						cout << "Produtos acima pertencem ao estoque." << endl;
+					}
+					else
+					{
+						cout << endl;
+						cout << "Sem ocorrências de produtos com esse código no estoque." << endl;
+					}
+					break;
+				}
+				case 2:
+				{
+					cout << "Informe o código de barras do produto perecível a ser pesquisado: ";
+					cin >> codigo;
+					
+					if(estoque.pesquisarProdutoPerecivel(codigo))
+					{
+						cout << endl;
+						cout << "Produtos perecíveis acima pertencem ao estoque." << endl;
+					}
+					else
+					{
+						cout << endl;
+						cout << "Sem ocorrências de produtos perecíveis com esse código no estoque." << endl;
+					}
+					break;
+				}
+				case 3:
+				{
+					cout << "Informe o código de barras do remédio a ser pesquisado: ";
+					cin >> codigo;
+					
+					if(estoque.pesquisarRemedio(codigo))
+					{
+						cout << endl;
+						cout << "Remédios acima pertencem ao estoque." << endl;
+					}
+					else
+					{
+						cout << endl;
+						cout << "Sem ocorrências de remédios com esse código no estoque." << endl;
+					}
+					break;
+				}
+				default:
+				{
+					cout << "Opção Inválida. Tente novamente." << endl;
+				}
+				}
+				break;
+			}
+			case 2:
+			{
+				int escolha;
+				string nome;
+			
+				cout << "=== Escolha o departamento a ter o produto pesquisado === :" << endl << endl;
+				cout << "1 - Departamento de produtos não perecíveis;" << endl;
+				cout << "2 - Departamento de produtos perecíveis;" << endl;
+				cout << "3 - Departamento de remédios;" << endl << endl;
+				cout << "Opção: ";
+				cin >> escolha;
+			
+				cout << endl;
+				system("pause");
+				system("cls");
+				
+				switch(escolha)
+				{
+				case 1:
+				{
+					cout << "Informe o nome do produto a ser pesquisado: ";
+					cin.ignore();
+					getline(cin, nome);
+					
+					if(estoque.pesquisarProduto(nome))
+					{
+						cout << endl;
+						cout << "Produtos acima pertencem ao estoque." << endl;
+					}
+					else
+					{
+						cout << endl;
+						cout << "Sem ocorrências de produtos com esse código no estoque." << endl;
+					}
+					break;
+				}
+				case 2:
+				{
+					cout << "Informe o nome do produto perecível a ser pesquisado: ";
+					cin.ignore();
+					getline(cin, nome);
+					
+					if(estoque.pesquisarProdutoPerecivel(nome))
+					{
+						cout << endl;
+						cout << "Produtos perecíveis acima pertencem ao estoque." << endl;
+					}
+					else
+					{
+						cout << endl;
+						cout << "Sem ocorrências de produtos perecíveis com esse código no estoque." << endl;
+					}
+					break;
+				}
+				case 3:
+				{
+					cout << "Informe o nome do remédio a ser pesquisado: ";
+					cin.ignore();
+					getline(cin, nome);
+					
+					if(estoque.pesquisarRemedio(nome))
+					{
+						cout << endl;
+						cout << "Remédios acima pertencem ao estoque." << endl;
+					}
+					else
+					{
+						cout << endl;
+						cout << "Sem ocorrências de remédios com esse código no estoque." << endl;
+					}
+					break;
+				}
+				default:
+				{
+					cout << "Opção Inválida. Tente novamente." << endl;
+				}
+				}
+				break;
+			}
+			default:
+				{
+					cout << "Opção Inválida. Tente novamente." << endl;
+				}
+			}
+			break;
+		}
+		case 6:
+		{
+				int escolha;
+			
+				cout << "=== Escolha o departamento para ter seus dados ordenados === :" << endl << endl;
+				cout << "1 - Departamento de produtos não perecíveis;" << endl;
+				cout << "2 - Departamento de produtos perecíveis;" << endl;
+				cout << "3 - Departamento de remédios;" << endl << endl;
+				cout << "Opção: ";
+				cin >> escolha;
+			
+				cout << endl;
+				system("pause");
+				system("cls");
+				
+				switch(escolha)
+				{
+				case 1:
+				{
+					cout << "=== Escolha o tipo de ordenação === :" << endl << endl;
+					cout << "1 - Ordenar por preço de venda do produto;" << endl;
+					cout << "2 - Ordenar por nome do produto;" << endl;
+					cout << "3 - Ordenar por fabricante;" << endl;
+					cout << "4 - Ordenar por quantidade em estoque;" << endl << endl;
+					cout << "Opção: ";
+					cin >> escolha;
+					
+					cout << endl;
+					system("pause");
+					system("cls");
+					
+					switch(escolha)
+					{
+					case 1:
+					{
+						estoque.ordenaProdutoPrecoVenda();
+						estoque.imprimirProduto();
+						break;
+					}
+					case 2:
+					{
+						estoque.ordenaProdutoNome();
+						estoque.imprimirProduto();
+						break;
+					}
+					case 3:
+					{
+						estoque.ordenaProdutoFabricante();
+						estoque.imprimirProduto();
+						break;
+					}
+					case 4:
+					{
+						estoque.ordenaProdutoEstoque();
+						estoque.imprimirProduto();
+						break;
+					}
+					default:
+						cout << "Opção Inválida. Tente novamente." << endl;
+					}
+					break;
+				}
+				case 2:
+				{
+					cout << "=== Escolha o tipo de ordenação === :" << endl << endl;
+					cout << "1 - Ordenar por preço de venda do produto;" << endl;
+					cout << "2 - Ordenar por nome do produto;" << endl;
+					cout << "3 - Ordenar por fabricante;" << endl;
+					cout << "4 - Ordenar por quantidade em estoque;" << endl << endl;
+					cout << "Opção: ";
+					cin >> escolha;
+					
+					cout << endl;
+					system("pause");
+					system("cls");
+					
+					switch(escolha)
+					{
+					case 1:
+					{
+						estoque.ordenaPerecivelPrecoVenda();
+						estoque.imprimirProdutoPerecivel();
+						break;
+					}
+					case 2:
+					{
+						estoque.ordenaPerecivelNome();
+						estoque.imprimirProdutoPerecivel();
+						break;
+					}
+					case 3:
+					{
+						estoque.ordenaPerecivelFabricante();
+						estoque.imprimirProdutoPerecivel();
+						break;
+					}
+					case 4:
+					{
+						estoque.ordenaPerecivelEstoque();
+						estoque.imprimirProdutoPerecivel();
+						break;
+					}
+					default:
+						cout << "Opção Inválida. Tente novamente." << endl;
+					}
+					break;
+				}
+				case 3:
+				{
+					cout << "=== Escolha o tipo de ordenação === :" << endl << endl;
+					cout << "1 - Ordenar por preço de venda do produto;" << endl;
+					cout << "2 - Ordenar por nome do produto;" << endl;
+					cout << "3 - Ordenar por fabricante;" << endl;
+					cout << "4 - Ordenar por quantidade em estoque;" << endl;
+					cout << "5 - Ordenar por tarja;" << endl << endl;
+					cout << "Opção: ";
+					cin >> escolha;
+					
+					cout << endl;
+					system("pause");
+					system("cls");
+					
+					switch(escolha)
+					{
+					case 1:
+					{
+						estoque.ordenaRemedioPrecoVenda();
+						estoque.imprimirRemedio();
+						break;
+					}
+					case 2:
+					{
+						estoque.ordenaRemedioNome();
+						estoque.imprimirRemedio();
+						break;
+					}
+					case 3:
+					{
+						estoque.ordenaRemedioFabricante();
+						estoque.imprimirRemedio();
+						break;
+					}
+					case 4:
+					{
+						estoque.ordenaRemedioEstoque();
+						estoque.imprimirRemedio();
+						break;
+					}
+					case 5:
+					{
+						estoque.ordenaRemedioTarja();
+						estoque.imprimirRemedio();
+						break;
+					}
+					default:
+						cout << "Opção Inválida. Tente novamente." << endl;
+					}
+					break;
+				}
+				default:
+					cout << "Opção Inválida. Tente novamente." << endl;
+				}
+				break;
 		}
 		default:
 			cout << "Opção Inválida. Tente novamente." << endl;
