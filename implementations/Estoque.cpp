@@ -956,6 +956,78 @@ void Estoque::ordenaRemedioEstoque(void)
     return;
 }
 
+bool Estoque::set_entrada_estoque_produto(long int codigo, int quantidade)
+{
+	if(pesquisarProduto(codigo))
+	{
+		int indice = getIndiceProduto(codigo); 
+		produtos[indice].set_quantidade(produtos[indice].get_objeto_produto().quantidade + quantidade);
+		return true;	
+	}
+	
+	return false;
+}
+
+bool Estoque::set_entrada_estoque_perecivel(long int codigo, int quantidade)
+{
+	if(pesquisarProdutoPerecivel(codigo))
+	{
+		int indice = getIndiceProdutoPerecivel(codigo);
+		pereciveis[indice].set_quantidade(pereciveis[indice].get_objeto_produto().quantidade + quantidade);
+		return true;
+	}
+	
+	return false;
+}
+
+bool Estoque::set_entrada_estoque_remedio(long int codigo, int quantidade)
+{
+	if(pesquisarRemedio(codigo))
+	{
+		int indice = getIndiceRemedio(codigo);
+		remedios[indice].set_quantidade(remedios[indice].get_objeto_produto().quantidade + quantidade);
+		return true;	
+	}
+	
+	return false;
+}
+
+bool Estoque::set_saida_estoque_produto(long int codigo, int quantidade)
+{
+	if(pesquisarProduto(codigo))
+	{
+		int indice = getIndiceProduto(codigo);
+		produtos[indice].set_quantidade(produtos[indice].get_objeto_produto().quantidade - quantidade);
+		return true;
+	}
+	
+	return false;
+}
+
+bool Estoque::set_saida_estoque_perecivel(long int codigo, int quantidade)
+{
+	if(pesquisarProdutoPerecivel(codigo))
+	{
+		int indice = getIndiceProdutoPerecivel(codigo);
+		pereciveis[indice].set_quantidade(pereciveis[indice].get_objeto_produto().quantidade - quantidade);	
+		return true;
+	}
+	
+	return false;
+}
+
+bool Estoque::set_saida_estoque_remedio(long int codigo, int quantidade)
+{
+	if(pesquisarRemedio(codigo))
+	{
+		int indice = getIndiceRemedio(codigo);
+		remedios[indice].set_quantidade(remedios[indice].get_objeto_produto().quantidade - quantidade);
+		return true;
+	}
+	
+	return false;
+}
+
 int Estoque::getIndiceProduto(long int codigo) const
 {
 	for(unsigned i(0); i < produtos.size(); i++)

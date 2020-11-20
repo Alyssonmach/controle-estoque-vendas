@@ -32,11 +32,12 @@ int main(void)
 		
 		cout << "Escolha uma opção para testar a classe estoque: " << endl << endl;
 		cout << "1 - Inserir um novo produto ao estoque;" << endl;
-		cout << "2 - Visualizar estoque;" << endl;
-		cout << "3 - Remover produtos por código de barra." << endl;
-		cout << "4 - Fazer a gestão da validade dos produtos;" << endl;
-		cout << "5 - Pesquisar sobre o produto;" << endl;
-		cout << "6 - Ordenação de Estoque;" << endl;
+		cout << "2 - Gerir quantidades de produto em estoque;" << endl;
+		cout << "3 - Visualizar estoque;" << endl;
+		cout << "4 - Remover produtos por código de barra." << endl;
+		cout << "5 - Fazer a gestão da validade dos produtos;" << endl;
+		cout << "6 - Pesquisar sobre o produto;" << endl;
+		cout << "7 - Ordenação de Estoque;" << endl;
 		cout << "0 - Encerrar o programa;" << endl << endl;
 		cout << "Digite sua opção: ";
 		cin >> opcao;
@@ -160,6 +161,189 @@ int main(void)
 		}
 		case 2:
 		{
+			
+			int escolha;
+			
+			cout << "=== Escolha o tipo de procedimento a ser realizado === :" << endl << endl;
+			cout << "1 - Adicionar Produtos;" << endl;
+			cout << "2 - Remover Produtos;" << endl << endl;
+			cout << "Opção: ";
+			cin >> escolha;
+			
+			cout << endl;
+			system("pause");
+			system("cls");
+			
+			switch(escolha)
+			{
+			case 1:
+			{
+				int escolha, quantidade;
+				long int codigo;
+				
+				cout << "=== Escolha o departamento a ter itens adicionados === :" << endl << endl;
+				cout << "1 - Departamento de produtos não perecíveis;" << endl;
+				cout << "2 - Departamento de produtos perecíveis;" << endl;
+				cout << "3 - Departamento de remédios;" << endl << endl;
+				cout << "Opção: ";
+				cin >> escolha;
+				
+				cout << endl;
+				system("pause");
+				system("cls");
+				
+				switch(escolha)
+				{
+				case 1:
+				{
+					cout << "Informe o código de barras do produto a ser aumentado no estoque: ";
+					cin >> codigo;
+					cout << "Informe a quantidade de aumento:";
+					cin >> quantidade;
+					
+					cout << "Pesquisando..." << endl << endl;
+					if(estoque.set_entrada_estoque_produto(codigo, quantidade))
+					{
+						cout << endl;
+						cout << "Produtos adicionados com sucesso." << endl;
+					}
+					else
+					{
+						cout << "Operação não realizada. Tente Novamete." << endl;
+					}
+					break;
+				}
+				case 2:
+				{
+					cout << "Informe o código de barras do produto perecível a ser aumentado no estoque: ";
+					cin >> codigo;
+					cout << "Informe a quantidade de aumento:";
+					cin >> quantidade;
+					
+					cout << "Pesquisando..." << endl << endl;
+					if(estoque.set_entrada_estoque_perecivel(codigo, quantidade))
+					{
+						cout << endl;
+						cout << "Produtos perecíveis adicionados com sucesso." << endl;
+					}
+					else
+					{
+						cout << "Operação não realizada. Tente Novamete." << endl;
+					}
+					break;
+				}
+				case 3:
+				{
+					cout << "Informe o código de barras do remédio a ser aumentado no estoque: ";
+					cin >> codigo;
+					cout << "Informe a quantidade de aumento:";
+					cin >> quantidade;
+					
+					cout << "Pesquisando..." << endl << endl;
+					if(estoque.set_entrada_estoque_remedio(codigo, quantidade))
+					{
+						cout << endl;
+						cout << "Remédios adicionados com sucesso." << endl;
+					}
+					else
+					{
+						cout << "Operação não realizada. Tente Novamete." << endl;
+					}
+					break;
+				}
+				default:
+					cout << "Opção Inválida. Tente novamente." << endl;
+				}
+				break;
+			}
+			case 2:
+			{
+				int escolha, quantidade;
+				long int codigo;
+				
+				cout << "=== Escolha o departamento a ter itens adicionados === :" << endl << endl;
+				cout << "1 - Departamento de produtos não perecíveis;" << endl;
+				cout << "2 - Departamento de produtos perecíveis;" << endl;
+				cout << "3 - Departamento de remédios;" << endl << endl;
+				cout << "Opção: ";
+				cin >> escolha;
+				
+				cout << endl;
+				system("pause");
+				system("cls");
+				
+				switch(escolha)
+				{
+				case 1:
+				{
+					cout << "Informe o código de barras do produto a ser diminuido no estoque: ";
+					cin >> codigo;
+					cout << "Informe a quantidade de diminuição: ";
+					cin >> quantidade;
+					
+					cout << "Pesquisando..." << endl << endl;
+					if(estoque.set_saida_estoque_produto(codigo, quantidade))
+					{
+						cout << endl;
+						cout << "Produtos removidos com sucesso." << endl;
+					}
+					else
+					{
+						cout << "Operação não realizada. Tente Novamete." << endl;
+					}
+					break;
+				}
+				case 2:
+				{
+					cout << "Informe o código de barras do produto perecível a ser diminuido no estoque: ";
+					cin >> codigo;
+					cout << "Informe a quantidade de diminuição: ";
+					cin >> quantidade;
+					
+					cout << "Pesquisando..." << endl << endl;
+					if(estoque.set_saida_estoque_perecivel(codigo, quantidade))
+					{
+						cout << endl;
+						cout << "Produtos perecíveis removidos com sucesso." << endl;
+					}
+					else
+					{
+						cout << "Operação não realizada. Tente Novamete." << endl;
+					}
+					break;
+				}
+				case 3:
+				{
+					cout << "Informe o código de barras do remédio a ser aumentado no diminuido: ";
+					cin >> codigo;
+					cout << "Informe a quantidade de diminuição:";
+					cin >> quantidade;
+					
+					cout << "Pesquisando..." << endl << endl;
+					if(estoque.set_saida_estoque_remedio(codigo, quantidade))
+					{
+						cout << endl;
+						cout << "Remédios removidos com sucesso." << endl;
+					}
+					else
+					{
+						cout << "Operação não realizada. Tente Novamete." << endl;
+					}
+					break;
+				}
+				default:
+					cout << "Opção Inválida. Tente novamente." << endl;
+				}
+				break;
+			}
+			default:
+				cout << "Opção Inválida. Tente novamente." << endl;
+			}
+			
+			break;
+		}
+		case 3:
+		{
 			int escolha;
 			
 			cout << "=== Escolha o departamento de estoque === :" << endl << endl;
@@ -196,7 +380,7 @@ int main(void)
 			
 			break;
 		}
-		case 3:
+		case 4:
 		{
 			int escolha;
 			long int codigo;
@@ -285,7 +469,7 @@ int main(void)
 			}
 			break;
 		}
-		case 4:
+		case 5:
 		{
 			int escolha;
 			int limite;
@@ -375,7 +559,7 @@ int main(void)
 			}
 			break;
 		}
-		case 5:
+		case 6:
 		{
 			int escolha;
 			
@@ -554,7 +738,7 @@ int main(void)
 			}
 			break;
 		}
-		case 6:
+		case 7:
 		{
 				int escolha;
 			

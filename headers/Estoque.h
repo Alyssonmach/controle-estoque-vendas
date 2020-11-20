@@ -61,6 +61,12 @@ class Estoque
     	void ordenaRemedioFabricante(void);
     	void ordenaRemedioTarja(void);
     	void ordenaRemedioEstoque(void);
+    	bool set_entrada_estoque_produto(long int, int);
+    	bool set_entrada_estoque_perecivel(long int, int);
+    	bool set_entrada_estoque_remedio(long int, int);
+    	bool set_saida_estoque_produto(long int, int);
+    	bool set_saida_estoque_perecivel(long int, int);
+    	bool set_saida_estoque_remedio(long int, int);
     	int getIndiceProduto(long int) const;
     	int getIndiceProduto(string) const;
     	int getIndiceProdutoPerecivel(long int) const;
