@@ -29,6 +29,8 @@ class ProdutoPerecivel : public Produto
     	void set_data_validade(Data);
     	Data get_data_validade(void) const;
     	Data get_data_atual(void) const;
+    	void imprimeDataAtual(void) const;
+    	void imprimeDataVencimento(void) const;
     	void imprimeProdutoPerecivel(void) const;
 };
 
