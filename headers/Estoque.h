@@ -67,6 +67,7 @@ class Estoque
     	bool set_saida_estoque_produto(long int, int);
     	bool set_saida_estoque_perecivel(long int, int);
     	bool set_saida_estoque_remedio(long int, int);
+    	float get_despezas(void) const;
     	int getIndiceProduto(long int) const;
     	int getIndiceProduto(string) const;
     	int getIndiceProdutoPerecivel(long int) const;

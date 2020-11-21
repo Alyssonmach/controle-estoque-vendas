@@ -378,6 +378,54 @@ int main(void)
 					
 				break;
 			}
+			case 3:
+			{
+				cout << "=== Análise Fiscal da Empresa ===" << endl;
+				cout << "1 - Visualizar o saldo mensal da empresa;" << endl;
+				cout << "2 - Visualizar o apurado mensal da empresa;" << endl;
+				cout << "3 - Visualizar a despeza mensal da empresa;" << endl;
+				cout << "4 - Finalizar as contas do mês;" << endl << endl;
+				cout << "Escolha uma opção: ";
+				cin >> escolha;
+				
+				cout << endl;
+				system("pause");
+				system("cls");
+				
+				switch(escolha)
+				{
+				case 1:
+				{
+					cout << "Saldo mensal: " << processo_vendas.get_saldo() << " R$" << endl;
+					break;
+				}
+				case 2:
+				{
+					cout << "Apurado mensal: " << processo_vendas.get_apurado() << " R$" << endl;
+					break;
+				}
+				case 3:
+				{
+					cout << "Despeza mensal: " << processo_vendas.get_despezas() << " R$" << endl;
+					break;
+				}
+				case 4:
+				{
+					processo_vendas.fecha_conta_mes();
+					cout << "As contas do mês foram encerrados. Reiniciando uma nova análise." << endl;
+					break;
+				}
+				default:
+					cout << "Opção inválida. Tente novamente." << endl;
+					break;
+				}
+				
+				cout << endl;
+				system("pause");
+				system("cls");
+				
+				break;
+			}
 			default:
 				cout << "Opção inválida. Tente novamente." << endl;
 		}

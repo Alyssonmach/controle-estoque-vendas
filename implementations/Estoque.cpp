@@ -1028,6 +1028,25 @@ bool Estoque::set_saida_estoque_remedio(long int codigo, int quantidade)
 	return false;
 }
 
+float Estoque::get_despezas(void) const
+{
+	float despezas = 0;
+	for(unsigned i(0); i < produtos.size(); i++)
+	{
+		despezas += produtos[i].get_objeto_produto().preco_loja * float(produtos[i].get_objeto_produto().quantidade);
+	}
+	for(unsigned i(0); i < pereciveis.size(); i++)
+	{
+		despezas += pereciveis[i].get_objeto_produto().preco_loja * float(pereciveis[i].get_objeto_produto().quantidade);
+	}
+	for(unsigned i(0); i < remedios.size(); i++)
+	{
+		despezas += remedios[i].get_objeto_produto().preco_loja * float(remedios[i].get_objeto_produto().quantidade);
+	}
+	
+	return despezas;
+}
+
 int Estoque::getIndiceProduto(long int codigo) const
 {
 	for(unsigned i(0); i < produtos.size(); i++)

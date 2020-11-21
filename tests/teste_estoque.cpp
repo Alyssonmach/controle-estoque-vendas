@@ -38,6 +38,7 @@ int main(void)
 		cout << "5 - Fazer a gestão da validade dos produtos;" << endl;
 		cout << "6 - Pesquisar sobre o produto;" << endl;
 		cout << "7 - Ordenação de Estoque;" << endl;
+		cout << "8 - Visualizar as depezas atuais;" << endl;
 		cout << "0 - Encerrar o programa;" << endl << endl;
 		cout << "Digite sua opção: ";
 		cin >> opcao;
@@ -901,6 +902,11 @@ int main(void)
 					cout << "Opção Inválida. Tente novamente." << endl;
 				}
 				break;
+		}
+		case 8:
+		{
+			cout << "Despezas atuais: " << estoque.get_despezas() << " R$" <<  endl;
+			break;
 		}
 		default:
 			cout << "Opção Inválida. Tente novamente." << endl;

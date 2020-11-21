@@ -6,18 +6,47 @@ using namespace std;
 
 Vendas::Vendas(void)
 {
-	this -> apurado = 0;
-	this -> saldo = 0;
+	float a;
+	
+    ifstream myfile1;
+    myfile1.open("../financas/apurado.txt");
+    myfile1 >> a;
+    this -> apurado  = a;
+    myfile1.close();
+    
+    ifstream myfile2;
+    myfile2.open("../financas/saldo.txt");
+    myfile2 >> a;
+    this -> saldo  = a;
+    myfile2.close();
 }
 
 void Vendas::adiciona_apurado(float apurado)
 {
 	this -> apurado += (apurado > 0) ? apurado : 0; 
+	
+	ofstream myfile;
+	myfile.open("../financas/apurado.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile.is_open())
+	{
+		myfile << apurado;
+		myfile.close();
+	}
+	else cout << "Não foi possível abrir o arquivo." << cout;
 }
 
 void Vendas::adiciona_saldo(float saldo)
 {
 	this -> saldo += (saldo > 0) ? saldo : 0; 
+	
+	ofstream myfile;
+	myfile.open("../financas/saldo.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile.is_open())
+	{
+		myfile << saldo;
+		myfile.close();
+	}
+	else cout << "Não foi possível abrir o arquivo." << cout;
 }
 
 int Vendas::quantidade_notas_fiscais(void)
@@ -48,51 +77,25 @@ string Vendas::diretorio_nota(int arquivo_atual)
 	return nome;
 }
 
-bool Vendas::inserir_nota_produto(Produto aux)
+void Vendas::inserir_nota_produto(Produto aux)
 {
-	for(unsigned i(0); i < produto_nota.size(); i++)
-	{
-		// verifica se o produto cadastrado possui um outro codigo
-		if(produto_nota[i].get_objeto_produto().codigo == aux.get_objeto_produto().codigo)
-		{
-			return false;
-		}
-	}
-	
 	produto_nota.push_back(aux);
 	
-	return true;
+	return;
 }
 
-bool Vendas::inserir_nota_perecivel(ProdutoPerecivel aux)
+void Vendas::inserir_nota_perecivel(ProdutoPerecivel aux)
 {
-	for(unsigned i(0); i < perecivel_nota.size(); i++)
-	{
-		// verifica se o produto cadastrado possui um outro codigo
-		if(perecivel_nota[i].get_objeto_produto().codigo == aux.get_objeto_produto().codigo)
-		{
-			return false;
-		}
-	}
-	
 	perecivel_nota.push_back(aux);
 	
-	return true;
+	return;
 }
 
-bool Vendas::inserir_nota_remedio(Remedio aux)
+void Vendas::inserir_nota_remedio(Remedio aux)
 {
-	for(unsigned i(0); i < remedio_nota.size(); i++)
-	{
-		// verifica se o produto cadastrado possui um outro codigo
-		if(remedio_nota[i].get_objeto_produto().codigo == aux.get_objeto_produto().codigo)
-		{
-			return false;
-		}
-	}
 	remedio_nota.push_back(aux);
 	
-	return true;
+	return;
 }
 
 bool Vendas::pesquisar_nota_produto(long int codigo)
@@ -422,6 +425,32 @@ void Vendas::monta_nota_fiscal(void)
 	return;
 }
 
+void Vendas::fecha_conta_mes(void)
+{
+	apurado = 0;
+	saldo = 0;
+	
+	ofstream myfile1;
+	myfile1.open("../financas/apurado.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile1.is_open())
+	{
+		myfile1 << apurado;
+		myfile1.close();
+	}
+	else cout << "Não foi possível abrir o arquivo." << cout;
+	
+	ofstream myfile2;
+	myfile2.open("../financas/saldo.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile2.is_open())
+	{
+		myfile2 << saldo;
+		myfile2.close();
+	}
+	else cout << "Não foi possível abrir o arquivo." << cout;
+	
+	return;
+}
+
 float Vendas::get_apurado(void) const
 {
 	return apurado;
@@ -430,9 +459,4 @@ float Vendas::get_apurado(void) const
 float Vendas::get_saldo(void) const
 {
 	return saldo;
-}
-
-float Vendas::get_despezas(void) const
-{
-	return (get_saldo() - get_apurado());
 }

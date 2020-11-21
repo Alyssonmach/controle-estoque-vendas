@@ -31,9 +31,9 @@ class Vendas : public Estoque
     	// construtor da classe
     	Vendas(void);
     	// membros de funções da classe
-    	bool inserir_nota_produto(Produto);
-    	bool inserir_nota_perecivel(ProdutoPerecivel);
-    	bool inserir_nota_remedio(Remedio);
+    	void inserir_nota_produto(Produto);
+    	void inserir_nota_perecivel(ProdutoPerecivel);
+    	void inserir_nota_remedio(Remedio);
     	bool pesquisar_nota_produto(long int);
     	bool pesquisar_nota_perecivel(long int);
     	bool pesquisar_nota_remedio(long int);
@@ -46,9 +46,9 @@ class Vendas : public Estoque
     	void imprime_ultimas_notas(int);
     	Data retornaDataAtual(void) const;
     	void monta_nota_fiscal(void);
+    	void fecha_conta_mes(void);
     	float get_apurado(void) const;
     	float get_saldo(void) const;
-    	float get_despezas(void) const;
 };
 
 #endif
