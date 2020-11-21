@@ -1,4 +1,5 @@
 #include "../headers/Vendas.h"
+
 #include <ctime>
 
 using namespace std;
@@ -92,6 +93,63 @@ bool Vendas::inserir_nota_remedio(Remedio aux)
 	remedio_nota.push_back(aux);
 	
 	return true;
+}
+
+bool Vendas::pesquisar_nota_produto(long int codigo)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < produto_nota.size(); i++)
+	{
+		if(produto_nota[i].get_objeto_produto().codigo == codigo)
+		{
+			produto_nota[i].imprimeProduto();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == produto_nota.size())
+		return false;
+	
+	return false;
+}
+
+bool Vendas::pesquisar_nota_perecivel(long int codigo)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < perecivel_nota.size(); i++)
+	{
+		if(perecivel_nota[i].get_objeto_produto().codigo == codigo)
+		{
+			perecivel_nota[i].imprimeProdutoPerecivel();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == perecivel_nota.size())
+		return false;
+	
+	return false;
+}
+
+bool Vendas::pesquisar_nota_remedio(long int codigo)
+{
+	unsigned contador(0);
+	for(unsigned i(0); i < remedio_nota.size(); i++)
+	{
+		if(remedio_nota[i].get_objeto_produto().codigo == codigo)
+		{
+			remedio_nota[i].imprimeProdutoPerecivel();
+			return true;
+		}
+		else
+			contador++;
+	}
+	if(contador == remedio_nota.size())
+		return false;
+	
+	return false;
 }
 
 bool Vendas::apaga_da_nota_produto(long int codigo)
@@ -226,10 +284,10 @@ void Vendas::imprime_ultimas_notas(int limite)
 	}
 	else
 	{
-		for(int i(limite); i > quantidade_notas_fiscais(); i--)
+		for(int i(0); i < limite; i++)
 		{
 			string linha;
-		    ifstream myfile2 (diretorio_nota(i).c_str());
+		    ifstream myfile2 (diretorio_nota(quantidade_notas_fiscais() - i - 1).c_str());
 		    if (myfile2.is_open())
 		    {
 		      while ( getline (myfile2,linha) )
@@ -264,6 +322,8 @@ Data Vendas::retornaDataAtual(void) const
 }
 void Vendas::monta_nota_fiscal(void)
 {
+	  cout << fixed << setprecision(2);
+	  
 	  ofstream myfile;
 	  myfile.open ("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
 	  if (myfile.is_open())
@@ -294,6 +354,7 @@ void Vendas::monta_nota_fiscal(void)
 				myfile << " Preço do Produto: " << remedio_nota[i].get_objeto_produto().preco_consumidor;
 				myfile << " Código de Barras: " << remedio_nota[i].get_objeto_produto().codigo << endl;
 			}
+			myfile << endl;
 	    	myfile.close();
 	  }
 	  else cout << "Não foi possível abrir o arquivo." << cout;
@@ -303,7 +364,6 @@ void Vendas::monta_nota_fiscal(void)
 	  if (myfile1.is_open())
 	  {
 			myfile1 << "=== Nota Fiscal da Farmácia === Data: ";
-			myfile1 << "=== Nota Fiscal da Farmácia === Data: ";
 	  		myfile1 << setw(2);
 	   	   	myfile1 << setfill('0') << retornaDataAtual().dia << "/";
 			myfile1 << setfill('0') << retornaDataAtual().mes << "/";
@@ -311,7 +371,7 @@ void Vendas::monta_nota_fiscal(void)
 	  		for(unsigned i(0); i < produto_nota.size(); i++)
 			{
 				myfile1 << "Nome do Produto: " << produto_nota[i].get_objeto_produto().nome;
-				myfile1 << " Preço do Produto: " << produto_nota[i].get_objeto_produto().preco_consumidor;
+				myfile1 << " Preço do Produto: " << produto_nota[i].get_objeto_produto().preco_consumidor << " R$";
 				myfile1 << " Código de Barras: " << produto_nota[i].get_objeto_produto().codigo << endl;
 			}
 			
