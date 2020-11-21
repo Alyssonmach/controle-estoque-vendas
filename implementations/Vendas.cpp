@@ -21,32 +21,39 @@ Vendas::Vendas(void)
     myfile2.close();
 }
 
+Vendas::~Vendas(void)
+{
+	ofstream myfile1;
+	myfile1.open("../financas/apurado.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile1.is_open())
+	{
+		myfile1 << (this -> apurado);
+		myfile1.close();
+	}
+	else cout << "Não foi possível abrir o arquivo." << cout;
+	
+	ofstream myfile2;
+	myfile2.open("../financas/saldo.txt", std::ofstream::out | std::ofstream::trunc);
+	if (myfile2.is_open())
+	{
+		myfile2 << (this -> saldo);
+		myfile2.close();
+	}
+	else cout << "Não foi possível abrir o arquivo." << cout;
+}
+
 void Vendas::adiciona_apurado(float apurado)
 {
 	this -> apurado += (apurado > 0) ? apurado : 0; 
 	
-	ofstream myfile;
-	myfile.open("../financas/apurado.txt", std::ofstream::out | std::ofstream::trunc);
-	if (myfile.is_open())
-	{
-		myfile << (this -> apurado);
-		myfile.close();
-	}
-	else cout << "Não foi possível abrir o arquivo." << cout;
+	return;
 }
 
 void Vendas::adiciona_saldo(float saldo)
 {
 	this -> saldo += (saldo > 0) ? saldo : 0; 
 	
-	ofstream myfile;
-	myfile.open("../financas/saldo.txt", std::ofstream::out | std::ofstream::trunc);
-	if (myfile.is_open())
-	{
-		myfile << (this -> saldo);
-		myfile.close();
-	}
-	else cout << "Não foi possível abrir o arquivo." << cout;
+	return;
 }
 
 int Vendas::quantidade_notas_fiscais(void)
