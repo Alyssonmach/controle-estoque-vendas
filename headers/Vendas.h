@@ -2,8 +2,8 @@
 #define VENDAS_H
 
 #include "Estoque.h"
-
 #include <iostream>
+#include <iomanip>
 #include <cstdio>
 #include <cstdlib>
 #include <dirent.h>
@@ -34,6 +34,9 @@ class Vendas : public Estoque
     	bool inserir_nota_produto(Produto);
     	bool inserir_nota_perecivel(ProdutoPerecivel);
     	bool inserir_nota_remedio(Remedio);
+    	bool pesquisar_nota_produto(long int);
+    	bool pesquisar_nota_perecivel(long int);
+    	bool pesquisar_nota_remedio(long int);
     	bool apaga_da_nota_produto(long int);
     	bool apaga_da_nota_perecivel(long int);
     	bool apaga_da_nota_remedio(long int);
