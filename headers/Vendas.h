@@ -30,6 +30,7 @@ class Vendas : public Estoque
     public:
     	// construtor da classe
     	Vendas(void);
+    	~Vendas(void);
     	// membros de funções da classe
     	void inserir_nota_produto(Produto);
     	void inserir_nota_perecivel(ProdutoPerecivel);
