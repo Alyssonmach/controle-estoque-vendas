@@ -40,8 +40,8 @@ class Vendas : public Estoque
  		void imprime_historico_fiscal(void) const;
     	void limpa_historico_notas(void);
     	void restaura_historico_notas(void);
-    	void imprime_ultimas_notas(int) const;
-    	string imprimeDataAtual(void) const;
+    	void imprime_ultimas_notas(int);
+    	Data retornaDataAtual(void) const;
     	void monta_nota_fiscal(void);
     	float get_apurado(void) const;
     	float get_saldo(void) const;

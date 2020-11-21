@@ -52,7 +52,7 @@ bool Vendas::inserir_nota_produto(Produto aux)
 	for(unsigned i(0); i < produto_nota.size(); i++)
 	{
 		// verifica se o produto cadastrado possui um outro codigo
-		if(produto_nota[i].get_objeto_produto().codigo == p.get_objeto_produto().codigo)
+		if(produto_nota[i].get_objeto_produto().codigo == aux.get_objeto_produto().codigo)
 		{
 			return false;
 		}
@@ -68,7 +68,7 @@ bool Vendas::inserir_nota_perecivel(ProdutoPerecivel aux)
 	for(unsigned i(0); i < perecivel_nota.size(); i++)
 	{
 		// verifica se o produto cadastrado possui um outro codigo
-		if(perecivel_nota[i].get_objeto_produto().codigo == p.get_objeto_produto().codigo)
+		if(perecivel_nota[i].get_objeto_produto().codigo == aux.get_objeto_produto().codigo)
 		{
 			return false;
 		}
@@ -84,7 +84,7 @@ bool Vendas::inserir_nota_remedio(Remedio aux)
 	for(unsigned i(0); i < remedio_nota.size(); i++)
 	{
 		// verifica se o produto cadastrado possui um outro codigo
-		if(remedio_nota[i].get_objeto_produto().codigo == p.get_objeto_produto().codigo)
+		if(remedio_nota[i].get_objeto_produto().codigo == aux.get_objeto_produto().codigo)
 		{
 			return false;
 		}
@@ -171,8 +171,8 @@ void Vendas::imprime_historico_fiscal(void) const
 void Vendas::limpa_historico_notas(void)
 {
 	ofstream myfile;
-	myfile = fopen("../NotasFiscais/historico/historico_notas_fiscais.txt", "w");
-    fclose(arquivo);
+	myfile.open("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ios::trunc);
+    myfile.close();
     
 	return;
 }
@@ -217,11 +217,11 @@ void Vendas::restaura_historico_notas(void)
 	return;
 }
 
-void Vendas::imprime_ultimas_notas(int limite) const
+void Vendas::imprime_ultimas_notas(int limite)
 {	
 	if(quantidade_notas_fiscais() < limite)
 	{
-		cout << "Não há notas suficientes para impressão" << endl;
+		cout << "Não há notas suficientes para impressão." << endl;
 		return;
 	}
 	else
@@ -246,10 +246,8 @@ void Vendas::imprime_ultimas_notas(int limite) const
 	return;
 }
 
-string Vendas::imprimeDataAtual(void)
+Data Vendas::retornaDataAtual(void) const
 {
-	strinf data;
-	char snum1[1], snum2[1], snum3[1];
 	Data aux;
 	
 	time_t t;
@@ -262,9 +260,7 @@ string Vendas::imprimeDataAtual(void)
 	aux.mes = ++(infoTempo -> tm_mon);
 	aux.ano = 1900 + (infoTempo -> tm_year);
 	
-	data = itoa(aux.dia, snum, 10) + "/" + itoa(aux.mes, snum, 10) + "/" itoa(aux.ano, snum, 10);
-	
-	return data;
+	return aux;
 }
 void Vendas::monta_nota_fiscal(void)
 {
@@ -273,7 +269,11 @@ void Vendas::monta_nota_fiscal(void)
 	  if (myfile.is_open())
 	  {
 	  	
-	  		myfile << "=== Nota Fiscal da Farmácia === Data: " << imprimeDataAtual() << endl;
+	  		myfile << "=== Nota Fiscal da Farmácia === Data: ";
+	  		myfile << setw(2);
+	   	   	myfile << setfill('0') << retornaDataAtual().dia << "/";
+			myfile << setfill('0') << retornaDataAtual().mes << "/";
+			myfile << setfill('0') << retornaDataAtual().ano << endl;
 	  		for(unsigned i(0); i < produto_nota.size(); i++)
 			{
 				myfile << "Nome do Produto: " << produto_nota[i].get_objeto_produto().nome;
@@ -302,7 +302,12 @@ void Vendas::monta_nota_fiscal(void)
 	  myfile1.open(diretorio_nota(quantidade_notas_fiscais()).c_str(), std::ofstream::out | std::ofstream::app);
 	  if (myfile1.is_open())
 	  {
-			myfile1 << "=== Nota Fiscal da Farmácia === Data: " << imprimeDataAtual() << endl;
+			myfile1 << "=== Nota Fiscal da Farmácia === Data: ";
+			myfile1 << "=== Nota Fiscal da Farmácia === Data: ";
+	  		myfile1 << setw(2);
+	   	   	myfile1 << setfill('0') << retornaDataAtual().dia << "/";
+			myfile1 << setfill('0') << retornaDataAtual().mes << "/";
+			myfile1 << setfill('0') << retornaDataAtual().ano << endl;
 	  		for(unsigned i(0); i < produto_nota.size(); i++)
 			{
 				myfile1 << "Nome do Produto: " << produto_nota[i].get_objeto_produto().nome;
@@ -367,7 +372,7 @@ float Vendas::get_saldo(void) const
 	return saldo;
 }
 
-float get_despezas(void) const
+float Vendas::get_despezas(void) const
 {
-	return saldo - apurado;
+	return (get_saldo() - get_apurado());
 }

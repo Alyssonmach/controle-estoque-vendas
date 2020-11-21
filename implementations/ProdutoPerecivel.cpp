@@ -59,7 +59,7 @@ Data ProdutoPerecivel::get_data_atual(void) const
 	return aux;
 }
 
-void ProdutoPerecivel::imprimeDataAtual(void) const;
+void ProdutoPerecivel::imprimeDataAtual(void) const
 {
 	cout << setw(2);
 	cout << setfill('0') << get_data_atual().dia << "/";
@@ -82,5 +82,5 @@ void ProdutoPerecivel::imprimeDataVencimento(void) const
 void ProdutoPerecivel::imprimeProdutoPerecivel(void) const
 {
 	imprimeProduto();
-	imprimDataVencimento();
+	imprimeDataVencimento();
 }
