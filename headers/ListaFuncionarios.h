@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Funcionario.h"
+#include "Sobrecarga.h"
 
 class ListaFuncionarios 
 {
