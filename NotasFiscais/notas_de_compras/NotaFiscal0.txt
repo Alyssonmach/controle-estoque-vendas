@@ -1,0 +1,6 @@
+=== Nota Fiscal da Farmácia === Data: 21/11/2020
+Nome do Produto: Band-aid / Preço do Produto: 7.89 R$ / Código de Barras: 12349
+Nome do Produto: Cortador de Comprimidos / Preço do Produto: 6.89 R$ / Código de Barras: 12342
+Nome do Produto: Bolinho de Chocolate / Preço do Produto: 2 R$ / Código de Barras: 12348
+Nome do Produto: Hidrante Facial / Preço do Produto: 75.59 R$ / Código de Barras: 12341
+Nome do Produto: Xarelto / Preço do Produto: 500 R$ / Código de Barras: 12344

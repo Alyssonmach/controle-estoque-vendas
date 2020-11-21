@@ -4,7 +4,7 @@
 Lenco de Bolso
 Higiene Pessoal
 Kleenex
-200
+199
 12340
 10.11
 14.99
@@ -18,7 +18,7 @@ Dauf Deluxe
 Cortador de Comprimidos
 Utilitarios
 PagueMenos
-34
+33
 12342
 0.89
 2
@@ -32,7 +32,7 @@ Estadao Comunicacoes
 Lubrificante
 Intimos
 Venus
-67
+63
 12344
 4.3
 5
@@ -46,7 +46,7 @@ Plastil
 Mamadeira Plastica
 Infantil
 Plastil
-234
+232
 12346
 15.9
 30.45
@@ -67,5 +67,5 @@ Matel
 Band-aid
 Cuidados Pessoais
 Johnson e Johnson
-345
+344
 12349

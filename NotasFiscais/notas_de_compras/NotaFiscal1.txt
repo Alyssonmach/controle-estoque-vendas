@@ -1,0 +1,7 @@
+=== Nota Fiscal da Farmácia === Data: 21/11/2020
+Nome do Produto: Mamadeira Plastica / Preço do Produto: 4.5 R$ / Código de Barras: 12346
+Nome do Produto: Mamadeira Plastica / Preço do Produto: 4.5 R$ / Código de Barras: 12346
+Nome do Produto: Lubrificante / Preço do Produto: 20.7 R$ / Código de Barras: 12344
+Nome do Produto: Lubrificante / Preço do Produto: 20.7 R$ / Código de Barras: 12344
+Nome do Produto: Whey Protein / Preço do Produto: 100.9 R$ / Código de Barras: 12343
+Nome do Produto: Addera D3 / Preço do Produto: 78.9 R$ / Código de Barras: 12347

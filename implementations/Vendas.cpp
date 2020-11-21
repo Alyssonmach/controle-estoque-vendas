@@ -356,22 +356,22 @@ void Vendas::monta_nota_fiscal(void)
 	  		for(unsigned i(0); i < produto_nota.size(); i++)
 			{
 				myfile << "Nome do Produto: " << produto_nota[i].get_objeto_produto().nome;
-				myfile << " Preço do Produto: " << produto_nota[i].get_objeto_produto().preco_consumidor;
-				myfile << " Código de Barras: " << produto_nota[i].get_objeto_produto().codigo << endl;
+				myfile << " / Preço do Produto: " << produto_nota[i].get_objeto_produto().preco_consumidor << " R$";
+				myfile << " / Código de Barras: " << produto_nota[i].get_objeto_produto().codigo << endl;
 			}
 			
 			for(unsigned i(0); i < perecivel_nota.size(); i++)
 			{
 				myfile << "Nome do Produto: " << perecivel_nota[i].get_objeto_produto().nome;
-				myfile << " Preço do Produto: " << perecivel_nota[i].get_objeto_produto().preco_consumidor;
-				myfile << " Código de Barras: " << perecivel_nota[i].get_objeto_produto().codigo << endl;
+				myfile << " / Preço do Produto: " << perecivel_nota[i].get_objeto_produto().preco_consumidor << " R$";
+				myfile << " / Código de Barras: " << perecivel_nota[i].get_objeto_produto().codigo << endl;
 			}
 			
 			for(unsigned i(0); i < remedio_nota.size(); i++)
 			{
 				myfile << "Nome do Produto: " << remedio_nota[i].get_objeto_produto().nome;
-				myfile << " Preço do Produto: " << remedio_nota[i].get_objeto_produto().preco_consumidor;
-				myfile << " Código de Barras: " << remedio_nota[i].get_objeto_produto().codigo << endl;
+				myfile << " / Preço do Produto: " << remedio_nota[i].get_objeto_produto().preco_consumidor << " R$";
+				myfile << " / Código de Barras: " << remedio_nota[i].get_objeto_produto().codigo << endl;
 			}
 			myfile << endl;
 	    	myfile.close();
@@ -390,22 +390,22 @@ void Vendas::monta_nota_fiscal(void)
 	  		for(unsigned i(0); i < produto_nota.size(); i++)
 			{
 				myfile1 << "Nome do Produto: " << produto_nota[i].get_objeto_produto().nome;
-				myfile1 << " Preço do Produto: " << produto_nota[i].get_objeto_produto().preco_consumidor << " R$";
-				myfile1 << " Código de Barras: " << produto_nota[i].get_objeto_produto().codigo << endl;
+				myfile1 << " / Preço do Produto: " << produto_nota[i].get_objeto_produto().preco_consumidor << " R$";
+				myfile1 << " / Código de Barras: " << produto_nota[i].get_objeto_produto().codigo << endl;
 			}
 			
 			for(unsigned i(0); i < perecivel_nota.size(); i++)
 			{
 				myfile1 << "Nome do Produto: " << perecivel_nota[i].get_objeto_produto().nome;
-				myfile1 << " Preço do Produto: " << perecivel_nota[i].get_objeto_produto().preco_consumidor;
-				myfile1 << " Código de Barras: " << perecivel_nota[i].get_objeto_produto().codigo << endl;
+				myfile1 << " / Preço do Produto: " << perecivel_nota[i].get_objeto_produto().preco_consumidor << " R$";
+				myfile1 << " / Código de Barras: " << perecivel_nota[i].get_objeto_produto().codigo << endl;
 			}
 			
 			for(unsigned i(0); i < remedio_nota.size(); i++)
 			{
 				myfile1 << "Nome do Produto: " << remedio_nota[i].get_objeto_produto().nome;
-				myfile1 << " Preço do Produto: " << remedio_nota[i].get_objeto_produto().preco_consumidor;
-				myfile1 << " Código de Barras: " << remedio_nota[i].get_objeto_produto().codigo << endl;
+				myfile1 << " / Preço do Produto: " << remedio_nota[i].get_objeto_produto().preco_consumidor << " R$";
+				myfile1 << " / Código de Barras: " << remedio_nota[i].get_objeto_produto().codigo << endl;
 			}
 	    	myfile1.close();
 	  }

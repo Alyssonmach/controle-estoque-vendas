@@ -4,7 +4,7 @@
 Bolinho de Chocolate
 Comestiveis
 Maria
-45
+44
 12348
 12
 8
@@ -54,7 +54,7 @@ Old Spice
 Hidrante Facial
 Cuidados Pessoais
 Neutrogena
-134
+133
 12341
 4
 5
@@ -74,7 +74,7 @@ Integral Medica
 Protetor Solar Fps70
 Cuidados Pessoais
 Le Roche-Rolwy
-245
+243
 12340
 12
 3
@@ -84,7 +84,7 @@ Le Roche-Rolwy
 Whey Protein
 Suplementos Alimentares
 Universal Suplementos
-45
+44
 12343
 12
 5
