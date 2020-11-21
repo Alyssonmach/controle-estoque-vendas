@@ -29,7 +29,7 @@ void Vendas::adiciona_apurado(float apurado)
 	myfile.open("../financas/apurado.txt", std::ofstream::out | std::ofstream::trunc);
 	if (myfile.is_open())
 	{
-		myfile << apurado;
+		myfile << (this -> apurado);
 		myfile.close();
 	}
 	else cout << "Não foi possível abrir o arquivo." << cout;
@@ -43,7 +43,7 @@ void Vendas::adiciona_saldo(float saldo)
 	myfile.open("../financas/saldo.txt", std::ofstream::out | std::ofstream::trunc);
 	if (myfile.is_open())
 	{
-		myfile << saldo;
+		myfile << (this -> saldo);
 		myfile.close();
 	}
 	else cout << "Não foi possível abrir o arquivo." << cout;
@@ -244,7 +244,7 @@ void Vendas::restaura_historico_notas(void)
 	struct dirent *lsdir;
 	
 	dir = opendir("../NotasFiscais/notas_de_compras/");
-	
+	limpa_historico_notas();
 	if((lsdir = readdir(dir)) == NULL)
 	{
 		cout << "Não há notas fiscais registradas." << endl;
@@ -272,6 +272,15 @@ void Vendas::restaura_historico_notas(void)
 		      myfile2.close();
 		  }
 		  else cout << "Não foi possível abrir o arquivo." << cout;
+		  
+		  ofstream myfile;
+          myfile.open ("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
+		  if (myfile.is_open())
+          {
+				myfile << endl;
+				myfile.close();
+          }
+          else cout << "Não foi possível abrir o arquivo." << cout;  
 		}
 	}
 	
@@ -403,24 +412,27 @@ void Vendas::monta_nota_fiscal(void)
 	  	adiciona_saldo(produto_nota[i].get_objeto_produto().preco_consumidor);
 	  	adiciona_apurado(produto_nota[i].get_objeto_produto().preco_consumidor - produto_nota[i].get_objeto_produto().preco_loja);
 	  	codigo = produto_nota[i].get_objeto_produto().codigo;
-	  	estado = apaga_da_nota_produto(codigo);
 	  }
+	  
+	  estado = apaga_da_nota_produto(codigo);
 	  
 	  for(unsigned i(0); i < perecivel_nota.size(); i++)
 	  {
 	  	adiciona_saldo(perecivel_nota[i].get_objeto_produto().preco_consumidor);
 	  	adiciona_apurado(perecivel_nota[i].get_objeto_produto().preco_consumidor - perecivel_nota[i].get_objeto_produto().preco_loja);
 	  	codigo = perecivel_nota[i].get_objeto_produto().codigo;
-	  	estado = apaga_da_nota_perecivel(codigo);
 	  }
+	  
+	  estado = apaga_da_nota_perecivel(codigo);
 	  
 	  for(unsigned i(0); i < remedio_nota.size(); i++)
 	  {
 	  	adiciona_saldo(remedio_nota[i].get_objeto_produto().preco_consumidor);
 	  	adiciona_apurado(remedio_nota[i].get_objeto_produto().preco_consumidor - remedio_nota[i].get_objeto_produto().preco_loja);
 	  	codigo = remedio_nota[i].get_objeto_produto().codigo;
-	  	estado = apaga_da_nota_remedio(codigo);
 	  }
+	  
+	  estado = apaga_da_nota_remedio(codigo);
 	
 	return;
 }
