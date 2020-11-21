@@ -3,9 +3,9 @@
 
 #include <vector>
 #include "Funcionario.h"
-#include "Sobrecarga.h"
+#include "Sobrecarga2.h"
 
-class ListaFuncionarios 
+class ListaFuncionarios
 {
 	private:
 	   vector <Funcionario> lista_funcionarios;	
