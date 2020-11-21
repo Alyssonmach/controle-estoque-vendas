@@ -61,6 +61,7 @@ Data ProdutoPerecivel::get_data_atual(void) const
 
 void ProdutoPerecivel::imprimeDataAtual(void) const
 {
+	cout << "Data de Atual: ";
 	cout << setw(2);
 	cout << setfill('0') << get_data_atual().dia << "/";
 	cout << setfill('0') << get_data_atual().mes << "/";
@@ -71,6 +72,7 @@ void ProdutoPerecivel::imprimeDataAtual(void) const
 
 void ProdutoPerecivel::imprimeDataVencimento(void) const
 {
+	cout << "Data de Vencimento do Produto: ";
 	cout << setw(2);
 	cout << setfill('0') << get_data_validade().dia << "/";
 	cout << setfill('0') << get_data_validade().mes << "/";
