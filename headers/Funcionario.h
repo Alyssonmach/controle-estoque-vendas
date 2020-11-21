@@ -22,8 +22,8 @@ class Funcionario
 {
 	private:
 		Funcionario_Prototipo objeto_funcionario;
-		static const key_login;
-		static const key_senha;
+		static const string key_login;
+		static const string key_senha;
     public:
     	Funcionario(string = " ", string = " ", long int = 0, string = " ",
 		            string = " ", string = " ");
@@ -35,11 +35,11 @@ class Funcionario
         void set_cargo(string);
         void set_login(string);
         void set_senha(string);
-        Funcionario_Prototipo get_objeto_funcionario(void);
+        Funcionario_Prototipo get_objeto_funcionario(void) const;
         void imprime_dados(void) const;
 };
 
-const static Funcionario::key_login = "admin";
-const static Funcionario::key_senha = "admin";
+const string Funcionario::key_login = "admin";
+const string Funcionario::key_senha = "admin";
 
 #endif
