@@ -1,3 +1,4 @@
+#include "../headers/Funcionario.h"
 #include "../headers/ListaFuncionarios.h"
 
 ListaFuncionarios::ListaFuncionarios(void)
@@ -5,7 +6,7 @@ ListaFuncionarios::ListaFuncionarios(void)
 	leitura_funcionarios();
 }
 
-~ListaFuncionarios::ListaFuncionarios(void)
+ListaFuncionarios::~ListaFuncionarios(void)
 {
 	gravacao_funcionarios();
 }
@@ -13,42 +14,42 @@ ListaFuncionarios::ListaFuncionarios(void)
 void ListaFuncionarios::leitura_funcionarios(void)
 {
 	Funcionario func;
-	ifstream arquivo1; 
-	arquivo1.open("../funcionarios/lista_de_funcionarios.txt"); 
+	ifstream arquivo4; 
+	arquivo4.open("../funcionarios/lista_de_funcionarios.txt"); 
 	
-	if(arquivo1.is_open()) 
+	if(arquivo4.is_open()) 
 	{
-		while(!arquivo1.eof()) 
+		while(!arquivo4.eof()) 
 		{
-			arquivo1 >> func; 
+			arquivo4 >> func; 
 			lista_funcionarios.push_back(func);
 		}
 	}
-	arquivo1.close(); 
+	arquivo4.close(); 
 	
 	return;
 }
 
 void ListaFuncionarios::gravacao_funcionarios(void)
 {
-	ofstream arquivo1; 
+	ofstream arquivo4; 
 	
-	arquivo1.open("../funcionarios/lista_de_funcionarios.txt", std::ios::trunc);
+	arquivo4.open("../funcionarios/lista_de_funcionarios.txt", std::ios::trunc);
 	
-	if(arquivo1.is_open())
+	if(arquivo4.is_open())
 	{
 		for(unsigned i(0); i < lista_funcionarios.size(); i++)
 		{
-			arquivo1 << lista_funcionarios[i]; 
+			arquivo4 << lista_funcionarios[i]; 
 		}	
 	}	
 	
-	arquivo1.close();
+	arquivo4.close();
 	
 	return;
 }
 
-void ListaFuncionarios::inserir_funcionario(Funcionario func)
+bool ListaFuncionarios::inserir_funcionario(Funcionario func)
 {
 	for(unsigned i(0); i < lista_funcionarios.size(); i++)
 	{
@@ -131,7 +132,7 @@ void ListaFuncionarios::ordena_funcionario_nome(void)
 		Funcionario func_aux;
 		func_aux = lista_funcionarios[i];
     	lista_funcionarios[i] = lista_funcionarios[smallest];
-    	produtos[smallest] = func_aux;
+    	lista_funcionarios[smallest] = func_aux;
     } 
     
     return;			
@@ -155,7 +156,7 @@ void ListaFuncionarios::ordena_funcionario_cpf(void)
 		Funcionario func_aux;
 		func_aux = lista_funcionarios[i];
     	lista_funcionarios[i] = lista_funcionarios[smallest];
-    	produtos[smallest] = func_aux;
+    	lista_funcionarios[smallest] = func_aux;
     } 
     
     return;			
@@ -179,7 +180,7 @@ void ListaFuncionarios::ordena_funcionario_cargo(void)
 		Funcionario func_aux;
 		func_aux = lista_funcionarios[i];
     	lista_funcionarios[i] = lista_funcionarios[smallest];
-    	produtos[smallest] = func_aux;
+    	lista_funcionarios[smallest] = func_aux;
     } 
     
     return;			
@@ -195,7 +196,7 @@ void ListaFuncionarios::ordena_funcionario_id(void)
 
         for(unsigned index = i + 1; index < lista_funcionarios.size(); index++)
         {
-            if(lista_funcionarios[index].get_objeto_funcionario().id < lista_funcionarios[smallest].get_objeto_funcionario().id < 0)
+            if(lista_funcionarios[index].get_objeto_funcionario().id < lista_funcionarios[smallest].get_objeto_funcionario().id)
             {
                 smallest = index;
             }
@@ -203,7 +204,7 @@ void ListaFuncionarios::ordena_funcionario_id(void)
 		Funcionario func_aux;
 		func_aux = lista_funcionarios[i];
     	lista_funcionarios[i] = lista_funcionarios[smallest];
-    	produtos[smallest] = func_aux;
+    	lista_funcionarios[smallest] = func_aux;
     } 
     
     return;			
@@ -227,7 +228,7 @@ void ListaFuncionarios::ordena_funcionario_login(void)
 		Funcionario func_aux;
 		func_aux = lista_funcionarios[i];
     	lista_funcionarios[i] = lista_funcionarios[smallest];
-    	produtos[smallest] = func_aux;
+    	lista_funcionarios[smallest] = func_aux;
     } 
     
     return;			
@@ -251,7 +252,7 @@ void ListaFuncionarios::ordena_funcionario_senha(void)
 		Funcionario func_aux;
 		func_aux = lista_funcionarios[i];
     	lista_funcionarios[i] = lista_funcionarios[smallest];
-    	produtos[smallest] = func_aux;
+    	lista_funcionarios[smallest] = func_aux;
     } 
     
     return;			
