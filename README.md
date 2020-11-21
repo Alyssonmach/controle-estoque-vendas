@@ -16,7 +16,10 @@ Implementar um projeto que faça o controle de estoque e vendas de uma farmácia
 
 - Sobrecarga [**Concluído**]
 
-A classe Sobrecarga é responsável por realizar sobrecarga em operadores específicos, de modo que seja possível fazer toda a parte de manipulação com os arquivos nos construtores e destrutores, garantido que as listas de objetos sejam lidas logo no início da execução e sobrescritas ao final da execução.
+A classe Sobrecarga é responsável por realizar sobrecarga em operadores específicos, de modo que seja possível fazer toda a parte de manipulação com os arquivos nos construtores e destrutores, garantido que as listas de objetos sejam lidas logo no início da execução e sobrescritas ao final da execução. Com essa classe, é possível realizar a manipulação de arquivos em listas de Vector de forma rápida e prática nas seguintes classes:
+- [x] Classe Produto;
+- [X] Classe ProdutoPerecivel;
+- [X] Classe Remedio;
 
 - Produto [**Concluído**]
 
@@ -45,10 +48,22 @@ A classe Estoque é responsável por fazer todos os gerenciamentos dos produtos 
 - [x] Métodos para pesquisar os Produtos, Produtos Perecíveis e Remédios que estão vencidos nas listas de Vector;
 - [X] Métodos que retornam um objeto armazenado na lista de Vector através do índice;
 - [x] Métodos para retornar todas as listas de vector que armazena os objetos Produto, Produto Perecível e Remédio armazenados em arquivos distintos;
+- [x] Métodos para realizar a ordenação nos dados através dos atributos distintos associados as classes de objetos;
+- [x] Métodos que alteram a quantidade de cada um dos produtos distintos no estoque;
+- [x] Método que calcula a despeza no estado atual da farmácia, conforme o preço de aquisição dos produtos e sua qauntidade em estoque dos produtos no estoque;
 
-- Vendas [**Em construção**]
+- Vendas [**Concluído**]
 
-A classe Vendas é responsável por fazer a comunicação indireta com o Estoque. Através dela, os funcionários de uma farmácia poderiam elaborar notas fiscas dos consumidores e realizar o cálculo da parte financeira da farmácia.
+A classe Vendas é responsável por fazer a comunicação indireta com o Estoque. Através dela, os funcionários de uma farmácia poderiam vender os produtos disponíveis no estoque, elaborar notas fiscas das compras realizadas e ter uma análise rápida do saldo, apurado e despesas da farmácia em um determiando mês. Nessa classe, estão envolvidos os seguintes métodos:
+
+- [x] Métodos para computar a gestão financeira da empresa a cada venda realizada;
+- [x] Métodos que fazem a gestão do fluxo de notas fiscais no diretório, permitindo dinamizar a forma como as notas fiscais podem ser salvas e visualizadas;
+- [x] Métodos que pesquisam diversos tipos de produtos no estoque, de modo que seja possível vendê-los;
+- [x] Métodos que permitem remover produtos que já passaram pelo caixa, caso o consumidor repense a compra de algum item, permitindo que tal produto extorne para o estoque;
+- [x] Métodos que limpam e rastauram o histórico de notas fiscais, mantendo-as intactas em outro diretório;
+- [x] Método que imprime na tela do usuário as últimas n notas elaboradas;
+- [x] Método que fecha as contas do mês, recomeçando toda a apuração da parte de finanças da farmácia;
+- [x] Métodos que retornam o apurado e o saldo mensal da farmácia;
 
 - Cadastro [**Em construção**]
 
@@ -61,18 +76,21 @@ A classe Cadastro é responsável por fazer a gestão de funcionários da farmá
 
 ### Diretórios
 
-- Arquivos
+- **Arquivos**
 
 - [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos referenciados na lista de Vector;
+
+- **NotasFiscais**
+- [x] Contém todo o fluxo de notas fiscais, mantendo um diretório a parte para salvá-las e outro como todo o histórico de notas fiscais das vendas realizada;
  
-- Headers
+- **Headers**
 
 - [x] Contém todos os arquivos de cabeçalho .h das classes utilizadas no projeto;
 
-- Implementations
+- **Implementations**
 
 - [x] Contém todos os arquivos de implementação .cpp das classes utilizadas no projeto;
 
- - Tests
+ - **testes**
 
- - [x] Contéum todos os arquivos de teste .cpp que testam cada um dos métodos da classe;
+ - [x] Contém todos os arquivos de teste .cpp que para verificar o funcionamento de cada um dos métodos da classe;
