@@ -14,10 +14,10 @@ class ListaFuncionarios
     public:
     	ListaFuncionarios(void);
     	~ListaFuncionarios(void);
-    	void inserir_funcionario(Funcionario);
-    	void imprimir_funcionario(void) const;
-    	void remover_funcionario_cpf(string);
-    	void pesquisar_funcionario_cpf(string);
+    	bool inserir_funcionario(Funcionario);
+    	void imprimir_funcionarios(void) const;
+    	bool remover_funcionario_cpf(string);
+    	bool pesquisar_funcionario_cpf(string);
     	void ordena_funcionario_nome(void);
     	void ordena_funcionario_cpf(void);
     	void ordena_funcionario_id(void);
