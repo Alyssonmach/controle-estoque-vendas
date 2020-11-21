@@ -34,7 +34,7 @@ int main(void)
 		cout << "1 - Inserir um novo produto ao estoque;" << endl;
 		cout << "2 - Gerir quantidades de produto em estoque;" << endl;
 		cout << "3 - Visualizar estoque;" << endl;
-		cout << "4 - Remover produtos por código de barra." << endl;
+		cout << "4 - Remover produtos por código de barra;" << endl;
 		cout << "5 - Fazer a gestão da validade dos produtos;" << endl;
 		cout << "6 - Pesquisar sobre o produto;" << endl;
 		cout << "7 - Ordenação de Estoque;" << endl;
@@ -90,7 +90,17 @@ int main(void)
 				cin >> auxiliar_produto.codigo;
 				
 				produto.set_objeto_produto(auxiliar_produto);
-				estoque.inserirProduto(produto);
+				cout << endl;
+				if(estoque.pesquisarProduto(produto.get_objeto_produto().codigo))
+				{
+					cout << endl;
+					cout << "Código já vinculado. Tente novamente." << endl;
+				}
+				else
+				{
+					estoque.inserirProduto(produto);
+					cout << "Produto Cadastrado com sucesso." << endl;	
+				}
 				break;
 			}
 			case 2:
@@ -118,7 +128,18 @@ int main(void)
 				cin >> vencimento.ano;
 				
 				perecivel.set_objeto_perecivel(auxiliar_produto, vencimento);
-				estoque.inserirProdutoPerecivel(perecivel);
+				
+				cout << endl;
+				if(estoque.pesquisarProdutoPerecivel(perecivel.get_objeto_produto().codigo))
+				{
+					cout << endl;
+					cout << "Código já vinculado. Tente novamente." << endl;
+				}
+				else
+				{
+					estoque.inserirProdutoPerecivel(perecivel);
+					cout << "Produto Perecível Cadastrado com sucesso." << endl;
+				}
 				break;
 			}
 			case 3:
@@ -151,7 +172,18 @@ int main(void)
 				getline(cin, informacoes_remedio.info_adicional);
 				
 				remedio.set_objeto_remedio(auxiliar_produto, vencimento, informacoes_remedio);
-				estoque.inserirRemedio(remedio);
+				
+				cout << endl;
+				if(estoque.pesquisarRemedio(remedio.get_objeto_produto().codigo))
+				{
+					cout << endl;
+					cout << "Código já vinculado. Tente novamente." << endl;		
+				}
+				else
+				{
+					estoque.inserirRemedio(remedio);
+					cout << "Remédio Cadastrado com sucesso." << endl;
+				}
 				break;
 			}
 			default:
@@ -506,13 +538,13 @@ int main(void)
 					{
 						estoque.removerProdutosPereciveisVencidos();
 					} 
-					else if(aux != 1 || aux != 2)
+					else if(aux == 2)
 					{
-						cout << "Entrada inválidade. Tente novamente." << endl;
+						cout << "Produtos vencidos mantidos." << endl;
 					}
 					else
 					{
-						cout << "Produtos vencidos mantidos." << endl;
+						cout << "Entrada inválidade. Tente novamente." << endl;
 					}
 				}
 				else
@@ -540,13 +572,13 @@ int main(void)
 					{
 						estoque.removerRemediosVencidos();
 					} 
-					else if(aux != 1 || aux != 2)
+					else if(aux == 2)
 					{
-						cout << "Entrada inválidade. Tente novamente." << endl;
+						cout << "Remédios vencidos mantidos." << endl;	
 					}
 					else
 					{
-						cout << "Remédios vencidos mantidos." << endl;
+						cout << "Entrada inválidade. Tente novamente." << endl;
 					}
 				}
 				else

@@ -480,14 +480,18 @@ bool Estoque::checaVencimentoPerecivel(int indice, int limite)
 	}
 	else if(pereciveis[indice].get_data_validade().ano - atual.ano == 0)
 	{
-		if(acumula_vencido - acumula_atual <= limite)
+		
+		if(pereciveis[indice].get_data_validade().mes < pereciveis[indice].get_data_atual().mes)
 		{
 			return true;
 		}
-	}
-	else
-	{
-		return true;
+		else if(pereciveis[indice].get_data_validade().mes == pereciveis[indice].get_data_atual().mes)
+		{
+			if(pereciveis[indice].get_data_validade().dia < pereciveis[indice].get_data_atual().dia)
+			{
+				return true;	
+			}
+		}
 	}
 	
 	return false;
@@ -527,14 +531,17 @@ bool Estoque::checaVencimentoRemedio(int indice, int limite)
 	}
 	else if(remedios[indice].get_data_validade().ano - atual.ano == 0)
 	{
-		if(acumula_vencido - acumula_atual <= limite)
+		if(remedios[indice].get_data_validade().mes < remedios[indice].get_data_atual().mes)
 		{
 			return true;
 		}
-	}
-	else
-	{
-		return true;
+		else if(remedios[indice].get_data_validade().mes == remedios[indice].get_data_atual().mes)
+		{
+			if(remedios[indice].get_data_validade().dia < remedios[indice].get_data_atual().dia)
+			{
+				return true;
+			}
+		}
 	}
 	
 	return false;

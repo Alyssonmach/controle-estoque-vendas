@@ -1,8 +1,71 @@
 
-12.3
-16
+3.45
+4.59
+Lenco de Bolso
+Higiene Pessoal
+Kleenex
+200
+12340
+10.11
+14.99
+Papel Higienico
+Higiene Pessoal
+Dauf Deluxe
+134
+12341
+3.5
+6.89
+Cortador de Comprimidos
+Utilitarios
+PagueMenos
+34
+12342
+0.89
+2
+Jornal Estadao
+Papelaria
+Estadao Comunicacoes
+50
+12343
+13.45
+20.7
+Lubrificante
+Intimos
+Venus
+67
+12344
+4.3
+5
+Chupeta Plastica
+Infantil
+Plastil
+543
+12345
+2.3
+4.5
+Mamadeira Plastica
+Infantil
+Plastil
+234
+12346
+15.9
+30.45
+Brinquedo Chocalho
+Infantil
+Bda Pezinho
+232
+12347
+45.6
+70.2
+Jogo de Cartas Uno
+Brinquedo
+Matel
+234
+12348
+5.6
+7.89
 Band-aid
 Cuidados Pessoais
-Jonhson e Johnson
-68
-12345
+Johnson e Johnson
+345
+12349

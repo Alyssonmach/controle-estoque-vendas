@@ -59,8 +59,6 @@ void Produto::set_objeto_produto(Produto_prototipo aux)
 		objeto_produto.fabricante = aux.fabricante;
 		objeto_produto.quantidade = aux.quantidade;
 		objeto_produto.codigo = aux.codigo;
-		
-		cout << "Produto cadastrado com sucesso." << endl;
 	}
 	else
 	{
