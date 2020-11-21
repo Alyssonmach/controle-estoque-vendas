@@ -2,7 +2,7 @@
 #include "../headers/Produto.h"
 #include "../headers/ProdutoPerecivel.h"
 #include "../headers/Remedio.h"
-#include "../headers/Sobrecarga.h"
+#include "../headers/Sobrecarga1.h"
 
 // implementacao do construtor da classe (le os arquivos)
 Estoque::Estoque()
