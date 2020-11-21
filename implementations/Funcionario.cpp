@@ -5,7 +5,7 @@ Funcionario::Funcionario(string nome, string cpf, long int id, string cargo,
 {
 	set_nome(nome);
 	set_cpf(cpf);
-	set_id(id)
+	set_id(id);
 	set_cargo(cargo);
 	set_login(login);
 	set_senha(senha);
@@ -39,41 +39,41 @@ bool Funcionario::valida_funcionario(Funcionario_Prototipo aux)
 
 void Funcionario::set_nome(string nome)
 {
-	this -> nome = nome;
+	this -> objeto_funcionario.nome = nome;
 	
 	return;
 }
 
 void Funcionario::set_cpf(string cpf)
 {
-	this -> cpf = cpf;
+	this -> objeto_funcionario.cpf = cpf;
 	
 	return;
 }
 
 void Funcionario::set_id(long int id)
 {
-	this -> long int id = id;
+	this -> objeto_funcionario.id = id;
 	
 	return;
 }
 void Funcionario::set_cargo(string cargo)
 {
-	this -> cargo = cargo;
+	this -> objeto_funcionario.cargo = cargo;
 	
 	return;
 }
 
 void Funcionario::set_login(string login)
 {
-	this -> login = login;
+	this -> objeto_funcionario.login = login;
 	
 	return;
 }
 
 void Funcionario::set_senha(string senha)
 {
-	this -> senha = senha;
+	this -> objeto_funcionario.senha = senha;
 	
 	return;
 }
