@@ -52,8 +52,8 @@ A classe Remedio é responsável por armazenar diversos atributos de um objeto p
 
 A classe Funcionario é responsável por armazenar diversos atributos dos empregados da farmácia, tais como nome, cpf, cargo, login e senha. Através dela, será possível ter um controle do acesso de funcionários em determinadas áreas da farmácia, podendo ser divididas entre os seguintes cargos:
 
-- [x]Controle de Vendas;
-- [x]Controle de Estoque;
+- [x] Controle de Vendas;
+- [x] Controle de Estoque;
 
 - Estoque [**Concluído**]
 
