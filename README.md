@@ -23,7 +23,7 @@ Implementar um projeto que faça o controle de estoque e vendas de uma farmácia
 - [x] Todo o projeto foi versionado utilizando o Git, possibilitando rastrear e organizar cada etapa de progresso;
 - [x] O projeto foi desenvolvido utilizando a linguagem de programação C++, como fruto da conclusão da disciplina Técnicas de Programação, na Universidade Federal de Campina Grande, curso de Engenharia Elétrica;
 - [x] O projeto foi desenvolvido utilizando o conhecimento de orientação a objetos, através da criação de classes e classes com herança, seguido do posterior desenvolvimento dos seus métodos. Além disso, foi criando um fluxo de comunicação entre as classes;
-- [x] Utilização de  Tratamento de excessões e erros, manipulação de arquivos e alocação dinâmina (possibilitado com a implementação de um Vector);
+- [x] Utilização de  Tratamento de exceções  e erros, manipulação de arquivos e alocação dinâmica (possibilitado com a implementação de um Vector);
 - [x] Especificação do Diagrama UML e do diagrama de Casos;
  
 ### Classes e Métodos Implementados
@@ -46,9 +46,9 @@ A classe ProdutoPerecivel é responsável por armazenar diversos atributos de um
 
 - Remedio [**Concluído**]
 
-A classe Remedio é responsável por armazenar diversos atributos de um objeto perecível. Sendo uma classe que tem herança com a classe Perecivel, ela vai englobar todos os métodos envolvidos nessa classe, com o adicional de informações de medidas do remédio e informações da finalidade desse remédio.
+A classe Remedio é responsável por armazenar diversos atributos de um objeto perecível. Sendo uma classe que tem herança com a classe ProdutoPerecivel, ela vai englobar todos os métodos envolvidos nessa classe, com o adicional de informações de medidas do remédio e informações da finalidade desse remédio.
 
-- Funcionario[**Concluído**]
+- Funcionario [**Concluído**]
 
 A classe Funcionario é responsável por armazenar diversos atributos dos empregados da farmácia, tais como nome, cpf, cargo, login e senha. Através dela, será possível ter um controle do acesso de funcionários em determinadas áreas da farmácia, podendo ser divididas entre os seguintes cargos:
 
@@ -57,7 +57,7 @@ A classe Funcionario é responsável por armazenar diversos atributos dos empreg
 
 - Estoque [**Concluído**]
 
-A classe Estoque é responsável por fazer todos os gerenciamentos dos produtos disponíveis a venda na farmácia. Armazenando todos os objetos pertencentes a classe Produto, Perecivel e Remedio em um Vector, foi implementado os seguintes métodos:
+A classe Estoque é responsável por fazer todos os gerenciamentos dos produtos disponíveis a venda na farmácia. Armazenando todos os objetos pertencentes a classe Produto, ProdutoPerecivel e Remedio em um Vector, foi implementado os seguintes métodos:
 
 - [x] Métodos para checar o vencimento de produtos Perecíveis e Remédios;
 - [x] Métodos para ler as listas de Produtos, Produtos Perecíveis e Remédios armazenados em um arquivo; 
@@ -72,17 +72,17 @@ A classe Estoque é responsável por fazer todos os gerenciamentos dos produtos 
 - [x] Métodos para retornar todas as listas de vector que armazena os objetos Produto, Produto Perecível e Remédio armazenados em arquivos distintos;
 - [x] Métodos para realizar a ordenação nos dados através dos atributos distintos associados as classes de objetos;
 - [x] Métodos que alteram a quantidade de cada um dos produtos distintos no estoque;
-- [x] Método que calcula a despeza no estado atual da farmácia, conforme o preço de aquisição dos produtos e sua qauntidade em estoque dos produtos no estoque;
+- [x] Método que calcula a despesa no estado atual da farmácia, conforme o preço de aquisição dos produtos e sua quantidade em estoque dos produtos no estoque;
 
 - Vendas [**Concluído**]
 
-A classe Vendas é responsável por fazer a comunicação indireta com o Estoque. Através dela, os funcionários de uma farmácia poderiam vender os produtos disponíveis no estoque, elaborar notas fiscas das compras realizadas e ter uma análise rápida do saldo, apurado e despesas da farmácia em um determiando mês. Nessa classe, estão envolvidos os seguintes métodos:
+A classe Vendas é responsável por fazer a comunicação indireta com o Estoque. Através dela, os funcionários de uma farmácia poderiam vender os produtos disponíveis no estoque, elaborar notas fiscais das compras realizadas e ter uma análise rápida do saldo, apurado e despesas da farmácia em um determinado mês. Nessa classe, estão envolvidos os seguintes métodos:
 
 - [x] Métodos para computar a gestão financeira da empresa a cada venda realizada;
 - [x] Métodos que fazem a gestão do fluxo de notas fiscais no diretório, permitindo dinamizar a forma como as notas fiscais podem ser salvas e visualizadas;
 - [x] Métodos que pesquisam diversos tipos de produtos no estoque, de modo que seja possível vendê-los;
-- [x] Métodos que permitem remover produtos que já passaram pelo caixa, caso o consumidor repense a compra de algum item, permitindo que tal produto extorne para o estoque;
-- [x] Métodos que limpam e rastauram o histórico de notas fiscais, mantendo-as intactas em outro diretório;
+- [x] Métodos que permitem remover produtos que já passaram pelo caixa, caso o consumidor repense a compra de algum item, permitindo que tal produto estorne para o estoque;
+- [x] Métodos que limpam e restauram o histórico de notas fiscais, mantendo-as intactas em outro diretório;
 - [x] Método que imprime na tela do usuário as últimas n notas elaboradas;
 - [x] Método que fecha as contas do mês, recomeçando toda a apuração da parte de finanças da farmácia;
 - [x] Métodos que retornam o apurado e o saldo mensal da farmácia;
@@ -95,9 +95,9 @@ A classe ListaFuncionarios é responsável por fazer a gestão de funcionários 
 - [x] Cadastro de funcionários de vendas dá poder aos membros de de gerar saída de produtos do estoque por meio de notas fiscais;
 - [x] Cadastro de funcionários de estoque dá livre acesso ao estoque da loja, de modo que seja possível implementar todos os métodos envolvidos da classe Estoque;
 
-Sendo uma classe que herda de Funcionario, ela possuí todos os atributos ligados a essa classe, podendo armazenar cada objeto em uma lista de Vector. Na classe ListaFuncionairos, foi implementado os seguintes métodos:
+Sendo uma classe que herda de Funcionario, ela possuí todos os atributos ligados a essa classe, podendo armazenar cada objeto em uma lista de Vector. Na classe ListaFuncionarios, foi implementado os seguintes métodos:
 
-- [x] Métodos parar inserir objetos do tipo Funcionario na Lista de Vector e imprimí-los;
+- [x] Métodos parar inserir objetos do tipo Funcionario na Lista de Vector e imprimi-los;
 - [x] Método para realizar a remoção de qualquer funcionário da lista pelo cpf;
 - [x] Método para pesquisar funcionários da lista pelo cpf;
 - [x] Métodos para validar o acesso de funcionários da parte do Controle de Vendas e Controle de Estoque, através de login e senha previamente definidos;
