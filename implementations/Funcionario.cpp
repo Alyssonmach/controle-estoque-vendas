@@ -37,6 +37,18 @@ bool Funcionario::valida_funcionario(Funcionario_Prototipo aux)
 	return false;
 }
 
+void Funcionario::set_objeto(Funcionario_Prototipo func)
+{
+	set_nome(func.nome);
+	set_cpf(func.cpf);
+	set_id(func.id);
+	set_cargo(func.cargo);
+	set_login(func.login);
+	set_senha(func.senha);
+	
+	return;
+}
+
 void Funcionario::set_nome(string nome)
 {
 	this -> objeto_funcionario.nome = nome;

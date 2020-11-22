@@ -114,6 +114,34 @@ bool ListaFuncionarios::pesquisar_funcionario_cpf(string cpf)
 	return false;
 }
 
+bool ListaFuncionarios::valida_funcionarios_estoque(Funcionario func_aux)
+{
+	for(unsigned i(0); i < lista_funcionarios.size(); i++)
+	{
+		if(lista_funcionarios[i].get_objeto_funcionario().cargo == "Controle de Estoque")
+		{
+			if(lista_funcionarios[i].valida_funcionario(func_aux.get_objeto_funcionario()))
+				return true;
+		}
+	}
+	
+	return false;
+}
+
+bool ListaFuncionarios::valida_funcionarios_vendas(Funcionario func_aux)
+{
+	for(unsigned i(0); i < lista_funcionarios.size(); i++)
+	{
+		if(lista_funcionarios[i].get_objeto_funcionario().cargo == "Controle de Vendas")
+		{
+			if(lista_funcionarios[i].valida_funcionario(func_aux.get_objeto_funcionario()))
+				return true;
+		}
+	}
+	
+	return false;
+}
+
 void ListaFuncionarios::ordena_funcionario_nome(void)
 {
 	int smallest;

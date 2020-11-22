@@ -29,6 +29,7 @@ class Funcionario
 		            string = " ", string = " ");
         bool valida_key(Funcionario_Prototipo);
         bool valida_funcionario(Funcionario_Prototipo);
+        void set_objeto(Funcionario_Prototipo);
         void set_nome(string);
         void set_cpf(string);
         void set_id(long int);

@@ -18,6 +18,8 @@ class ListaFuncionarios
     	void imprimir_funcionarios(void) const;
     	bool remover_funcionario_cpf(string);
     	bool pesquisar_funcionario_cpf(string);
+    	bool valida_funcionarios_estoque(Funcionario);
+    	bool valida_funcionarios_vendas(Funcionario);
     	void ordena_funcionario_nome(void);
     	void ordena_funcionario_cpf(void);
     	void ordena_funcionario_id(void);
