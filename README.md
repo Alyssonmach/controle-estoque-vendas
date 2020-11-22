@@ -1,4 +1,4 @@
-# Controle de Estoque e Vendas
+# Controle de Estoque e Vendas (beta-final)
 #### Projeto de controle de estoque e vendas em Farmácia.
 
 ### Versões do Projeto
