@@ -1,37 +1,59 @@
-# controle-estoque-e-vendas
+# Controle de Estoque e Vendas
 #### Projeto de controle de estoque e vendas em Farmácia.
+
+### Versões do Projeto
+
+|**Documentação**|**Link para Download**|
+|:---------------|:---------------------|
+|[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.5)|[controle-estoque-vendas-0.5](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.5.zip)|
+|[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.8.5)|[controle-estoque-vendas-0.8.5](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.8.5.zip)|  
 
 ### Membros do projeto
 
 - **Alysson Machado** (Pessoa responsável por modelar o formato dos objetos das classes e implementação do estoque da farmácia);
-- **Nathan Ferreira** (Pessoa responsável por implementar o funcionamento da classe de Vendas, essa que tem comunicação direta com o estoque);
+- **Nathan Ferreira e Marcos Pereira** (Pessoa responsável por implementar o funcionamento da classe de Vendas, essa que tem comunicação direta com o estoque);
 - **Iago Miguel** (Pessoa Responsável por cuidar da gestão dos funcionários da farmácia, determinando o modelo de cadastro por objetos);
-- **Marcos Pereira** (Pessoa responsável por implementar o funcionamento da classe de Vendas, essa que tem comunicação direta com o estoque);
 
 ### Objetivo
 
 Implementar um projeto que faça o controle de estoque e vendas de uma farmácia usando a linguagem de programação C++. 
 
-### Classes Implementadas
+### Material Utilizado
 
-- Sobrecarga [**Concluído**]
+- [x] Todo o projeto foi versionado utilizando o Git, possibilitando rastrear e organizar cada etapa de progresso;
+- [x] O projeto foi desenvolvido utilizando a linguagem de programação C++, como fruto da conclusão da disciplina Técnicas de Programação, na Universidade Federal de Campina Grande, curso de Engenharia Elétrica;
+- [x] O projeto foi desenvolvido utilizando o conhecimento de orientação a objetos, através da criação de classes e classes com herança, seguido do posterior desenvolvimento dos seus métodos. Além disso, foi criando um fluxo de comunicação entre as classes;
+- [x] Utilização de  Tratamento de excessões e erros, manipulação de arquivos e alocação dinâmina (possibilitado com a implementação de um Vector);
+- [x] Especificação do Diagrama UML e do diagrama de Casos;
+ 
+### Classes e Métodos Implementados
 
-A classe Sobrecarga é responsável por realizar sobrecarga em operadores específicos, de modo que seja possível fazer toda a parte de manipulação com os arquivos nos construtores e destrutores, garantido que as listas de objetos sejam lidas logo no início da execução e sobrescritas ao final da execução. Com essa classe, é possível realizar a manipulação de arquivos em listas de Vector de forma rápida e prática nas seguintes classes:
+- Sobrecarga1 e Sobrecarga2 [**Concluído**]
+
+As implementações de Sobrecarga1 e Sobrecarga2 são responsáveis  por realizar sobrecarga em operadores específicos, de modo que seja possível fazer toda a parte de manipulação com os arquivos nos construtores e destrutores, garantido que as listas de objetos sejam lidas logo no início da execução e sobrescritas ao final da execução. Com essas implementações, é possível realizar a manipulação de arquivos em listas de Vector de forma rápida e prática nas seguintes classes:
 - [x] Classe Produto;
 - [X] Classe ProdutoPerecivel;
 - [X] Classe Remedio;
+- [X] Classe Funcionário;
 
 - Produto [**Concluído**]
 
 A classe Produto é responsável por armazenar diversos atributos de um objeto não perecível. Envolve informações sobre preço de aquisição, preço de compra, nome do produto, nome do fabricante, categoria, quantidade em estoque e código de barras do produto. Os métodos são referentes a configuração e impressão dos atributos.
 
-- Perecivel [**Concluído**]
+- ProdutoPerecivel [**Concluído**]
 
-A classe Perecível é responsável por armazenar diversos atributos de um objeto perecível. Sendo uma classe que tem herança com a classe Produto, ela vai englobar todos os métodos envolvidos nessa classe, com o adicional de uma data de validade. Além disso, foi implementado um método que computa a data atual do produto, de modo que seja possível verificar se tal produto está vencido ou não.
+A classe ProdutoPerecivel é responsável por armazenar diversos atributos de um objeto perecível. Sendo uma classe que tem herança com a classe Produto, ela vai englobar todos os métodos envolvidos nessa classe, com o adicional de uma data de validade. Além disso, foi implementado um método que computa a data atual do produto, de modo que seja possível verificar se tal produto está vencido ou não.
 
 - Remedio [**Concluído**]
 
 A classe Remedio é responsável por armazenar diversos atributos de um objeto perecível. Sendo uma classe que tem herança com a classe Perecivel, ela vai englobar todos os métodos envolvidos nessa classe, com o adicional de informações de medidas do remédio e informações da finalidade desse remédio.
+
+- Funcionario[**Concluído**]
+
+A classe Funcionario é responsável por armazenar diversos atributos dos empregados da farmácia, tais como nome, cpf, cargo, login e senha. Através dela, será possível ter um controle do acesso de funcionários em determinadas áreas da farmácia, podendo ser divididas entre os seguintes cargos:
+
+- [x]Controle de Vendas;
+- [x]Controle de Estoque;
 
 - Estoque [**Concluído**]
 
@@ -65,23 +87,36 @@ A classe Vendas é responsável por fazer a comunicação indireta com o Estoque
 - [x] Método que fecha as contas do mês, recomeçando toda a apuração da parte de finanças da farmácia;
 - [x] Métodos que retornam o apurado e o saldo mensal da farmácia;
 
-- Cadastro [**Em construção**]
+- ListaFuncionarios [**Concluído**]
 
-A classe Cadastro é responsável por fazer a gestão de funcionários da farmácia. Em outras farmácias, armazena informações de cadastro dos funcionários, criando senhas de acesso específica para cada um deles. Há três tipos distintos de cadastro:
+A classe ListaFuncionarios é responsável por fazer a gestão de funcionários da farmácia. Em outras farmácias, armazena informações de cadastro dos funcionários, criando senhas de acesso específica para cada um deles. Há três tipos distintos de cadastro:
 
-- [x] Cadastro Universal e único dá poder a uma só pessoa de registrar novos funcionários;
+- [x] Cadastro do Administrador;
 - [x] Cadastro de funcionários de vendas dá poder aos membros de de gerar saída de produtos do estoque por meio de notas fiscais;
-- [x] Cadastro de operários de estoque dá livre acesso ao estoque da loja, de modo que seja possível implementar todos os métodos envolvidos da classe Estoque;
+- [x] Cadastro de funcionários de estoque dá livre acesso ao estoque da loja, de modo que seja possível implementar todos os métodos envolvidos da classe Estoque;
+
+Sendo uma classe que herda de Funcionario, ela possuí todos os atributos ligados a essa classe, podendo armazenar cada objeto em uma lista de Vector. Na classe ListaFuncionairos, foi implementado os seguintes métodos:
+
+- [x] Métodos parar inserir objetos do tipo Funcionario na Lista de Vector e imprimí-los;
+- [x] Método para realizar a remoção de qualquer funcionário da lista pelo cpf;
+- [x] Método para pesquisar funcionários da lista pelo cpf;
+- [x] Métodos para validar o acesso de funcionários da parte do Controle de Vendas e Controle de Estoque, através de login e senha previamente definidos;
+- [x] Métodos para ordenar a lista de vector ligado a todos os possíveis atributos da classe Funcionario;
 
 
 ### Diretórios
 
 - **Arquivos**
 
-- [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos referenciados na lista de Vector;
+- [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos do tipo Produto, ProdutoPerecivel e Remedio;
 
 - **NotasFiscais**
+
 - [x] Contém todo o fluxo de notas fiscais, mantendo um diretório a parte para salvá-las e outro como todo o histórico de notas fiscais das vendas realizada;
+
+- **funcionarios**
+
+- [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos do tipo Funcionario;
  
 - **Headers**
 
