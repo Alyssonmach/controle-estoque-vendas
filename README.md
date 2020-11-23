@@ -22,12 +22,12 @@ Implementar um projeto que faça o controle de estoque e vendas de uma farmácia
 ### Diagrama UML
 
 ![diagrama-uml](diagramacao/controle-estoque-vendas-farmacia.svg)
-> [Visualizar melhor]()
+> [Visualizar melhor](https://github.com/Alyssonmach/controle-estoque-vendas/blob/v1.0.0/diagramacao/controle-estoque-vendas-farmacia.svg)
 
 ### Diagrama de Caso de Uso
 
 ![diagrama-caso-de-uso](diagramacao/caso-de-uso-controle-estoque-vendas-farmacia.svg)
-> [Visualizar melhor]()
+> [Visualizar melhor](https://github.com/Alyssonmach/controle-estoque-vendas/blob/v1.0.0/diagramacao/caso-de-uso-controle-estoque-vendas-farmacia.svg)
 
 ### Material Utilizado
 
@@ -98,7 +98,7 @@ A classe Vendas é responsável por fazer a comunicação indireta com o Estoque
 - [x] Método que fecha as contas do mês, recomeçando toda a apuração da parte de finanças da farmácia;
 - [x] Métodos que retornam o apurado e o saldo mensal da farmácia;
 
-- ListaFuncionarios [**Concluído**]
+#### ListaFuncionarios
 
 A classe ListaFuncionarios possui a finalidade de fazer a gestão de funcionários da farmácia. Ela é responsável por armazenar informações de cadastro dos funcionários, criando senhas de acesso específica para cada um deles. Há três tipos distintos de cadastro:
 
