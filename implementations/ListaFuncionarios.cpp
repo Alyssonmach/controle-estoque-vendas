@@ -1,5 +1,5 @@
-#include "../headers/Funcionario.h"
-#include "../headers/ListaFuncionarios.h"
+#include "../cabecalhos/Funcionario.h"
+#include "../cabecalhos/ListaFuncionarios.h"
 
 ListaFuncionarios::ListaFuncionarios(void)
 {
