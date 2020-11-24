@@ -21,7 +21,6 @@ ifstream& operator >> (ifstream& arquivo4, Funcionario& func)
 	string nome, cpf, cargo, login, senha;
 	long int id;
 	
-	//arquivo4.ignore();
 	arquivo4 >> id;  arquivo4.ignore();
 	func.set_id(id);
 	getline(arquivo4, cpf); 
