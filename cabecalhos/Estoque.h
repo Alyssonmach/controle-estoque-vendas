@@ -9,12 +9,11 @@
 class Estoque 
 {
 	private:
-		// definindo vectors para armazenar diversos produtos usando alocacao dinamica
+		// definindo vectors para armazenar diversos produtos usando alocacao dinamica de memoria
 		vector <Produto> produtos;
 		vector <ProdutoPerecivel> pereciveis;
 		vector <Remedio> remedios;
-		// metodos que checam a data de vencimento de um determinado produto i atraves de 
-		// um limite de n dias
+		// metodos que checam a data de vencimento de um determinado produto i atraves de um limite de n dias
 		bool checaVencimentoPerecivel(int, int);
     	bool checaVencimentoRemedio(int, int);
     	// metodos para ler de um arquivo objetos salvos
@@ -76,11 +75,9 @@ class Estoque
     	bool set_saida_estoque_produto(long int, int);
     	bool set_saida_estoque_perecivel(long int, int);
     	bool set_saida_estoque_remedio(long int, int);
-    	// metodo que retorna as despezas atuais com base nos produtos
-    	// que ainda estao no estoque
+    	// metodo que retorna as despezas atuais com base nos produtos que ainda estao no estoque
     	float get_despezas(void) const;
-    	// meotodos que retornam o indice dos produtos atraves de pesquisa por
-    	// nome ou codigo de barras
+    	// meotodos que retornam o indice dos produtos atraves de pesquisa por nome ou codigo de barras
     	int getIndiceProduto(long int) const;
     	int getIndiceProduto(string) const;
     	int getIndiceProdutoPerecivel(long int) const;
