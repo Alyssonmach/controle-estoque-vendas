@@ -6,8 +6,8 @@
 
 using namespace std;
 
-#include "../implementations/Funcionario.cpp"
-#include "../implementations/ListaFuncionarios.cpp"
+#include "../implementacoes/Funcionario.cpp"
+#include "../implementacoes/ListaFuncionarios.cpp"
 
 int main(void)
 {
