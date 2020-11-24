@@ -4,7 +4,7 @@
 Dorflex
 Sem tarja
 Genericos
-233
+232
 12341
 12
 3
@@ -76,7 +76,7 @@ antidiabetico
 Selozok
 Tarja preta
 PID
-566
+564
 12342
 3
 5
@@ -88,7 +88,7 @@ reducao da pressao arterial
 Calcitran B12
 Sem tarja
 OmegaD3
-66
+65
 12349
 12
 12

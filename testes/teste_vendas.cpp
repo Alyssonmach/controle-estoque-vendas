@@ -289,7 +289,7 @@ int main(void)
 									system("pause");
 									system("cls");
 									
-									processo_vendas.apaga_da_nota_perecivel(codigo);
+									processo_vendas.apaga_da_nota_remedio(codigo);
 									processo_vendas.set_entrada_estoque_remedio(codigo, 1);
 									cout << endl;
 									cout << "Remédio removido da nota fiscal." << endl;
