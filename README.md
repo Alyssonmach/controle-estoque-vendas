@@ -116,11 +116,11 @@ Sendo uma classe que herda de Funcionario, ela possuí todos os atributos ligado
 
 ### Diretórios
 
-#### Arquivos
+#### arquivos
 
 - [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos do tipo Produto, ProdutoPerecivel e Remedio;
 
-#### NotasFiscais 
+#### notasfiscais 
 
 - [x] Contém todo o fluxo de notas fiscais, mantendo um diretório a parte para salvá-las e outro como todo o histórico de notas fiscais das vendas realizada;
 
@@ -128,11 +128,11 @@ Sendo uma classe que herda de Funcionario, ela possuí todos os atributos ligado
 
 - [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos do tipo Funcionario;
  
-#### Headers
+#### cabecalhos
 
 - [x] Contém todos os arquivos de cabeçalho .h das classes utilizadas no projeto;
 
-#### Implementations
+#### implementacoes
 
 - [x] Contém todos os arquivos de implementação .cpp das classes utilizadas no projeto;
 
