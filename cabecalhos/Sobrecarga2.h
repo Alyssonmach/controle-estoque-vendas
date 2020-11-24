@@ -1,3 +1,5 @@
+// Arquivo destinado as sobrecargas utilizadas no projeto.
+
 #include "Funcionario.h"
 #include <string>
 
