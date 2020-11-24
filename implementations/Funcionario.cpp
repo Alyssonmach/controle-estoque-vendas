@@ -1,7 +1,6 @@
-#include "../headers/Funcionario.h"
+#include "../cabecalhos/Funcionario.h"
 
-Funcionario::Funcionario(string nome, string cpf, long int id, string cargo, 
-                         string login, string senha)
+Funcionario::Funcionario(string nome, string cpf, long int id, string cargo, string login, string senha)
 {
 	set_nome(nome);
 	set_cpf(cpf);
