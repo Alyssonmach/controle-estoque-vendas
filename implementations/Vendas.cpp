@@ -1,4 +1,4 @@
-#include "../headers/Vendas.h"
+#include "../cabecalhos/Vendas.h"
 
 #include <ctime>
 
@@ -63,7 +63,7 @@ int Vendas::quantidade_notas_fiscais(void)
 	
 	int count = 0;
 	
-	dir = opendir("../NotasFiscais/notas_de_compras/");
+	dir = opendir("../notasfiscais/notas_de_compras/");
 	
 	while((lsdir = readdir(dir)) != NULL)
 	{
@@ -79,7 +79,7 @@ string Vendas::diretorio_nota(int arquivo_atual)
 	char snum[1];
 	
 	nome = nome + itoa(arquivo_atual, snum, 10);
-	nome = "../NotasFiscais/notas_de_compras/" + nome + ".txt";
+	nome = "../notasfiscais/notas_de_compras/" + nome + ".txt";
 	
 	return nome;
 }
@@ -222,7 +222,7 @@ bool Vendas::apaga_da_nota_remedio(long int codigo)
 void Vendas::imprime_historico_fiscal(void) const
 {
   string linha;
-  ifstream myfile ("../NotasFiscais/historico/historico_notas_fiscais.txt");
+  ifstream myfile ("../notasfiscais/historico/historico_notas_fiscais.txt");
   if (myfile.is_open())
   {
     while (getline(myfile, linha))
@@ -239,7 +239,7 @@ void Vendas::imprime_historico_fiscal(void) const
 void Vendas::limpa_historico_notas(void)
 {
 	ofstream myfile;
-	myfile.open("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ios::trunc);
+	myfile.open("../notasfiscais/historico/historico_notas_fiscais.txt", std::ios::trunc);
     myfile.close();
     
 	return;
@@ -250,7 +250,7 @@ void Vendas::restaura_historico_notas(void)
 	DIR *dir;
 	struct dirent *lsdir;
 	
-	dir = opendir("../NotasFiscais/notas_de_compras/");
+	dir = opendir("../notasfiscais/notas_de_compras/");
 	limpa_historico_notas();
 	if((lsdir = readdir(dir)) == NULL)
 	{
@@ -268,7 +268,7 @@ void Vendas::restaura_historico_notas(void)
 		      while ( getline (myfile2,linha) )
 		      {
 		          ofstream myfile;
-				  myfile.open ("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
+				  myfile.open ("../notasfiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
 				  if (myfile.is_open())
 				  {
 					  	myfile << linha << endl;
@@ -281,7 +281,7 @@ void Vendas::restaura_historico_notas(void)
 		  else cout << "Não foi possível abrir o arquivo." << cout;
 		  
 		  ofstream myfile;
-          myfile.open ("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
+          myfile.open ("../notasfiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
 		  if (myfile.is_open())
           {
 				myfile << endl;
@@ -344,7 +344,7 @@ void Vendas::monta_nota_fiscal(void)
 	  cout << fixed << setprecision(2);
 	  
 	  ofstream myfile;
-	  myfile.open ("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
+	  myfile.open ("../notasfiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
 	  if (myfile.is_open())
 	  {
 	  	
