@@ -4,7 +4,7 @@
 Dorflex
 Sem tarja
 Genericos
-234
+233
 12341
 12
 3
@@ -76,7 +76,7 @@ antidiabetico
 Selozok
 Tarja preta
 PID
-567
+566
 12342
 3
 5

@@ -7,11 +7,11 @@
 
 using namespace std;
 
-#include "../implementations/Produto.cpp"
-#include "../implementations/ProdutoPerecivel.cpp"
-#include "../implementations/Remedio.cpp"
-#include "../implementations/Estoque.cpp"
-#include "../implementations/Vendas.cpp"
+#include "../implementacoes/Produto.cpp"
+#include "../implementacoes/ProdutoPerecivel.cpp"
+#include "../implementacoes/Remedio.cpp"
+#include "../implementacoes/Estoque.cpp"
+#include "../implementacoes/Vendas.cpp"
 
 int main(void)
 {
