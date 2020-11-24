@@ -1,10 +1,6 @@
-#include "../headers/Remedio.h"
+#include "../cabecalhos/Remedio.h"
 
-Remedio::Remedio(float preco_loja, float preco_consumidor, string nome, string categoria, 
-				 string fabricante, int quantidade, long int codigo, int dia, int mes,
-	   	     	 int ano, string medida, string info_adicional) : ProdutoPerecivel(preco_loja, 
-                 preco_consumidor, nome, categoria, fabricante, quantidade, codigo, dia, mes,
-				 ano)
+Remedio::Remedio(float preco_loja, float preco_consumidor, string nome, string categoria, string fabricante, int quantidade, long int codigo, int dia, int mes, int ano, string medida, string info_adicional) : ProdutoPerecivel(preco_loja, preco_consumidor, nome, categoria, fabricante, quantidade, codigo, dia, mes, ano)
 {
 	set_medida(medida);
 	set_info_adicional(info_adicional);		 	
