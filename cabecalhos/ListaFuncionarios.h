@@ -2,8 +2,11 @@
 #define LISTAFUNCIONARIOS_H
 
 #include <vector>
+#include <string>
 #include "Funcionario.h"
 #include "Sobrecarga2.h"
+
+using std::string;
 
 class ListaFuncionarios
 {
