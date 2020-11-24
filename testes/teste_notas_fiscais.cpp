@@ -19,7 +19,7 @@ int main (void) {
   int count = 0;
   string nome = "NotaFiscal", numero;
 	
-  dir = opendir("../NotasFiscais/notas_de_compras/");
+  dir = opendir("../notasfiscais/notas_de_compras/");
 	
   while((lsdir = readdir(dir)) != NULL)
   {
@@ -33,10 +33,10 @@ int main (void) {
   cout << nome << endl;
   closedir(dir);
   
-  nome = "../NotasFiscais/notas_de_compras/" + nome + ".txt";
+  nome = "../notasfiscais/notas_de_compras/" + nome + ".txt";
   
   ofstream myfile;
-  myfile.open ("../NotasFiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
+  myfile.open ("../notasfiscais/historico/historico_notas_fiscais.txt", std::ofstream::out | std::ofstream::app);
   if (myfile.is_open())
   {
 	  	myfile << "=== Teste === Data: 12/12/1111" << endl;
@@ -60,7 +60,7 @@ int main (void) {
   else cout << "Não foi possível abrir o arquivo." << cout;
 
   string line;
-  ifstream myfile2 ("../NotasFiscais/historico/historico_notas_fiscais.txt");
+  ifstream myfile2 ("../notasfiscais/historico/historico_notas_fiscais.txt");
   if (myfile2.is_open())
   {
     while ( getline (myfile2,line) )
