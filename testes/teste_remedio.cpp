@@ -4,9 +4,9 @@
 
 using namespace std;
 
-#include "../implementations/Produto.cpp"
-#include "../implementations/ProdutoPerecivel.cpp"
-#include "../implementations/Remedio.cpp"
+#include "../implementacoes/Produto.cpp"
+#include "../implementacoes/ProdutoPerecivel.cpp"
+#include "../implementacoes/Remedio.cpp"
 
 int main(void)
 {
