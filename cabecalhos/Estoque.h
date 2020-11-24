@@ -3,11 +3,13 @@
 
 #include <vector>
 #include <string>
+#include <stdexcept>
 #include "Produto.h"
 #include "ProdutoPerecivel.h"
 #include "Remedio.h"
 
 using std::string;
+using std::out_of_range;
 
 class Estoque 
 {

@@ -1038,17 +1038,53 @@ int Estoque::getIndiceRemedio(string nome) const
 
 Produto Estoque::getProduto(int indice) const
 {
-	return produtos[indice];
+	Produto produto_vazio;
+	
+	try 
+	{
+		produtos.at(indice);
+	}
+	catch(out_of_range const& excecao) 
+	{
+		cout << excecao.what() << endl;
+		cout << "Retornando objeto vazio." << endl;
+		return produto_vazio;
+	}
+	return produtos.at(indice);
 }
 
 ProdutoPerecivel Estoque::getProdutoPerecivel(int indice) const
 {
-	return pereciveis[indice];
+	ProdutoPerecivel perecivel_vazio;
+	
+	try 
+	{
+		pereciveis.at(indice);
+	}
+	catch(out_of_range const& excecao) 
+	{
+		cout << excecao.what() << endl;
+		cout << "Retornando objeto vazio." << endl;
+		return perecivel_vazio;
+	}
+	return pereciveis.at(indice);
 }
 
 Remedio Estoque::getRemedio(int indice) const
 {
-	return remedios[indice];
+	Remedio remedio_vazio;
+	
+	try 
+	{
+		remedios.at(indice);
+	}
+	catch(out_of_range const& excecao) 
+	{
+		cout << excecao.what() << endl;
+		cout << "Retornando objeto vazio." << endl;
+		return remedio_vazio;
+	}
+	return remedios.at(indice);
 }
 
 vector <Produto> Estoque::getListaProdutos(void) const
