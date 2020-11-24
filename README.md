@@ -8,6 +8,7 @@
 |[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.5)|[controle-estoque-vendas-0.5](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.5.zip)|
 |[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.8.5)|[controle-estoque-vendas-0.8.5](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.8.5.zip)|
 |[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.9.9)|[controle-estoque-vendas-0.9.9](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.9.9.zip)|
+|[Lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.0.0)|[controle-estoque-vendas-1.0.0](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.0.0.zip)|
 
 ### Membros do projeto
 
