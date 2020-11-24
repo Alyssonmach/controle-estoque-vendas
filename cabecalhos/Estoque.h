@@ -2,9 +2,12 @@
 #define ESTOQUE_H
 
 #include <vector>
+#include <string>
 #include "Produto.h"
 #include "ProdutoPerecivel.h"
 #include "Remedio.h"
+
+using std::string;
 
 class Estoque 
 {
