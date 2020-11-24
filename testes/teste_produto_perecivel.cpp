@@ -4,8 +4,8 @@
 
 using namespace std;
 
-#include "../implementations/Produto.cpp"
-#include "../implementations/ProdutoPerecivel.cpp"
+#include "../implementacoes/Produto.cpp"
+#include "../implementacoes/ProdutoPerecivel.cpp"
 
 int main(void)
 {
@@ -48,27 +48,6 @@ int main(void)
 	cout << setfill('0') << produto_perecivel.get_data_atual().dia << "/";
 	cout << setfill('0') << produto_perecivel.get_data_atual().mes << "/";
 	cout << setfill('0') << produto_perecivel.get_data_atual().ano << endl;
-	
-	produto_cadastro.preco_loja = 13.49;
-	produto_cadastro.preco_consumidor = 20.99;
-	produto_cadastro.nome = "Pastilha Anti-inflamação";
-	produto_cadastro.categoria = "Produto Perecível";
-	produto_cadastro.fabricante = "Souza e Zousa";
-	produto_cadastro.quantidade = 345;
-	produto_cadastro.codigo = 123458;
-	vencimento.dia = 14;
-	vencimento.mes = 11;
-	vencimento.ano = 2019;
-	
-	cout << "Tentando cadastrar um novo produto: " << endl;
-	if(produto_perecivel.verifica_vencimento(vencimento))
-	{
-		produto_perecivel.set_objeto_perecivel(produto_cadastro, vencimento);
-	}
-	else
-	{
-		cout << "Produto vencido!" << endl;
-	}
 	
 	return 0;
 }
