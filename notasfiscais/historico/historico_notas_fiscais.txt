@@ -38,3 +38,10 @@ Nome do Produto: Selozok / Preço do Produto: 67.89 R$ / Código de Barras: 12342
 Nome do Produto: Selozok / Preço do Produto: 67.89 R$ / Código de Barras: 12342
 Nome do Produto: Calcitran B12 / Preço do Produto: 70 R$ / Código de Barras: 12349
 
+=== Nota Fiscal da Farmácia === Data: 24/11/2020
+Nome do Produto: Lenco de Bolso / Preço do Produto: 4.59 R$ / Código de Barras: 12340
+Nome do Produto: Papel Higienico / Preço do Produto: 14.99 R$ / Código de Barras: 12341
+Nome do Produto: Protetor Solar Fps70 / Preço do Produto: 94.49 R$ / Código de Barras: 12340
+Nome do Produto: Hidrante Facial / Preço do Produto: 75.59 R$ / Código de Barras: 12341
+Nome do Produto: Neosaldina / Preço do Produto: 12.34 R$ / Código de Barras: 12340
+
