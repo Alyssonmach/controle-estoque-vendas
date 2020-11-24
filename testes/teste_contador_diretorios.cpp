@@ -15,7 +15,7 @@ int main(void)
 	int count = 0;
 	string nome = "NotaFiscal", numero;
 	
-	dir = opendir("../NotasFiscais/notas_de_compras/");
+	dir = opendir("../notasfiscais/notas_de_compras/");
 	
 	while((lsdir = readdir(dir)) != NULL)
 	{
