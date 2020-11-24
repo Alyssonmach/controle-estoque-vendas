@@ -1,15 +1,12 @@
-#include "../headers/ProdutoPerecivel.h"
+#include "../cabecalhos/ProdutoPerecivel.h"
 
 #include <ctime>
 #include <iomanip>
+
 using std::setw;
 using std::setfill;
 
-ProdutoPerecivel::ProdutoPerecivel(float preco_loja, float preco_consumidor, 
-									string nome, string categoria, string fabricante,
-									int quantidade, long int codigo, int dia, int mes,
-									int ano) : Produto(preco_loja, preco_consumidor, nome,
-									categoria, fabricante, quantidade, codigo)
+ProdutoPerecivel::ProdutoPerecivel(float preco_loja, float preco_consumidor, string nome, string categoria, string fabricante, int quantidade, long int codigo, int dia, int mes, int ano) : Produto(preco_loja, preco_consumidor, nome, categoria, fabricante, quantidade, codigo)
 {
 	Data aux;
 	
