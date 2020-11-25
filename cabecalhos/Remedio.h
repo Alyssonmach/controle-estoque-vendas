@@ -17,7 +17,9 @@ class Remedio : public ProdutoPerecivel
 		Drogaria objeto_remedio;
     public:
     	Remedio(float = 0.0, float = 0.0, string = " ", string = " ", string = " ", int = 0, long int = 0, int = 0, int = 0, int = 0, string = " ", string = " ");
-        // metodo que configura um objeto do tipo remedio
+        // metodo que verifica a configuracao de um remedio
+		bool valida_objeto_remedio(Produto_prototipo, Data);
+		// metodo que configura um objeto do tipo remedio
         void set_objeto_remedio(Produto_prototipo, Data, Drogaria);
         // metodo que configura a medida do remedio
     	void set_medida(string);

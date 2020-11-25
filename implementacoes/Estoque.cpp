@@ -312,7 +312,7 @@ bool Estoque::pesquisarRemedio(string nome) const
 	{
 		if(remedios[i].get_objeto_produto().nome == nome)
 		{
-			remedios[i].imprimeProdutoPerecivel();
+			remedios[i].imprimeRemedio();
 			return true;
 		}
 		else
@@ -369,7 +369,7 @@ bool Estoque::pesquisarRemedio(long int codigo) const
 	{
 		if(remedios[i].get_objeto_produto().codigo == codigo)
 		{
-			remedios[i].imprimeProdutoPerecivel();
+			remedios[i].imprimeRemedio();
 			return true;
 		}
 		else
@@ -421,7 +421,7 @@ bool Estoque::checaVencimentoPerecivel(int indice, int limite)
 		}
 		else if(pereciveis[indice].get_data_validade().mes == pereciveis[indice].get_data_atual().mes)
 		{
-			if(pereciveis[indice].get_data_validade().dia < pereciveis[indice].get_data_atual().dia)
+			if(pereciveis[indice].get_data_validade().dia <= pereciveis[indice].get_data_atual().dia)
 			{
 				return true;	
 			}

@@ -6,6 +6,13 @@ Remedio::Remedio(float preco_loja, float preco_consumidor, string nome, string c
 	set_info_adicional(info_adicional);		 	
 }
 
+bool Remedio::valida_objeto_remedio(Produto_prototipo aux, Data daux)
+{
+	if(valida_objeto_perecivel(aux, daux))
+		return true;
+	
+	return false;
+}
 void Remedio::set_objeto_remedio(Produto_prototipo aux1, Data aux2, Drogaria aux3)
 {
 	set_objeto_produto(aux1);

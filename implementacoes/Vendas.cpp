@@ -150,7 +150,7 @@ bool Vendas::pesquisar_nota_remedio(long int codigo)
 	{
 		if(remedio_nota[i].get_objeto_produto().codigo == codigo)
 		{
-			remedio_nota[i].imprimeProdutoPerecivel();
+			remedio_nota[i].imprimeRemedio();
 			return true;
 		}
 		else
@@ -410,37 +410,37 @@ void Vendas::monta_nota_fiscal(void)
 	    	myfile1.close();
 	  }
 	  else cout << "Não foi possível abrir o arquivo." << cout;
-	  
-	  long int codigo;
-  	  bool estado;
   
 	  for(unsigned i(0); i < produto_nota.size(); i++)
 	  {
 	  	adiciona_saldo(produto_nota[i].get_objeto_produto().preco_consumidor);
 	  	adiciona_apurado(produto_nota[i].get_objeto_produto().preco_consumidor - produto_nota[i].get_objeto_produto().preco_loja);
-	  	codigo = produto_nota[i].get_objeto_produto().codigo;
 	  }
 	  
-	  estado = apaga_da_nota_produto(codigo);
 	  
 	  for(unsigned i(0); i < perecivel_nota.size(); i++)
 	  {
 	  	adiciona_saldo(perecivel_nota[i].get_objeto_produto().preco_consumidor);
 	  	adiciona_apurado(perecivel_nota[i].get_objeto_produto().preco_consumidor - perecivel_nota[i].get_objeto_produto().preco_loja);
-	  	codigo = perecivel_nota[i].get_objeto_produto().codigo;
 	  }
-	  
-	  estado = apaga_da_nota_perecivel(codigo);
+
 	  
 	  for(unsigned i(0); i < remedio_nota.size(); i++)
 	  {
 	  	adiciona_saldo(remedio_nota[i].get_objeto_produto().preco_consumidor);
 	  	adiciona_apurado(remedio_nota[i].get_objeto_produto().preco_consumidor - remedio_nota[i].get_objeto_produto().preco_loja);
-	  	codigo = remedio_nota[i].get_objeto_produto().codigo;
 	  }
 	  
-	  estado = apaga_da_nota_remedio(codigo);
+	  limpa_carrinho();
 	
+	return;
+}
+
+void Vendas::limpa_carrinho(void)
+{
+	produto_nota.clear();
+	perecivel_nota.clear();
+	remedio_nota.clear();
 	return;
 }
 

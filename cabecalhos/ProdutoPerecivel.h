@@ -18,7 +18,11 @@ class ProdutoPerecivel : public Produto
 		Data data_validade;
     public:
     	ProdutoPerecivel(float = 0.0, float = 0.0, string = " ", string = " ", string = " ", int = 0, long int = 0, int = 0, int = 0, int = 0);
-    	// metodo que configura um objeto do tipo produto nao perecivel (tem data de validade associada)
+    	// metodo que verifica se um produto esta vencido
+		bool valida_data_validade(void);
+		// metodo que verifica a adequacao de um produto
+		bool valida_objeto_perecivel(Produto_prototipo, Data);
+		// metodo que configura um objeto do tipo produto nao perecivel (tem data de validade associada)
 		void set_objeto_perecivel(Produto_prototipo, Data);
 		// metodo que configura a data de validade do produto nao perecivel
     	void set_data_validade(Data);

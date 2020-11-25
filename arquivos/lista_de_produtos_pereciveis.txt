@@ -4,7 +4,7 @@
 Bolinho de Chocolate
 Comestiveis
 Maria
-44
+42
 12348
 12
 8
@@ -14,11 +14,21 @@ Maria
 Pastilha Halls
 Comestiveis
 Halls
-23
+22
 12346
 12
 12
 2021
+3
+7
+Cha de Ervas
+Medicinal
+MacroID
+13
+12342
+12
+3
+2023
 4.5
 7
 Picole Magnum
@@ -74,7 +84,7 @@ Integral Medica
 Protetor Solar Fps70
 Cuidados Pessoais
 Le Roche-Rolwy
-241
+240
 12340
 12
 3
@@ -84,18 +94,8 @@ Le Roche-Rolwy
 Whey Protein
 Suplementos Alimentares
 Universal Suplementos
-43
+41
 12343
 12
 5
 2021
-3
-7
-Cha de Ervas
-Medicinal
-MacroID
-3
-12342
-12
-3
-2023

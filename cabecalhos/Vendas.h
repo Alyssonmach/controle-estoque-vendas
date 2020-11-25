@@ -46,6 +46,8 @@ class Vendas : public Estoque
     	bool apaga_da_nota_produto(long int);
     	bool apaga_da_nota_perecivel(long int);
     	bool apaga_da_nota_remedio(long int);
+    	// metodo que limpa os produtos adicionados ao carrinho de compras
+    	void limpa_carrinho(void);
     	// metodo que imprime o historico total de notas fiscais feitas a cada compra
  		void imprime_historico_fiscal(void) const;
  		// metodo que zera o arquivo do historico das notas fiscais

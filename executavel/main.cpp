@@ -178,7 +178,6 @@ int main(void)
 						{
 							analisa_admin.set_objeto(funcionario);
 							lista.inserir_funcionario(analisa_admin);
-							cout << endl;
 							cout << "Funcionário cadatrado com sucesso." << endl;
 						}
 						break;
@@ -374,6 +373,7 @@ int main(void)
 				cout << endl;
 				cout << "Login ou senha incorretos. Tente novamente." << endl;
 			}
+			
 			escolha = 1;
 			break;
 		}
@@ -466,10 +466,10 @@ void controle_estoque(void)
 				
 				produto.set_objeto_produto(auxiliar_produto);
 				cout << endl;
-				if(estoque.pesquisarProduto(produto.get_objeto_produto().codigo))
+				if(estoque.pesquisarProduto(produto.get_objeto_produto().codigo) || (!produto.valida_objeto_produto(auxiliar_produto)))
 				{
 					cout << endl;
-					cout << "Código já vinculado. Tente novamente." << endl;
+					cout << "Produto indevido de cadastro. Tente novamente." << endl;
 				}
 				else
 				{
@@ -505,10 +505,10 @@ void controle_estoque(void)
 				perecivel.set_objeto_perecivel(auxiliar_produto, vencimento);
 				
 				cout << endl;
-				if(estoque.pesquisarProdutoPerecivel(perecivel.get_objeto_produto().codigo))
+				if(estoque.pesquisarProdutoPerecivel(perecivel.get_objeto_produto().codigo) || (!perecivel.valida_objeto_perecivel(auxiliar_produto, vencimento)))
 				{
 					cout << endl;
-					cout << "Código já vinculado. Tente novamente." << endl;
+					cout << "Produto indevido de cadastro. Tente novamente." << endl;
 				}
 				else
 				{
@@ -549,10 +549,10 @@ void controle_estoque(void)
 				remedio.set_objeto_remedio(auxiliar_produto, vencimento, informacoes_remedio);
 				
 				cout << endl;
-				if(estoque.pesquisarRemedio(remedio.get_objeto_produto().codigo))
+				if(estoque.pesquisarRemedio(remedio.get_objeto_produto().codigo) || (!remedio.valida_objeto_remedio(auxiliar_produto, vencimento)))
 				{
 					cout << endl;
-					cout << "Código já vinculado. Tente novamente." << endl;		
+					cout << "Produto indevido de cadastro. Tente novamente." << endl;		
 				}
 				else
 				{
@@ -847,7 +847,7 @@ void controle_estoque(void)
 				cin >> codigo;
 				
 				cout << "Produtos Encontrados: " << endl << endl;
-				if(estoque.pesquisarProduto(codigo))
+				if(estoque.pesquisarRemedio(codigo))
 				{
 					cout << endl;
 					cout << "Processando remoção..." << endl;
@@ -900,7 +900,7 @@ void controle_estoque(void)
 					
 					cout << "Deseja Remover os produtos perecíveis já vencidos da lista?" << endl;
 					cout << "1 - sim;" << endl;
-					cout << "2 - não" << endl;
+					cout << "2 - não;" << endl;
 					cout << "Digite sua opção: ";
 					cin >> aux;
 					
@@ -1362,6 +1362,7 @@ void controle_vendas(void)
 					cout << "2 - Departamento de Produtos Perecíveis;" << endl;
 					cout << "3 - Departamento de Remédios;" << endl;
 					cout << "4 - Remover itens da compra;" << endl;
+					cout << "5 - Desistir das compras;" << endl;
 					cout << "0 - Montar nota fiscal;" << endl << endl;
 					
 					cout << "insira sua opção: ";
@@ -1610,6 +1611,13 @@ void controle_vendas(void)
 								cout << "Opção inválida. Tente novamente." << endl;
 								break;
 							}
+							break;
+						}
+						case 5:
+						{
+							cout << "Compras canceladas." << endl;
+							processo_vendas.limpa_carrinho();
+							escolha = 0;
 							break;
 						}
 						default:
