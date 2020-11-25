@@ -18,21 +18,21 @@ Estadao Comunicacoes
 Lubrificante
 Intimos
 Venus
-63
+61
 12344
 10.11
 14.99
 Papel Higienico
 Higiene Pessoal
 Dauf Deluxe
-132
+131
 12341
 3.45
 4.59
 Lenco de Bolso
 Higiene Pessoal
 Kleenex
-237
+231
 12340
 15.9
 30.45
@@ -67,5 +67,5 @@ Johnson e Johnson
 Chupeta Plastica
 Infantil
 Plastil
-542
+541
 12345

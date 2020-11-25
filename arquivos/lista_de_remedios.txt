@@ -52,7 +52,7 @@ anti-hipertensivo
 Neosaldina
 Tarja branca
 Generico
-446
+443
 12340
 12
 12
@@ -88,7 +88,7 @@ reducao da pressao arterial
 Calcitran B12
 Sem tarja
 OmegaD3
-64
+63
 12349
 12
 12
@@ -112,7 +112,7 @@ suplemento de vitamina d
 Xarelto
 Tarja vermelha com prescricao
 PID
-344
+343
 12344
 12
 3

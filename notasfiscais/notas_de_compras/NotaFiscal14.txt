@@ -1,0 +1,3 @@
+=== Nota Fiscal da Farmácia === Data: 25/11/2020
+Nome do Produto: Lenco de Bolso / Preço do Produto: 4.59 R$ / Código de Barras: 12340
+Nome do Produto: Calcitran B12 / Preço do Produto: 70 R$ / Código de Barras: 12349
