@@ -421,7 +421,7 @@ bool Estoque::checaVencimentoPerecivel(int indice, int limite)
 		}
 		else if(pereciveis[indice].get_data_validade().mes == pereciveis[indice].get_data_atual().mes)
 		{
-			if(pereciveis[indice].get_data_validade().dia < pereciveis[indice].get_data_atual().dia)
+			if(pereciveis[indice].get_data_validade().dia <= pereciveis[indice].get_data_atual().dia)
 			{
 				return true;	
 			}

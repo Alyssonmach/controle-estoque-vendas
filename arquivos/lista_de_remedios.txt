@@ -40,7 +40,7 @@ reduz sintomas de colicas menstruais
 Aradois
 Tarja branca
 PID
-566
+565
 12345
 3
 4
@@ -88,7 +88,7 @@ reducao da pressao arterial
 Calcitran B12
 Sem tarja
 OmegaD3
-65
+64
 12349
 12
 12
@@ -100,7 +100,7 @@ ajuda no fortalecimento osseo
 Addera D3
 Sem tarja
 FarmaVita
-44
+43
 12347
 3
 6
