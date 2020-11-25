@@ -17,6 +17,78 @@ ProdutoPerecivel::ProdutoPerecivel(float preco_loja, float preco_consumidor, str
 	set_data_validade(aux);										
 } 
 
+bool ProdutoPerecivel::valida_objeto_perecivel(Produto_prototipo aux, Data daux)
+{
+	int contador(0);
+	
+	if(valida_objeto_produto(aux))
+	{
+		if(valida_data_validade())
+			return false;
+		
+		contador += (daux.dia > 0 && daux.dia <= 31) ? 0 : 1;
+		contador += (daux.mes > 0 && daux.mes <= 12) ? 0 : 1;
+		contador += (daux.ano > 0) ? 0 : 1;
+		if(!contador)
+			return true;
+		
+	}
+	else
+		return false;
+	
+	return false;
+}
+
+bool ProdutoPerecivel::valida_data_validade(void)
+{
+	Data atual;
+	
+	atual = get_data_atual();
+	
+	int acumula_atual, acumula_vencido, verifica, anual;
+	
+	acumula_atual = ((12 - atual.mes) * 30) + atual.dia;
+	acumula_vencido = ((12 - get_data_validade().mes) * 30);
+	acumula_vencido += get_data_validade().dia;
+	
+	if(get_data_validade().ano - atual.ano == 1)
+	{
+		verifica = acumula_atual + acumula_vencido;
+		if(verifica <= 0)
+		{
+			return true;
+		}
+	}
+	else if(get_data_validade().ano - atual.ano > 1)
+	{
+		
+		verifica = acumula_atual + acumula_vencido;
+		anual = (get_data_validade().ano - atual.ano - 1) * 365;
+		verifica += anual;
+		if(verifica <= 0)
+		{
+			return true;
+		}
+	}
+	else if(get_data_validade().ano - atual.ano == 0)
+	{
+		
+		if(get_data_validade().mes < get_data_atual().mes)
+		{
+			return true;
+		}
+		else if(get_data_validade().mes == get_data_atual().mes)
+		{
+			if(get_data_validade().dia <= get_data_atual().dia)
+			{
+				return true;	
+			}
+		}
+	}
+	
+	return false;
+}
+
 void ProdutoPerecivel::set_objeto_perecivel(Produto_prototipo aux1, Data aux2)
 {
 	set_objeto_produto(aux1);
