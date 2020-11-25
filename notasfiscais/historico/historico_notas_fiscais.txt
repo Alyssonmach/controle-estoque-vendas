@@ -102,3 +102,5 @@ Nome do Produto: Lubrificante / Preço do Produto: 20.7 R$ / Código de Barras: 12
 === Nota Fiscal da Farmácia === Data: 25/11/2020
 Nome do Produto: Lenco de Bolso / Preço do Produto: 4.59 R$ / Código de Barras: 12340
 
+=== Nota Fiscal da Farmácia === Data: 25/11/2020
+

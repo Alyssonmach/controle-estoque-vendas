@@ -1362,6 +1362,7 @@ void controle_vendas(void)
 					cout << "2 - Departamento de Produtos Perecíveis;" << endl;
 					cout << "3 - Departamento de Remédios;" << endl;
 					cout << "4 - Remover itens da compra;" << endl;
+					cout << "5 - Desistir das compras;" << endl;
 					cout << "0 - Montar nota fiscal;" << endl << endl;
 					
 					cout << "insira sua opção: ";
@@ -1610,6 +1611,13 @@ void controle_vendas(void)
 								cout << "Opção inválida. Tente novamente." << endl;
 								break;
 							}
+							break;
+						}
+						case 5:
+						{
+							cout << "Compras canceladas." << endl;
+							processo_vendas.limpa_carrinho();
+							escolha = 0;
 							break;
 						}
 						default:
