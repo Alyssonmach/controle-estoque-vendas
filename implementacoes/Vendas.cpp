@@ -150,7 +150,7 @@ bool Vendas::pesquisar_nota_remedio(long int codigo)
 	{
 		if(remedio_nota[i].get_objeto_produto().codigo == codigo)
 		{
-			remedio_nota[i].imprimeProdutoPerecivel();
+			remedio_nota[i].imprimeRemedio();
 			return true;
 		}
 		else

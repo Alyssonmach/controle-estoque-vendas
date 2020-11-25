@@ -57,3 +57,14 @@ Nome do Produto: Bolinho de Chocolate / Preço do Produto: 2 R$ / Código de Barra
 Nome do Produto: Bolinho de Chocolate / Preço do Produto: 2 R$ / Código de Barras: 12348
 Nome do Produto: Aradois / Preço do Produto: 9 R$ / Código de Barras: 12345
 
+=== Nota Fiscal da Farmácia === Data: 25/11/2020
+Nome do Produto: Neosaldina / Preço do Produto: 12.34 R$ / Código de Barras: 12340
+
+=== Nota Fiscal da Farmácia === Data: 25/11/2020
+Nome do Produto: Neosaldina / Preço do Produto: 12.34 R$ / Código de Barras: 12340
+
+=== Nota Fiscal da Farmácia === Data: 25/11/2020
+Nome do Produto: Pastilha Halls / Preço do Produto: 2 R$ / Código de Barras: 12346
+Nome do Produto: Neosaldina / Preço do Produto: 12.34 R$ / Código de Barras: 12340
+Nome do Produto: Dorflex / Preço do Produto: 5.6 R$ / Código de Barras: 12341
+

@@ -4,7 +4,7 @@
 Dorflex
 Sem tarja
 Genericos
-232
+231
 12341
 12
 3
@@ -52,7 +52,7 @@ anti-hipertensivo
 Neosaldina
 Tarja branca
 Generico
-449
+446
 12340
 12
 12
