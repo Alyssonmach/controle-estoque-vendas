@@ -13,10 +13,11 @@ class ListaFuncionarios
 	private:
 		// lista de vector que armazena diversos funcionarios
 	   vector <Funcionario> lista_funcionarios;	
-	   // metodos para leitura e gravacao de objetos na lista de vector
+	   // metodo para leitura de objetos na lista de vector
 	   void leitura_funcionarios(void);
-	   void gravacao_funcionarios(void);
     public:
+    	// metodo para gravacao de objetos na lista de vector
+    	void gravacao_funcionarios(void);
     	// construtor inicia a leitura dos arquivos para a lista de vector
     	ListaFuncionarios(void);
     	// destrutor salva os objetos da lista de vector no arquivo
