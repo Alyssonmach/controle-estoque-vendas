@@ -25,11 +25,11 @@ class Estoque
     	void lerProduto(void);
     	void lerProdutoPerecivel(void);
     	void lerRemedio(void);
+    public:
     	// metodos para gravar em um arquivo objetos definidos
     	void salvarProduto(void);
     	void salvarProdutoPerecivel(void);
     	void salvarRemedio(void);
-    public:
     	// construtor carrega os objetos salvos em um arquivo
     	Estoque();
     	// destrutor salva os objetos definidos em um arquivo
