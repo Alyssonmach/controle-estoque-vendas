@@ -451,7 +451,7 @@ bool Estoque::checaVencimentoRemedio(int indice, int limite)
 			return true;
 		}
 	}
-	else if(pereciveis[indice].get_data_validade().ano - atual.ano > 1)
+	else if(remedios[indice].get_data_validade().ano - atual.ano > 1)
 	{
 		
 		verifica = acumula_atual + acumula_vencido;
@@ -470,7 +470,7 @@ bool Estoque::checaVencimentoRemedio(int indice, int limite)
 		}
 		else if(remedios[indice].get_data_validade().mes == remedios[indice].get_data_atual().mes)
 		{
-			if(remedios[indice].get_data_validade().dia < remedios[indice].get_data_atual().dia)
+			if(remedios[indice].get_data_validade().dia <= remedios[indice].get_data_atual().dia)
 			{
 				return true;
 			}
