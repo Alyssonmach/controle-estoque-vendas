@@ -37,8 +37,15 @@ int main(void)
 		cout << "3 - Gerenciar Funcionários da Farmácia;" << endl;
 		cout << "0 - Sair do Programa;" << endl << endl;
 		
-		cout << "Insira sua opção: ";
+		cout << "Insira a sua opção: ";
 		cin >> escolha;
+		while(cin.fail())
+		{
+	        cout << "Entrada inválida. Tente novamente." << endl;
+	        cin.clear();
+	        cin.ignore(256,'\n');  
+	        cin >> escolha;
+	   	}
 		
 		cout << endl;
 		system("pause");
@@ -65,7 +72,7 @@ int main(void)
 			if(lista.valida_funcionarios_estoque(analisa_admin))
 			{
 				cout << endl;
-				cout << "Funcionário registrado. Acesso Permitido" << endl;
+				cout << "Funcionário registrado. Acesso Permitido." << endl;
 				
 				cout << endl;
 				system("pause");
@@ -94,7 +101,7 @@ int main(void)
 			if(lista.valida_funcionarios_vendas(analisa_admin))
 			{
 				cout << endl;
-				cout << "Funcionário registrado. Acesso Permitido" << endl;
+				cout << "Funcionário registrado. Acesso Permitido." << endl;
 				
 				cout << endl;
 				system("pause");
@@ -131,14 +138,23 @@ int main(void)
 				{
 					cout << "=== Gestão dos Funcionários da Farmácia ===" << endl << endl;
 					cout << "1 - Inserir um novo funcionário;" << endl;
-					cout << "2 - Imprimir lista de funcionarios;" << endl;
-					cout << "3 - Pesquisar funcionários;" << endl;
+					cout << "2 - Imprimir a lista de funcionarios;" << endl;
+					cout << "3 - Pesquisar funcionários cadastrados;" << endl;
 					cout << "4 - Ordenar lista de funcionarios;" << endl;
 					cout << "5 - Remover Funcionário por CPF;" << endl;
 					cout << "6 - Testar Validação das senhas dos funcionarios;" << endl;
+					cout << "7 - Salvar alterações feitas;" << endl;
 					cout << "0 - Sair da Gestão de Funcionários;" << endl << endl;
 					cout << "Insira uma opção: ";
+					
 					cin >> escolha;
+					while(cin.fail())
+					{
+				        cout << "Entrada inválida. Tente novamente." << endl;
+				        cin.clear();
+				        cin.ignore(256,'\n');  
+				        cin >> escolha;
+				   	}
 					
 					cout << endl;
 					system("pause");
@@ -160,6 +176,13 @@ int main(void)
 						getline(cin, funcionario.cpf);
 						cout << "ID do Funcionário: ";
 						cin >> funcionario.id;
+						while(cin.fail())
+						{
+						        cout << "Entrada inválida. Tente novamente." << endl;
+						        cin.clear();
+						        cin.ignore(256,'\n');  
+						        cin >> funcionario.id;
+						}
 						cin.ignore();
 						cout << "Cargo do Funcionário: ";
 						getline(cin, funcionario.cargo);
@@ -194,7 +217,7 @@ int main(void)
 						cin.ignore();
 						getline(cin, funcionario.cpf);
 						cout << endl << endl;
-						cout << "Busca por: " << funcionario.cpf << ":" << endl << endl;
+						cout << "Buscar por: " << funcionario.cpf << ":" << endl << endl;
 						if(lista.pesquisar_funcionario_cpf(funcionario.cpf))
 						{
 							cout << endl;
@@ -217,7 +240,15 @@ int main(void)
 						cout << "6 - Ordenar por Senha;" << endl << endl;
 						
 						cout << "Insira sua opção: ";
+						
 						cin >> escolha;
+						while(cin.fail())
+						{
+					        cout << "Entrada inválida. Tente novamente." << endl;
+					        cin.clear();
+					        cin.ignore(256,'\n');  
+					        cin >> escolha;
+					   	}
 						
 						cout << endl;
 						system("pause");
@@ -293,7 +324,15 @@ int main(void)
 						cout << "1 - Cadastro de Estoque;" << endl;
 						cout << "2 - Cadastro de Vendas;" << endl << endl;
 						cout << "Insira sua opção: ";
+						
 						cin >> escolha;
+						while(cin.fail())
+						{
+					        cout << "Entrada inválida. Tente novamente." << endl;
+					        cin.clear();
+					        cin.ignore(256,'\n');  
+					        cin >> escolha;
+					   	}
 						
 						cout << endl;
 						system("pause");
@@ -352,6 +391,12 @@ int main(void)
 							break;
 						}
 						
+						break;
+					}
+					case 7:
+					{
+						cout << "Todas as alterações foram salvas." << endl;
+						lista.gravacao_funcionarios();
 						break;
 					}
 					default:
@@ -416,9 +461,18 @@ void controle_estoque(void)
 		cout << "6 - Pesquisar sobre o produto;" << endl;
 		cout << "7 - Ordenação de Estoque;" << endl;
 		cout << "8 - Visualizar as depezas atuais;" << endl;
+		cout << "9 - Salvar alterações feitas;" << endl;
 		cout << "0 - Voltar para o menu principal;" << endl << endl;
 		cout << "Digite sua opção: ";
+		
 		cin >> escolha;
+		while(cin.fail())
+		{
+      	  cout << "Entrada inválida. Tente novamente." << endl;
+      	  cin.clear();
+      	  cin.ignore(256,'\n');  
+      	  cin >> escolha;
+		}
 		
 		cout << endl;
 		system("pause");
@@ -433,7 +487,7 @@ void controle_estoque(void)
 		}
 		case 1:
 		{
-			cout << "=== Escolha o tipo de produto a ser cadastrado === :" << endl << endl;
+			cout << "Escolha o tipo de produto a ser cadastrado: " << endl << endl;
 			cout << "1 - Departamento de produtos não perecíveis;" << endl;
 			cout << "2 - Departamento de produtos perecíveis;" << endl;
 			cout << "3 - Departamento de remédios;" << endl << endl;
@@ -450,8 +504,22 @@ void controle_estoque(void)
 			{
 				cout << "Informe o preço de aquisição do produto: ";
 				cin >> auxiliar_produto.preco_loja;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.preco_loja;
+				}
 				cout << "Informe o preço de venda do produto: ";;
 				cin >> auxiliar_produto.preco_consumidor;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.preco_consumidor;
+				}
 				cin.ignore();
 				cout << "Informe o nome do produto: ";
 				getline(cin, auxiliar_produto.nome);
@@ -461,10 +529,25 @@ void controle_estoque(void)
 				getline(cin, auxiliar_produto.fabricante);
 				cout << "Informe a quantidade em estoque do produto: ";
 				cin >> auxiliar_produto.quantidade;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.quantidade;
+				}
 				cout << "Informe o código de barras do produto: ";
 				cin >> auxiliar_produto.codigo;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.codigo;
+				}
 				
 				produto.set_objeto_produto(auxiliar_produto);
+				
 				cout << endl;
 				if(estoque.pesquisarProduto(produto.get_objeto_produto().codigo) || (!produto.valida_objeto_produto(auxiliar_produto)))
 				{
@@ -482,8 +565,22 @@ void controle_estoque(void)
 			{
 				cout << "Informe o preço de aquisição do produto perecível: ";
 				cin >> auxiliar_produto.preco_loja;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.preco_loja;
+				}
 				cout << "Informe o preço de venda do produto perecível: ";;
 				cin >> auxiliar_produto.preco_consumidor;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.preco_consumidor;
+				}
 				cin.ignore();
 				cout << "Informe o nome do produto perecível: ";
 				getline(cin, auxiliar_produto.nome);
@@ -493,14 +590,49 @@ void controle_estoque(void)
 				getline(cin, auxiliar_produto.fabricante);
 				cout << "Informe a quantidade em estoque do produto perecível: ";
 				cin >> auxiliar_produto.quantidade;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.quantidade;
+				}
 				cout << "Informe o código de barras do produto perecível: ";
 				cin >> auxiliar_produto.codigo;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.codigo;
+				}
 				cout << "Informe o dia que o produto perecível se vence: ";
 				cin >> vencimento.dia;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> vencimento.dia;
+				}
 				cout << "Informe o mês que o produto perecível se vence: ";
 				cin >> vencimento.mes;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> vencimento.mes;
+				}
 				cout << "Informe o ano que o produto perecível se vence: ";
 				cin >> vencimento.ano;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> vencimento.ano;
+				}
 				
 				perecivel.set_objeto_perecivel(auxiliar_produto, vencimento);
 				
@@ -521,8 +653,22 @@ void controle_estoque(void)
 			{
 				cout << "Informe o preço de aquisição do remédio: ";
 				cin >> auxiliar_produto.preco_loja;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.preco_loja;
+				}
 				cout << "Informe o preço de venda do remédio: ";;
 				cin >> auxiliar_produto.preco_consumidor;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.preco_consumidor;
+				}
 				cin.ignore();
 				cout << "Informe o nome do remédio: ";
 				getline(cin, auxiliar_produto.nome);
@@ -532,14 +678,49 @@ void controle_estoque(void)
 				getline(cin, auxiliar_produto.fabricante);
 				cout << "Informe a quantidade em estoque do remédio: ";
 				cin >> auxiliar_produto.quantidade;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.quantidade;
+				}
 				cout << "Informe o código de barras do remédio: ";
 				cin >> auxiliar_produto.codigo;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> auxiliar_produto.codigo;
+				}
 				cout << "Informe o dia que o remédio se vence: ";
 				cin >> vencimento.dia;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> vencimento.dia;
+				}
 				cout << "Informe o mês que o remédio se vence: ";
 				cin >> vencimento.mes;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> vencimento.mes;
+				}
 				cout << "Informe o ano que o remédio se vence: ";
 				cin >> vencimento.ano;
+				while(cin.fail())
+				{
+		      	  cout << "Entrada inválida. Tente novamente." << endl;
+		      	  cin.clear();
+		      	  cin.ignore(256,'\n');  
+		      	  cin >> vencimento.ano;
+				}
 				cin.ignore();
 				cout << "Informe a medida do remédio: ";
 				getline(cin, informacoes_remedio.medida);
@@ -572,11 +753,19 @@ void controle_estoque(void)
 			int quantidade;
 			long int codigo;
 				
-			cout << "=== Escolha o tipo de procedimento a ser realizado === :" << endl << endl;
+			cout << "Escolha o tipo de procedimento a ser realizado: " << endl << endl;
 			cout << "1 - Adicionar Produtos;" << endl;
 			cout << "2 - Remover Produtos;" << endl << endl;
 			cout << "Opção: ";
 			cin >> escolha;
+			while(cin.fail())
+			{
+  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+  	  	  	  cin.clear();
+  	  	  	  cin.ignore(256,'\n');  
+  	  	  	  cin >> escolha;
+			}
+			
 			
 			cout << endl;
 			system("pause");
@@ -592,6 +781,13 @@ void controle_estoque(void)
 				cout << "3 - Departamento de remédios;" << endl << endl;
 				cout << "Opção: ";
 				cin >> escolha;
+				while(cin.fail())
+				{
+	  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+	  	  	  	  cin.clear();
+	  	  	  	  cin.ignore(256,'\n');  
+	  	  	  	  cin >> escolha;
+				}
 				
 				cout << endl;
 				system("pause");
@@ -603,8 +799,22 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do produto a ser aumentado no estoque: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> codigo;
+					}
 					cout << "Informe a quantidade de aumento:";
 					cin >> quantidade;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> quantidade;
+					}
 					
 					cout << "Pesquisando..." << endl << endl;
 					if(estoque.set_entrada_estoque_produto(codigo, quantidade))
@@ -622,8 +832,22 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do produto perecível a ser aumentado no estoque: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> codigo;
+					}
 					cout << "Informe a quantidade de aumento:";
 					cin >> quantidade;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> quantidade;
+					}
 					
 					cout << "Pesquisando..." << endl << endl;
 					if(estoque.set_entrada_estoque_perecivel(codigo, quantidade))
@@ -641,8 +865,22 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do remédio a ser aumentado no estoque: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> codigo;
+					}
 					cout << "Informe a quantidade de aumento:";
 					cin >> quantidade;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> quantidade;
+					}
 					
 					cout << "Pesquisando..." << endl << endl;
 					if(estoque.set_entrada_estoque_remedio(codigo, quantidade))
@@ -663,12 +901,19 @@ void controle_estoque(void)
 			}
 			case 2:
 			{
-				cout << "=== Escolha o departamento a ter itens adicionados === :" << endl << endl;
+				cout << "Escolha o departamento a ter itens adicionados: " << endl << endl;
 				cout << "1 - Departamento de produtos não perecíveis;" << endl;
 				cout << "2 - Departamento de produtos perecíveis;" << endl;
 				cout << "3 - Departamento de remédios;" << endl << endl;
 				cout << "Opção: ";
 				cin >> escolha;
+				while(cin.fail())
+				{
+ 	  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+ 	  	  	  	  cin.clear();
+ 	  	  	  	  cin.ignore(256,'\n');  
+ 	  	  	  	  cin >> escolha;
+				}
 				
 				cout << endl;
 				system("pause");
@@ -680,8 +925,22 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do produto a ser diminuido no estoque: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> codigo;
+					}
 					cout << "Informe a quantidade de diminuição: ";
 					cin >> quantidade;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> quantidade;
+					}
 					
 					cout << "Pesquisando..." << endl << endl;
 					if(estoque.set_saida_estoque_produto(codigo, quantidade))
@@ -699,8 +958,22 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do produto perecível a ser diminuido no estoque: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> codigo;
+					}
 					cout << "Informe a quantidade de diminuição: ";
 					cin >> quantidade;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> quantidade;
+					}
 					
 					cout << "Pesquisando..." << endl << endl;
 					if(estoque.set_saida_estoque_perecivel(codigo, quantidade))
@@ -718,8 +991,22 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do remédio a ser aumentado no diminuido: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> codigo;
+					}
 					cout << "Informe a quantidade de diminuição:";
 					cin >> quantidade;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	  	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> quantidade;
+					}
 					
 					cout << "Pesquisando..." << endl << endl;
 					if(estoque.set_saida_estoque_remedio(codigo, quantidade))
@@ -752,6 +1039,13 @@ void controle_estoque(void)
 			cout << "3 - Departamento de remédios;" << endl << endl;
 			cout << "Opção: ";
 			cin >> escolha;
+			while(cin.fail())
+			{
+ 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+ 	  	  	  cin.clear();
+ 	  	  	  cin.ignore(256,'\n');  
+ 	  	  	  cin >> escolha;
+			}
 			
 			cout << endl;
 			system("pause");
@@ -790,6 +1084,13 @@ void controle_estoque(void)
 			cout << "3 - Departamento de remédios;" << endl << endl;
 			cout << "Opção: ";
 			cin >> escolha;
+			while(cin.fail())
+			{
+ 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+ 	  	  	  cin.clear();
+ 	  	  	  cin.ignore(256,'\n');  
+ 	  	  	  cin >> escolha;
+			}
 			
 			cout << endl;
 			system("pause");
@@ -801,6 +1102,13 @@ void controle_estoque(void)
 			{
 				cout << "Informe o código de barras do produto a ser removido: ";
 				cin >> codigo;
+				while(cin.fail())
+				{
+	 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+	 	  	  	  cin.clear();
+	 	  	  	  cin.ignore(256,'\n');  
+	 	  	  	  cin >> codigo;
+				}
 				
 				cout << "Produtos Encontrados: " << endl << endl;
 				if(estoque.pesquisarProduto(codigo))
@@ -823,6 +1131,13 @@ void controle_estoque(void)
 			{
 				cout << "Informe o código de barras do produto perecível a ser removido: ";
 				cin >> codigo;
+				while(cin.fail())
+				{
+	 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+	 	  	  	  cin.clear();
+	 	  	  	  cin.ignore(256,'\n');  
+	 	  	  	  cin >> codigo;
+				}
 				
 				cout << "Produtos Encontrados: " << endl << endl;
 				if(estoque.pesquisarProdutoPerecivel(codigo))
@@ -845,6 +1160,13 @@ void controle_estoque(void)
 			{
 				cout << "Informe o código de barras do remédio a ser removido: ";
 				cin >> codigo;
+				while(cin.fail())
+				{
+	 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+	 	  	  	  cin.clear();
+	 	  	  	  cin.ignore(256,'\n');  
+	 	  	  	  cin >> codigo;
+				}
 				
 				cout << "Produtos Encontrados: " << endl << endl;
 				if(estoque.pesquisarRemedio(codigo))
@@ -877,6 +1199,13 @@ void controle_estoque(void)
 			cout << "2 - Departamento de remédios;" << endl << endl;
 			cout << "Opção: ";
 			cin >> escolha;
+			while(cin.fail())
+			{
+  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+ 	 	 	  cin.clear();
+  	  	  	  cin.ignore(256,'\n');  
+  	  	  	  cin >> escolha;
+			}
 			
 			cout << endl;
 			system("pause");
@@ -888,11 +1217,16 @@ void controle_estoque(void)
 			{
 				cout << "Informe o limite de validade em dias a ser pesquisado: ";
 				cin >> limite;
+				while(cin.fail())
+				{
+	  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+	 	 	 	  cin.clear();
+	  	  	  	  cin.ignore(256,'\n');  
+	  	  	  	  cin >> limite;
+				}
 				if(estoque.pesquisaPerecivelVencido(limite))
 				{
 					int aux;
-					
-					cout << "Foi encontrado produtos perecíveis perto do vencimento com limite de " << limite << " dias." << endl;
 					
 					cout << endl;
 					system("pause");
@@ -903,6 +1237,13 @@ void controle_estoque(void)
 					cout << "2 - não;" << endl;
 					cout << "Digite sua opção: ";
 					cin >> aux;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		 	 	 	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> aux;
+					}
 					
 					if(aux == 1)
 					{
@@ -927,9 +1268,16 @@ void controle_estoque(void)
 			{
 				cout << "Informe o limite de validade em dias a ser pesquisado: ";
 				cin >> limite;
+				while(cin.fail())
+				{
+ 	  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+ 	  	  	  	  cin.clear();
+ 	  	  	  	  cin.ignore(256,'\n');  
+ 	  	  	  	  cin >> limite;
+				}
+					
 				if(estoque.pesquisaRemedioVencido(limite))
 				{
-					cout << "Foi encontrado remédios perto do vencimento com limite de " << limite << " dias." << endl;
 					int aux;
 					
 					cout << "Deseja Remover os remédios já vencidos da lista?" << endl;
@@ -937,6 +1285,13 @@ void controle_estoque(void)
 					cout << "2 - não" << endl;
 					cout << "Digite sua opção: ";
 					cin >> aux;
+					while(cin.fail())
+					{
+		  	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		 	 	 	  cin.clear();
+		  	  	  	  cin.ignore(256,'\n');  
+		  	  	  	  cin >> aux;
+					}
 					
 					if(aux == 1)
 					{
@@ -969,6 +1324,13 @@ void controle_estoque(void)
 			cout << "2 - Pesquisa por nome do produto;" << endl;
 			cout << "Opção: ";
 			cin >> escolha;
+			while(cin.fail())
+			{
+ 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+ 	  	  	  cin.clear();
+ 	  	  	  cin.ignore(256,'\n');  
+ 	  	  	  cin >> escolha;
+			}
 			
 			cout << endl;
 			system("pause");
@@ -986,7 +1348,14 @@ void controle_estoque(void)
 				cout << "3 - Departamento de remédios;" << endl << endl;
 				cout << "Opção: ";
 				cin >> escolha;
-			
+				while(cin.fail())
+				{
+	 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+	 	  	  	  cin.clear();
+	 	  	  	  cin.ignore(256,'\n');  
+	 	  	  	  cin >> escolha;
+				}
+				
 				cout << endl;
 				system("pause");
 				system("cls");
@@ -997,6 +1366,13 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do produto a ser pesquisado: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		 	  	  	  cin.clear();
+		 	  	  	  cin.ignore(256,'\n');  
+		 	  	  	  cin >> codigo;
+					}
 					
 					if(estoque.pesquisarProduto(codigo))
 					{
@@ -1014,6 +1390,13 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do produto perecível a ser pesquisado: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		 	  	  	  cin.clear();
+		 	  	  	  cin.ignore(256,'\n');  
+		 	  	  	  cin >> codigo;
+					}
 					
 					if(estoque.pesquisarProdutoPerecivel(codigo))
 					{
@@ -1031,6 +1414,13 @@ void controle_estoque(void)
 				{
 					cout << "Informe o código de barras do remédio a ser pesquisado: ";
 					cin >> codigo;
+					while(cin.fail())
+					{
+		 	  	  	  cout << "Entrada inválida. Tente novamente." << endl;
+		 	  	  	  cin.clear();
+		 	  	  	  cin.ignore(256,'\n');  
+		 	  	  	  cin >> codigo;
+					}
 					
 					if(estoque.pesquisarRemedio(codigo))
 					{
@@ -1061,6 +1451,13 @@ void controle_estoque(void)
 				cout << "3 - Departamento de remédios;" << endl << endl;
 				cout << "Opção: ";
 				cin >> escolha;
+				while(cin.fail())
+				{
+					cout << "Entrada inválida. Tente novamente." << endl;
+	  	  	        cin.clear();
+	  	  	        cin.ignore(256,'\n');  
+	  	  	        cin >> escolha;
+  	   	        }
 			
 				cout << endl;
 				system("pause");
@@ -1144,6 +1541,14 @@ void controle_estoque(void)
 				cout << "3 - Departamento de remédios;" << endl << endl;
 				cout << "Opção: ";
 				cin >> escolha;
+				while(cin.fail())
+				{
+					cout << "Entrada inválida. Tente novamente." << endl;
+	  	  	        cin.clear();
+	  	  	        cin.ignore(256,'\n');  
+	  	  	        cin >> escolha;
+  	   	        }
+			
 			
 				cout << endl;
 				system("pause");
@@ -1160,6 +1565,14 @@ void controle_estoque(void)
 					cout << "4 - Ordenar por quantidade em estoque;" << endl << endl;
 					cout << "Opção: ";
 					cin >> escolha;
+					while(cin.fail())
+					{
+						cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	        cin.clear();
+		  	  	        cin.ignore(256,'\n');  
+		  	  	        cin >> escolha;
+	  	   	        }
+			
 					
 					cout << endl;
 					system("pause");
@@ -1205,6 +1618,13 @@ void controle_estoque(void)
 					cout << "4 - Ordenar por quantidade em estoque;" << endl << endl;
 					cout << "Opção: ";
 					cin >> escolha;
+					while(cin.fail())
+					{
+						cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	        cin.clear();
+		  	  	        cin.ignore(256,'\n');  
+		  	  	        cin >> escolha;
+	  	   	        }
 					
 					cout << endl;
 					system("pause");
@@ -1251,6 +1671,13 @@ void controle_estoque(void)
 					cout << "5 - Ordenar por tarja;" << endl << endl;
 					cout << "Opção: ";
 					cin >> escolha;
+					while(cin.fail())
+					{
+						cout << "Entrada inválida. Tente novamente." << endl;
+		  	  	        cin.clear();
+		  	  	        cin.ignore(256,'\n');  
+		  	  	        cin >> escolha;
+	  	   	        }
 					
 					cout << endl;
 					system("pause");
@@ -1303,6 +1730,14 @@ void controle_estoque(void)
 			cout << "Despezas atuais: " << estoque.get_despezas() << " R$" <<  endl;
 			break;
 		}
+		case 9:
+		{
+			cout << "Todas as alterações foram salvas." << endl;
+			estoque.salvarProduto();
+			estoque.salvarProdutoPerecivel();
+			estoque.salvarRemedio();
+			break;
+		}
 		default:
 			cout << "Opção Inválida. Tente novamente." << endl;
 		}
@@ -1337,10 +1772,18 @@ void controle_vendas(void)
 		cout << "1 - Registrar Compras;" << endl;
 		cout << "2 - Análise de Notas Fiscais;" << endl;
 		cout << "3 - Visualizar a parte financeira da farmácia;" << endl; 
-		cout << "0 - Voltar para o Menu Principal;" << endl << endl; 
+		cout << "0 - Voltar para o Menu Principal;" << endl << endl;
+		cout << "Todas as alterações são salvas automaticamente." << endl << endl;
 		
 		cout << "Insira uma opção: ";
 		cin >> escolha;
+		while(cin.fail())
+        {
+      	   cout << "Entrada inválida. Tente novamente." << endl;
+       	   cin.clear();
+       	   cin.ignore(256,'\n');  
+       	   cin >> escolha;
+        }
 		
 		cout << endl;
 		system("pause");
@@ -1367,6 +1810,13 @@ void controle_vendas(void)
 					
 					cout << "insira sua opção: ";
 					cin >> escolha;
+					while(cin.fail())
+			        {
+			      	   cout << "Entrada inválida. Tente novamente." << endl;
+			       	   cin.clear();
+			       	   cin.ignore(256,'\n');  
+			       	   cin >> escolha;
+			        }
 					
 					cout << endl;
 					system("pause");
@@ -1384,6 +1834,14 @@ void controle_vendas(void)
 						{
 							cout << "Insira o código de barras do produto não perecível: ";
 							cin >> codigo;
+							while(cin.fail())
+					        {
+					      	   cout << "Entrada inválida. Tente novamente." << endl;
+					       	   cin.clear();
+					       	   cin.ignore(256,'\n');  
+					       	   cin >> codigo;
+					        }
+					        
 							cout << endl;
 							
 							if(processo_vendas.pesquisarProduto(codigo))
@@ -1394,6 +1852,13 @@ void controle_vendas(void)
 								cout << "2 - não;" << endl << endl;
 								cout << "Insira sua opção: ";
 								cin >> escolha;
+								while(cin.fail())
+						        {
+						      	   cout << "Entrada inválida. Tente novamente." << endl;
+						       	   cin.clear();
+						       	   cin.ignore(256,'\n');  
+						       	   cin >> escolha;
+						        }
 								
 								cout << endl;
 								system("pause");
@@ -1437,6 +1902,13 @@ void controle_vendas(void)
 								cout << "2 - não;" << endl << endl;
 								cout << "Insira sua opção: ";
 								cin >> escolha;
+								while(cin.fail())
+						        {
+						      	   cout << "Entrada inválida. Tente novamente." << endl;
+						       	   cin.clear();
+						       	   cin.ignore(256,'\n');  
+						       	   cin >> escolha;
+						        }
 								
 								cout << endl;
 								system("pause");
@@ -1469,6 +1941,14 @@ void controle_vendas(void)
 						{
 							cout << "Insira o código de barras do remédio: ";
 							cin >> codigo;
+							while(cin.fail())
+							{
+  	   	   	   	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+  	   	   	   	   	   	   	   cin.clear();
+	   	   	   	   	   	   	   cin.ignore(256,'\n');  
+       	   	   	   	   	   	   cin >> codigo;
+	 	 	 	 	        }
+	 	 	 	 	        
 							cout << endl;
 							
 							if(processo_vendas.pesquisarRemedio(codigo))
@@ -1479,6 +1959,13 @@ void controle_vendas(void)
 								cout << "2 - não;" << endl << endl;
 								cout << "Insira sua opção: ";
 								cin >> escolha;
+								while(cin.fail())
+								{
+	  	   	   	   	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+	  	   	   	   	   	   	   	   cin.clear();
+		   	   	   	   	   	   	   cin.ignore(256,'\n');  
+	       	   	   	   	   	   	   cin >> escolha;
+		 	 	 	 	        }
 								
 								cout << endl;
 								system("pause");
@@ -1514,9 +2001,15 @@ void controle_vendas(void)
 							cout << "2 - Departamento de produtos perecíveis;" << endl;
 							cout << "3 - Departamento de remédios;" << endl;
 							cout << "0 - Cancelar operação;" << endl << endl;
-							
-							cout << "Digite sua opção: ";
+							cout << "Escolha uma opção: ";
 							cin >> escolha;
+							while(cin.fail())
+	  	  	  	            {
+	   	   	   	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+	   	   	   	   	   	   	   cin.clear();
+	   	   	   	   	   	   	   cin.ignore(256,'\n');  
+  	   	   	   	   	   	   	   cin >> escolha;
+	        				}
 							
 							cout << endl;
 							system("pause");
@@ -1533,6 +2026,13 @@ void controle_vendas(void)
 							{
 								cout << "Informe o código do produto não perecível a ser removido da nota: ";
 								cin >> codigo;
+								while(cin.fail())
+		  	  	  	            {
+		   	   	   	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+		   	   	   	   	   	   	   cin.clear();
+		   	   	   	   	   	   	   cin.ignore(256,'\n');  
+	  	   	   	   	   	   	   	   cin >> codigo;
+		        				}
 								cout << endl;
 								
 								if(processo_vendas.pesquisar_nota_produto(codigo))
@@ -1559,6 +2059,13 @@ void controle_vendas(void)
 							{
 								cout << "Informe o código do produto perecível a ser removido da nota: ";
 								cin >> codigo;
+								while(cin.fail())
+		  	  	  	            {
+		   	   	   	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+		   	   	   	   	   	   	   cin.clear();
+		   	   	   	   	   	   	   cin.ignore(256,'\n');  
+	  	   	   	   	   	   	   	   cin >> codigo;
+		        				}
 								
 								if(processo_vendas.pesquisar_nota_perecivel(codigo))
 								{
@@ -1585,6 +2092,13 @@ void controle_vendas(void)
 							{
 								cout << "Informe o código do remédio a ser removido da nota: ";
 								cin >> codigo;
+								while(cin.fail())
+		  	  	  	            {
+		   	   	   	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+		   	   	   	   	   	   	   cin.clear();
+		   	   	   	   	   	   	   cin.ignore(256,'\n');  
+	  	   	   	   	   	   	   	   cin >> codigo;
+		        				}
 								
 								if(processo_vendas.pesquisar_nota_remedio(codigo))
 								{
@@ -1642,7 +2156,14 @@ void controle_vendas(void)
 				
 				cout << "Insira sua opção: ";
 				cin >> escolha;
-				
+				while(cin.fail())
+            	{
+  	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+  	   	   	   	   cin.clear();
+  	   	   	   	   cin.ignore(256,'\n');  
+   	   	   	   	   cin >> escolha;
+				}
+		        				
 				cout << endl;
 				system("pause");
 				system("cls");
@@ -1671,6 +2192,13 @@ void controle_vendas(void)
 				{
 					cout << "Informe a quantidade de notas a serem pesquisadas: ";
 					cin >> quantidade;
+					while(cin.fail())
+	            	{
+	  	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+	  	   	   	   	   cin.clear();
+	  	   	   	   	   cin.ignore(256,'\n');  
+	   	   	   	   	   cin >> quantidade;
+					}
 					
 					cout << endl;
 					system("pause");
@@ -1693,44 +2221,40 @@ void controle_vendas(void)
 			}
 			case 3:
 			{
-				cout << "=== Análise Fiscal da Empresa ===" << endl;
-				cout << "1 - Visualizar o saldo mensal da empresa;" << endl;
-				cout << "2 - Visualizar o apurado mensal da empresa;" << endl;
-				cout << "3 - Visualizar a despeza mensal da empresa;" << endl;
-				cout << "4 - Finalizar as contas do mês;" << endl << endl;
+				cout << "=== Análise Fiscal da Empresa ===" << endl << endl;
+				cout << "Saldo mensal: " << processo_vendas.get_saldo() << " R$" << endl;
+				cout << "Apurado mensal: " << processo_vendas.get_apurado() << " R$" << endl;
+				cout << "Despeza mensal: " << processo_vendas.get_despezas() << " R$" << endl << endl;
+				
+				cout << "Deseja fechar as contas do mês?" << endl;
+				cout << "1 - sim;" << endl;
+				cout << "2 - não;" << endl;
+				
 				cout << "Escolha uma opção: ";
 				cin >> escolha;
+				while(cin.fail())
+   				{
+  	   	   	   	   cout << "Entrada inválida. Tente novamente." << endl;
+  	   	   	   	   cin.clear();
+  	   	   	   	   cin.ignore(256,'\n');  
+   	   	   	   	   cin >> escolha;
+				}
 				
-				cout << endl;
-				system("pause");
-				system("cls");
-				
-				switch(escolha)
+				if(escolha == 1)
 				{
-				case 1:
-				{
-					cout << "Saldo mensal: " << processo_vendas.get_saldo() << " R$" << endl;
-					break;
-				}
-				case 2:
-				{
-					cout << "Apurado mensal: " << processo_vendas.get_apurado() << " R$" << endl;
-					break;
-				}
-				case 3:
-				{
-					cout << "Despeza mensal: " << processo_vendas.get_despezas() << " R$" << endl;
-					break;
-				}
-				case 4:
-				{
+					cout << endl;
 					processo_vendas.fecha_conta_mes();
 					cout << "As contas do mês foram encerrados. Reiniciando uma nova análise." << endl;
-					break;
 				}
-				default:
+				else if(escolha == 2)
+				{
+					cout << endl;
+					cout << "As contas serão mantidas." << endl;
+				}
+				else
+				{
+					cout << endl;
 					cout << "Opção inválida. Tente novamente." << endl;
-					break;
 				}
 				
 				cout << endl;
