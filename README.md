@@ -1,4 +1,4 @@
-# Controle de Estoque e Vendas (v1.5.7)
+# Controle de Estoque e Vendas (v1.6.0)
 #### Projeto de controle de estoque e vendas em Farmácia.
 
 ### Versões do Projeto
