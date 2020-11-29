@@ -70,6 +70,10 @@ bool ProdutoPerecivel::valida_data_validade(void)
 			return true;
 		}
 	}
+	else if((get_data_validade().ano - atual.ano) < 0)
+	{
+		return true;
+	}
 	else if(get_data_validade().ano - atual.ano == 0)
 	{
 		

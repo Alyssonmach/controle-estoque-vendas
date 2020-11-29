@@ -412,6 +412,10 @@ bool Estoque::checaVencimentoPerecivel(int indice, int limite)
 			return true;
 		}
 	}
+	else if((pereciveis[indice].get_data_validade().ano - atual.ano) < 0)
+	{
+		return true;
+	}
 	else if(pereciveis[indice].get_data_validade().ano - atual.ano == 0)
 	{
 		
@@ -461,6 +465,10 @@ bool Estoque::checaVencimentoRemedio(int indice, int limite)
 		{
 			return true;
 		}
+	}
+	else if((remedios[indice].get_data_validade().ano - atual.ano) < 0)
+	{
+		return true;
 	}
 	else if(remedios[indice].get_data_validade().ano - atual.ano == 0)
 	{

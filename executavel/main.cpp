@@ -1801,7 +1801,7 @@ void controle_vendas(void)
 				while(escolha)
 				{
 					cout << "=== Escolha o tipo de produto a ser registrado ===" << endl << endl;
-					cout << "1 - Departamento de Produtos Perecíveis;" << endl;
+					cout << "1 - Departamento de Produtos não Perecíveis;" << endl;
 					cout << "2 - Departamento de Produtos Perecíveis;" << endl;
 					cout << "3 - Departamento de Remédios;" << endl;
 					cout << "4 - Remover itens da compra;" << endl;
