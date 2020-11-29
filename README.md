@@ -11,6 +11,7 @@
 |[Lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.0.0)|[controle-estoque-vendas-1.0.0](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.0.0.zip)|
 |[documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.5.0)|[controle-estoque-vendas-1.5.0](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.5.0.zip)|
 |[novidades](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.5.7)|[controle-estoque-vendas-1.5.7](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.5.7.zip)|
+|[novidades](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.6.0)|[controle-estoque-vendas-1.6.0](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.6.0.zip)|
 
 ### Membros do projeto
 
