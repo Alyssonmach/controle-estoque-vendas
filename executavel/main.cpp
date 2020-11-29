@@ -546,17 +546,19 @@ void controle_estoque(void)
 		      	  cin >> auxiliar_produto.codigo;
 				}
 				
-				produto.set_objeto_produto(auxiliar_produto);
+				Produto aux_pro;
+				
+				aux_pro.set_objeto_produto(auxiliar_produto);
 				
 				cout << endl;
-				if(estoque.pesquisarProduto(produto.get_objeto_produto().codigo) || (!produto.valida_objeto_produto(auxiliar_produto)))
+				if(estoque.pesquisarProduto(aux_pro.get_objeto_produto().codigo) || (!aux_pro.valida_objeto_produto(auxiliar_produto)))
 				{
 					cout << endl;
 					cout << "Produto indevido de cadastro. Tente novamente." << endl;
 				}
 				else
 				{
-					estoque.inserirProduto(produto);
+					estoque.inserirProduto(aux_pro);
 					cout << "Produto Cadastrado com sucesso." << endl;	
 				}
 				break;
@@ -634,17 +636,19 @@ void controle_estoque(void)
 		      	  cin >> vencimento.ano;
 				}
 				
-				perecivel.set_objeto_perecivel(auxiliar_produto, vencimento);
+				ProdutoPerecivel aux_pe;
+				
+				aux_pe.set_objeto_perecivel(auxiliar_produto, vencimento);
 				
 				cout << endl;
-				if(estoque.pesquisarProdutoPerecivel(perecivel.get_objeto_produto().codigo) || (!perecivel.valida_objeto_perecivel(auxiliar_produto, vencimento)))
+				if(estoque.pesquisarProdutoPerecivel(aux_pe.get_objeto_produto().codigo) || (!aux_pe.valida_objeto_perecivel(auxiliar_produto, vencimento)))
 				{
 					cout << endl;
 					cout << "Produto indevido de cadastro. Tente novamente." << endl;
 				}
 				else
 				{
-					estoque.inserirProdutoPerecivel(perecivel);
+					estoque.inserirProdutoPerecivel(aux_pe);
 					cout << "Produto Perecível Cadastrado com sucesso." << endl;
 				}
 				break;
@@ -727,17 +731,19 @@ void controle_estoque(void)
 				cout << "Informe a descrição do remédio: ";
 				getline(cin, informacoes_remedio.info_adicional);
 				
-				remedio.set_objeto_remedio(auxiliar_produto, vencimento, informacoes_remedio);
+				Remedio aux_re;
+				
+				aux_re.set_objeto_remedio(auxiliar_produto, vencimento, informacoes_remedio);
 				
 				cout << endl;
-				if(estoque.pesquisarRemedio(remedio.get_objeto_produto().codigo) || (!remedio.valida_objeto_remedio(auxiliar_produto, vencimento)))
+				if(estoque.pesquisarRemedio(aux_re.get_objeto_produto().codigo) || (!aux_re.valida_objeto_remedio(auxiliar_produto, vencimento)))
 				{
 					cout << endl;
 					cout << "Produto indevido de cadastro. Tente novamente." << endl;		
 				}
 				else
 				{
-					estoque.inserirRemedio(remedio);
+					estoque.inserirRemedio(aux_re);
 					cout << "Remédio Cadastrado com sucesso." << endl;
 				}
 				break;
