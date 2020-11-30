@@ -40,7 +40,7 @@ reduz sintomas de colicas menstruais
 Aradois
 Tarja branca
 PID
-565
+564
 12345
 3
 4
@@ -112,7 +112,7 @@ suplemento de vitamina d
 Xarelto
 Tarja vermelha com prescricao
 PID
-343
+43
 12344
 12
 3

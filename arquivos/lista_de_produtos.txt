@@ -18,7 +18,7 @@ Dauf Deluxe
 Jornal Estadao
 Papelaria
 Estadao Comunicacoes
-50
+49
 12343
 5.6
 7.89
@@ -32,7 +32,7 @@ Johnson e Johnson
 Lenco de Bolso
 Higiene Pessoal
 Kleenex
-227
+225
 12340
 45.6
 70.2

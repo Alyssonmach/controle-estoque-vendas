@@ -1,0 +1,5 @@
+=== Nota Fiscal da Farmácia === Data: 30/11/2020
+Nome do Produto: Lenco de Bolso / Preço do Produto: 4.59 R$ / Código de Barras: 12340
+Nome do Produto: Jornal Estadao / Preço do Produto: 2 R$ / Código de Barras: 12343
+Nome do Produto: Desodorante / Preço do Produto: 10.5 R$ / Código de Barras: 12347
+Nome do Produto: Aradois / Preço do Produto: 9 R$ / Código de Barras: 12345

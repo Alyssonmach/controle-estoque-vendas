@@ -1,24 +1,4 @@
 
-1
-2
-Bolinho de Chocolate
-Comestiveis
-Maria
-42
-12348
-12
-8
-2021
-0.89
-2
-Pastilha Halls
-Comestiveis
-Halls
-22
-12346
-12
-12
-2021
 3
 7
 Cha de Ervas
@@ -39,6 +19,16 @@ Nestle
 12
 12
 2020
+0.89
+2
+Pastilha Halls
+Comestiveis
+Halls
+22
+12346
+12
+12
+2021
 3.4
 8.9
 Cola Super-Bond
@@ -49,46 +39,6 @@ Super-Bond
 2
 3
 2025
-7.89
-10.5
-Desodorante
-Higiene
-Old Spice
-245
-12347
-3
-4
-2022
-50.39
-75.59
-Hidrante Facial
-Cuidados Pessoais
-Neutrogena
-132
-12341
-4
-5
-2022
-34.5
-78.9
-Glutamina
-Suplementos Alimentares
-Integral Medica
-67
-12344
-12
-5
-2023
-53.99
-94.49
-Protetor Solar Fps70
-Cuidados Pessoais
-Le Roche-Rolwy
-236
-12340
-12
-3
-2021
 56.7
 100.9
 Whey Protein
@@ -99,3 +49,53 @@ Universal Suplementos
 12
 5
 2021
+1
+2
+Bolinho de Chocolate
+Comestiveis
+Maria
+42
+12348
+12
+8
+2021
+34.5
+78.9
+Glutamina
+Suplementos Alimentares
+Integral Medica
+67
+12344
+12
+5
+2023
+50.39
+75.59
+Hidrante Facial
+Cuidados Pessoais
+Neutrogena
+132
+12341
+4
+5
+2022
+53.99
+94.49
+Protetor Solar Fps70
+Cuidados Pessoais
+Le Roche-Rolwy
+236
+12340
+12
+3
+2021
+7.89
+10.5
+Desodorante
+Higiene
+Old Spice
+244
+12347
+3
+4
+2022
