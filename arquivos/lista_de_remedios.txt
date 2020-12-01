@@ -16,7 +16,7 @@ relaxante muscular
 Torsilax
 Sem tarja
 Generico
-4563
+4562
 12343
 12
 3
@@ -112,7 +112,7 @@ suplemento de vitamina d
 Xarelto
 Tarja vermelha com prescricao
 PID
-43
+143
 12344
 12
 3
