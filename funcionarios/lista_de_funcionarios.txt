@@ -5,27 +5,27 @@ Controle de Vendas
 alicia
 alicia
 Alicia Souza Martins
-12340
-123.456.789-12
-Controle de Vendas
-alysson
-alysson
-Alysson Machado de Oliveira Barbosa
-12342
-123.434.123-34
-Controle de Estoque
-fabio
-fabio
-Fabio Menezes Martins
-12349
-123.578.234-56
-Controle de Estoque
-francinildo
-francinildo
-Francinildo Barbosa Figueiredo
 12344
 123.434.123-23
 Controle de Estoque
 maria
 maria
 Maria Cavalcanti da Souza
+12342
+123.434.123-34
+Controle de Estoque
+fabio
+fabio
+Fabio Menezes Martins
+12340
+123.456.789-12
+Controle de Vendas
+alysson
+alysson
+Alysson Machado de Oliveira Barbosa
+12349
+123.578.234-56
+Controle de Estoque
+francinildo
+francinildo
+Francinildo Barbosa Figueiredo
