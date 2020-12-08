@@ -119,7 +119,7 @@ int main(void)
 		case 3:
 		{
 			cin.ignore();
-			cout << "Para acessar essa página, entre com o cadastro do administrador." << endl << endl;
+			cout << "Para acessar esta página, entre com o cadastro do administrador." << endl << endl;
 			cout << "Login do administrador: ";
 			getline(cin, funcionario.login);
 			cout << "Senha do administrador: ";
@@ -452,7 +452,6 @@ void controle_estoque(void)
 	{
 		cout << "=== Controle de Estoque ===" << endl << endl;
 		
-		cout << "Escolha uma das ações a serem realizadas no estoque: " << endl << endl;
 		cout << "1 - Inserir um novo produto ao estoque;" << endl;
 		cout << "2 - Gerir quantidades de produto em estoque;" << endl;
 		cout << "3 - Visualizar estoque;" << endl;
