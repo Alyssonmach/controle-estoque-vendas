@@ -1,145 +1,118 @@
-# Controle de Estoque e Vendas (v1.6.0)
-#### Projeto de controle de estoque e vendas em Farmácia.
+# Controle de Estoque e Vendas
 
-### Versões do Projeto
+Projeto de **controle de estoque e vendas para uma farmácia**, desenvolvido em **C++**, com foco em orientação a objetos, persistência em arquivos e organização modular do sistema.
 
-|**Documentação**|**Link para Download**|
-|:---------------|:---------------------|
-|[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.5)|[controle-estoque-vendas-0.5](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.5.zip)|
-|[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.8.5)|[controle-estoque-vendas-0.8.5](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.8.5.zip)|
-|[Pré-lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v0.9.9)|[controle-estoque-vendas-0.9.9](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v0.9.9.zip)|
-|[Lançamento - documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.0.0)|[controle-estoque-vendas-1.0.0](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.0.0.zip)|
-|[documentação](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.5.0)|[controle-estoque-vendas-1.5.0](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.5.0.zip)|
-|[novidades](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.5.7)|[controle-estoque-vendas-1.5.7](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.5.7.zip)|
-|[novidades](https://github.com/Alyssonmach/controle-estoque-vendas/releases/tag/v1.6.0)|[controle-estoque-vendas-1.6.0](https://github.com/Alyssonmach/controle-estoque-vendas/archive/v1.6.0.zip)|
+## Objetivo
 
-### Membros do projeto
+Implementar um sistema capaz de gerenciar o **estoque**, as **vendas** e o **controle de acesso de funcionários** de uma farmácia, utilizando os principais conceitos da linguagem C++ e boas práticas de programação.
 
-- **Alysson Machado** (Membro responsável por modelar o formato dos objetos das classes e implementação do estoque da farmácia);
-- **Nathan Ferreira e Marcos Pereira** (Membro responsável por implementar o funcionamento da classe de Vendas, essa que tem comunicação direta com o estoque);
-- **Iago Miguel** (Membro Responsável por cuidar da gestão dos funcionários da farmácia, determinando o modelo de cadastro por objetos);
-
-### Objetivo
-
-Implementar um projeto que faça o controle de estoque e vendas de uma farmácia usando a linguagem de programação C++. 
+## Diagramas
 
 ### Diagrama UML
 
-![diagrama-uml](diagramacao/controle-estoque-vendas-farmacia.svg)
-> [Visualizar melhor](https://github.com/Alyssonmach/controle-estoque-vendas/blob/v1.0.0/diagramacao/controle-estoque-vendas-farmacia.svg)
+![Diagrama UML](diagramacao/controle-estoque-vendas-farmacia.svg)
+
+> [Visualizar em alta resolução](https://github.com/Alyssonmach/controle-estoque-vendas/blob/v1.0.0/diagramacao/controle-estoque-vendas-farmacia.svg)
 
 ### Diagrama de Caso de Uso
 
-![diagrama-caso-de-uso](diagramacao/caso-de-uso-controle-estoque-vendas-farmacia.svg)
-> [Visualizar melhor](https://github.com/Alyssonmach/controle-estoque-vendas/blob/v1.0.0/diagramacao/caso-de-uso-controle-estoque-vendas-farmacia.svg)
+![Diagrama de Caso de Uso](diagramacao/caso-de-uso-controle-estoque-vendas-farmacia.svg)
 
-### Material Utilizado
+> [Visualizar em alta resolução](https://github.com/Alyssonmach/controle-estoque-vendas/blob/v1.0.0/diagramacao/caso-de-uso-controle-estoque-vendas-farmacia.svg)
 
-- [x] Todo o projeto foi versionado utilizando o Git, possibilitando rastrear e organizar cada etapa de progresso;
-- [x] O projeto foi desenvolvido utilizando a linguagem de programação C++, como fruto da conclusão da disciplina Técnicas de Programação, na Universidade Federal de Campina Grande, curso de Engenharia Elétrica;
-- [x] O projeto foi desenvolvido utilizando o conhecimento de orientação a objetos, através da criação de classes e classes com herança, seguido do posterior desenvolvimento dos seus métodos. Além disso, foi definido um fluxo de comunicação entre as classes;
-- [x] Utilização de  Tratamento de exceções  e erros, manipulação de arquivos e alocação dinâmica (possibilitado com a implementação de um Vector);
-- [x] Especificação do Diagrama UML e do diagrama de Casos;
- 
-### Classes e Métodos Implementados
+## Tecnologias e Conceitos Utilizados
 
-#### Sobrecarga1 e Sobrecarga2 
+* Versionamento completo do projeto utilizando **Git**;
+* Desenvolvimento em **C++**, como trabalho final da disciplina *Técnicas de Programação* (UFCG — Engenharia Elétrica);
+* Aplicação de **orientação a objetos**, incluindo herança, encapsulamento e polimorfismo;
+* Utilização de **tratamento de exceções**, manipulação de arquivos e **alocação dinâmica** com `vector`;
+* Modelagem do sistema por meio de **Diagramas UML** e **Diagramas de Casos de Uso**.
 
-As implementações de Sobrecarga1 e Sobrecarga2 são responsáveis por realizar sobrecarga em operadores específicos, de modo que seja possível fazer toda a parte de manipulação com os arquivos nos construtores e destrutores, garantido que as listas de objetos sejam lidas logo no início da execução e sobrescritas ao final da execução. Com essas implementações, é possível realizar a manipulação de arquivos em listas de Vector de forma rápida e prática nas seguintes classes:
-- [x] Classe Produto;
-- [X] Classe ProdutoPerecivel;
-- [X] Classe Remedio;
-- [X] Classe Funcionário;
+## Principais Classes Implementadas
 
-#### Produto 
+### Sobrecarga1 e Sobrecarga2
 
-A classe Produto é responsável por armazenar diversos atributos de um objeto não perecível. Envolve informações sobre preço de aquisição, preço de compra, nome do produto, nome do fabricante, categoria, quantidade em estoque e código de barras do produto. Os métodos são referentes a configuração e impressão dos atributos.
+Responsáveis pela **sobrecarga de operadores**, permitindo que a leitura e escrita de dados em arquivos seja realizada automaticamente nos **construtores e destrutores**. Dessa forma, as listas de objetos são carregadas no início da execução e persistidas ao final.
 
-#### ProdutoPerecivel 
+Essas implementações são utilizadas nas seguintes classes:
 
-A classe ProdutoPerecivel é responsável por armazenar diversos atributos de um objeto perecível. Sendo uma classe que tem herança com a classe Produto, ela vai englobar todos os métodos envolvidos nessa classe, com o adicional de uma data de validade. Além disso, foi implementado um método que computa a data atual do produto, de modo que seja possível verificar se tal produto está vencido ou não.
+* Produto;
+* ProdutoPerecivel;
+* Remedio;
+* Funcionario.
 
-#### Remedio
+### Produto
 
-A classe Remedio é responsável por armazenar diversos atributos de um objeto perecível. Sendo uma classe que tem herança com a classe ProdutoPerecivel, ela vai englobar todos os métodos envolvidos nessa classe, com o adicional de informações de medidas do remédio e informações da finalidade desse remédio.
+Representa produtos **não perecíveis**, armazenando informações como nome, fabricante, categoria, código de barras, preço de aquisição, preço de venda e quantidade em estoque. Inclui métodos de configuração e exibição dos dados.
 
-#### Funcionario 
+### ProdutoPerecivel
 
-A classe Funcionario é responsável por armazenar diversos atributos dos empregados da farmácia, tais como nome, cpf, cargo, login e senha. Através dela, será possível ter um controle do acesso de funcionários em determinadas áreas da farmácia, podendo ser divididas entre os seguintes cargos:
+Especialização da classe `Produto`, adicionando o atributo **data de validade**. Possui métodos para verificar automaticamente se o produto encontra-se vencido.
 
-- [x] Controle de Vendas;
-- [x] Controle de Estoque;
+### Remedio
 
-#### Estoque 
+Herda de `ProdutoPerecivel` e adiciona informações específicas de medicamentos, como **dosagem**, **unidade de medida** e **finalidade terapêutica**.
 
-A classe Estoque é responsável por realizar o gerenciamento dos produtos disponíveis para venda na farmácia. Os seus atributos são capazes de armazenar todos os objetos pertencentes a classe Produto, ProdutoPerecivel e Remedio em um Vector. Desse modo, foi implementado os seguintes métodos:
+### Funcionario
 
-- [x] Métodos para checar o vencimento de produtos Perecíveis e Remédios;
-- [x] Métodos para ler as listas de Produtos, Produtos Perecíveis e Remédios armazenados em um arquivo; 
-- [x] Métodos para salvar as listas de Produtos, Produtos Perecíveis e Remédios armazenados em um .arquivo; 
-- [x] Métodos para inserir os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-- [x] Métodos para imprimir os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-- [x] Métodos para remover os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-- [x] Métodos para remover os Produtos, Produtos Perecíveis e Remédios que estão vencidos nas listas .de Vector;
-- [x] Métodos para pesquisar os Produtos, Produtos Perecíveis e Remédios nas listas de Vector;
-- [x] Métodos para pesquisar os Produtos, Produtos Perecíveis e Remédios que estão vencidos nas listas de Vector;
-- [X] Métodos que retornam um objeto armazenado na lista de Vector através do índice;
-- [x] Métodos para retornar todas as listas de vector que armazena os objetos Produto, Produto Perecível e Remédio armazenados em arquivos distintos;
-- [x] Métodos para realizar a ordenação nos dados através dos atributos distintos associados as classes de objetos;
-- [x] Métodos que alteram a quantidade de cada um dos produtos distintos no estoque;
-- [x] Método que calcula a despesa no estado atual da farmácia, conforme o preço de aquisição dos produtos e sua quantidade em estoque;
+Armazena os dados dos funcionários da farmácia, como nome, CPF, cargo, login e senha. Permite controle de acesso às áreas do sistema, divididas entre:
 
-#### Vendas 
+* Controle de Vendas;
+* Controle de Estoque.
 
-A classe Vendas é responsável por fazer a comunicação indireta com o Estoque. Através dela, os funcionários de uma farmácia poderiam vender os produtos disponíveis no estoque, elaborar notas fiscais das compras realizadas e ter uma análise rápida do saldo, apurado e despesas da farmácia em um determinado mês. Nessa classe, estão envolvidos os seguintes métodos:
+### Estoque
 
-- [x] Métodos para computar a gestão financeira da empresa a cada venda realizada;
-- [x] Métodos que fazem a gestão do fluxo de notas fiscais no diretório, permitindo dinamizar a forma como as notas fiscais podem ser salvas e visualizadas;
-- [x] Métodos que pesquisam diversos tipos de produtos no estoque, de modo que seja possível vendê-los;
-- [x] Métodos que permitem remover produtos que já passaram pelo caixa, caso o consumidor repense a compra de algum item, permitindo que tal produto estorne para o estoque;
-- [x] Métodos que limpam e restauram o histórico de notas fiscais, mantendo-as intactas em outro diretório;
-- [x] Método que imprime na tela do usuário as últimas n notas elaboradas;
-- [x] Método que fecha as contas do mês, recomeçando toda a apuração da parte de finanças da farmácia;
-- [x] Métodos que retornam o apurado e o saldo mensal da farmácia;
+Responsável pelo **gerenciamento completo dos produtos** disponíveis para venda. Armazena objetos das classes `Produto`, `ProdutoPerecivel` e `Remedio` em estruturas `vector` e implementa métodos para:
 
-#### ListaFuncionarios
+* Leitura e gravação de dados em arquivos;
+* Inserção, remoção, pesquisa e listagem de produtos;
+* Verificação e remoção de produtos vencidos;
+* Ordenação dos produtos por diferentes atributos;
+* Atualização da quantidade em estoque;
+* Cálculo da despesa total da farmácia com base no estoque atual.
 
-A classe ListaFuncionarios possui a finalidade de fazer a gestão de funcionários da farmácia. Ela é responsável por armazenar informações de cadastro dos funcionários, criando senhas de acesso específica para cada um deles. Há três tipos distintos de cadastro:
+### Vendas
 
-- [x] Cadastro do Administrador;
-- [x] Cadastro de funcionários de vendas dá poder aos membros de gerar saída de produtos no estoque por meio de notas fiscais;
-- [x] Cadastro de funcionários de estoque dá livre acesso ao estoque da loja, de modo que seja possível implementar todos os métodos envolvidos na classe Estoque;
+Realiza a comunicação indireta com a classe `Estoque`. Permite:
 
-Sendo uma classe que herda de Funcionario, ela possuí todos os atributos ligados a essa classe, podendo armazenar cada objeto em uma lista de Vector. Na classe ListaFuncionarios, foi implementado os seguintes métodos:
+* Registro de vendas;
+* Emissão e gerenciamento de **notas fiscais**;
+* Apuração do faturamento e despesas mensais;
+* Estorno de produtos ao estoque;
+* Consulta às últimas notas fiscais emitidas;
+* Fechamento mensal das contas.
 
-- [x] Métodos parar inserir objetos do tipo Funcionario na Lista de Vector e imprimi-los;
-- [x] Método para realizar a remoção de qualquer funcionário da lista pelo cpf;
-- [x] Método para pesquisar funcionários da lista pelo cpf;
-- [x] Métodos para validar o acesso de funcionários da parte do Controle de Vendas e Controle de Estoque, através de login e senha previamente definidos;
-- [x] Métodos para ordenar a lista de vector ligado a todos os possíveis atributos da classe Funcionario;
+### ListaFuncionarios
 
-### Diretórios
+Gerencia o cadastro e autenticação dos funcionários da farmácia. Herda da classe `Funcionario` e mantém listas em `vector`, permitindo:
 
-#### arquivos
+* Cadastro de administradores, funcionários de vendas e funcionários de estoque;
+* Validação de login e senha;
+* Inserção, remoção e pesquisa de funcionários por CPF;
+* Ordenação da lista de funcionários por diferentes atributos.
 
-- [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos do tipo Produto, ProdutoPerecivel e Remedio;
+## Estrutura de Diretórios
 
-#### notasfiscais 
+### `arquivos/`
 
-- [x] Contém todo o fluxo de notas fiscais, mantendo um diretório a parte para salvá-las e outro como todo o histórico de notas fiscais das vendas realizada;
+Contém os arquivos `.txt` responsáveis por armazenar os dados persistentes de produtos, produtos perecíveis e remédios.
 
-#### funcionarios
+### `notasfiscais/`
 
-- [x] Contém todos os arquivos de texto .txt que armazenam em lista os objetos do tipo Funcionario;
- 
-#### cabecalhos
+Armazena as notas fiscais geradas, separando as vendas atuais do histórico consolidado.
 
-- [x] Contém todos os arquivos de cabeçalho .h das classes utilizadas no projeto;
+### `funcionarios/`
 
-#### implementacoes
+Contém os arquivos `.txt` relacionados ao cadastro e persistência dos funcionários.
 
-- [x] Contém todos os arquivos de implementação .cpp das classes utilizadas no projeto;
+### `cabecalhos/`
 
-#### testes
+Arquivos de cabeçalho (`.h`) das classes do projeto.
 
- - [x] Contém todos os arquivos de teste .cpp que para verificar o funcionamento de cada um dos métodos da classe;
+### `implementacoes/`
+
+Arquivos de implementação (`.cpp`) das classes do projeto.
+
+### `testes/`
+
+Arquivos de teste (`.cpp`) utilizados para validação do funcionamento dos métodos implementados.
